@@ -1,0 +1,63 @@
+/* Keep the complete desktop hero and gold event strip within the first viewport. */
+@media (min-width: 901px) {
+  .hero {
+    height: calc(100svh - 58px);
+    min-height: 700px;
+  }
+
+  .hero-content {
+    max-width: 760px;
+    padding: clamp(118px, 14vh, 150px) 5vw 35px;
+  }
+
+  .hero h1 {
+    font-size: clamp(4.2rem, 7vw, 7.2rem);
+    margin: .45rem 0 1rem;
+  }
+
+  .hero-actions {
+    margin-top: 24px;
+  }
+
+  .trust-row {
+    margin-top: 22px;
+  }
+
+  .spin-stamp {
+    bottom: 30px;
+    width: 116px;
+    height: 116px;
+  }
+}
+
+@media (min-width: 901px) and (max-height: 780px) {
+  .site-header {
+    height: 76px;
+  }
+
+  .hero {
+    min-height: 620px;
+  }
+
+  .hero-content {
+    padding-top: 94px;
+    padding-bottom: 24px;
+  }
+
+  .hero h1 {
+    font-size: clamp(3.8rem, 6.4vw, 6.2rem);
+  }
+
+  .hero-copy {
+    font-size: 1rem;
+    margin-bottom: 0;
+  }
+
+  .button {
+    min-height: 50px;
+  }
+
+  .trust-row {
+    margin-top: 14px;
+  }
+}
