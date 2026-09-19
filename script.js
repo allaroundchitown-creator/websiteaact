@@ -41,6 +41,23 @@ typography.textContent = `
 `;
 document.head.append(typography);
 
+// Add your Google Analytics Measurement ID (for example, G-ABC123DEF4) to activate analytics.
+const GA_MEASUREMENT_ID = '';
+if (/^G-[A-Z0-9]+$/i.test(GA_MEASUREMENT_ID)) {
+  const analyticsScript = document.createElement('script');
+  analyticsScript.async = true;
+  analyticsScript.src = `https://www.googletagmanager.com/gtag/js?id=${GA_MEASUREMENT_ID}`;
+  document.head.append(analyticsScript);
+  window.dataLayer = window.dataLayer || [];
+  window.gtag = function gtag() { window.dataLayer.push(arguments); };
+  window.gtag('js', new Date());
+  window.gtag('config', GA_MEASUREMENT_ID);
+}
+
+const trackConversion = (eventName, parameters = {}) => {
+  if (typeof window.gtag === 'function') window.gtag('event', eventName, parameters);
+};
+
 const perfectForItems = ['Weddings', 'Corporate Events', 'Quinceañeras', 'Birthdays', 'School Events', 'Brand Activations'];
 const perfectForGroup = () => `
   <div class="perfect-for-group">
@@ -56,10 +73,18 @@ perfectForBar.innerHTML = `<div class="perfect-for-track">${perfectForGroup()}${
 perfectForBar.querySelector('.perfect-for-group:last-child').setAttribute('aria-hidden', 'true');
 document.querySelector('.hero').insertAdjacentElement('afterend', perfectForBar);
 
+const reviewTrack = document.querySelector('.review-track');
+const reviewGroup = document.querySelector('.review-group');
+if (reviewTrack && reviewGroup) {
+  const reviewClone = reviewGroup.cloneNode(true);
+  reviewClone.setAttribute('aria-hidden', 'true');
+  reviewTrack.append(reviewClone);
+}
+
 const videosSection = document.querySelector('.videos');
 const includedSection = document.createElement('section');
 includedSection.className = 'details included';
-videosSection.insertAdjacentElement('afterend', includedSection);
+document.querySelector('.reviews').insertAdjacentElement('afterend', includedSection);
 
 const includedHeading = document.querySelector('.included-heading');
 includedHeading.style.marginTop = '0';
@@ -84,6 +109,10 @@ document.querySelectorAll('.accordion details').forEach((detail) => detail.addEv
   if (detail.open) document.querySelectorAll('.accordion details').forEach((other) => {
     if (other !== detail) other.open = false;
   });
+}));
+
+document.querySelectorAll('[data-track-contact]').forEach((link) => link.addEventListener('click', () => {
+  trackConversion('contact_click', { method: link.dataset.trackContact });
 }));
 
 document.getElementById('quickQuoteForm').addEventListener('submit', async (event) => {
@@ -121,6 +150,10 @@ document.getElementById('quickQuoteForm').addEventListener('submit', async (even
     form.reset();
     note.textContent = 'Thanks! Your request was sent. We’ll contact you shortly.';
     note.classList.add('success');
+    trackConversion('generate_lead', {
+      event_category: 'engagement',
+      event_type: formData.get('eventType')
+    });
   } catch (error) {
     note.textContent = 'We couldn’t send your request. Please call or text (224) 234-1473.';
     note.classList.remove('success');

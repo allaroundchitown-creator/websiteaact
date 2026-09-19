@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://all-around-chi-town-360.noah630.chatgpt.site/sitemap.xml
+Sitemap: https://allaroundchitown.com/sitemap.xml
