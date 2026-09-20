@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Book a Chicago 360 Photo Booth | AACT Booths</title>
+  <meta name="description" content="Check availability and request pricing for a premium 360 photo booth rental in Chicago and the surrounding suburbs.">
+  <meta name="robots" content="noindex,nofollow">
+  <meta name="theme-color" content="#202020">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="raffle.css">
+</head>
+<body>
+  <main class="raffle-shell">
+    <section class="raffle-intro">
+      <a class="raffle-logo" href="/" aria-label="All Around Chi-Town home">
+        <img src="all-around-chi-town-logo-transparent.png" alt="All Around Chi-Town 360 Degrees of Fun" width="2172" height="724">
+      </a>
+      <div class="raffle-copy">
+        <p class="eyebrow">CHICAGO 360 PHOTO BOOTH RENTAL</p>
+        <h1>Make your event <span>the one guests remember.</span></h1>
+        <p>Tell us about your event and we’ll confirm availability, recommend the right rental length, and send your pricing.</p>
+        <ul>
+          <li>Professional booth attendant</li>
+          <li>Unlimited 360 videos</li>
+          <li>Custom event overlay</li>
+          <li>Instant sharing for guests</li>
+          <li>Props, setup and breakdown</li>
+        </ul>
+      </div>
+      <p class="intro-note">Serving weddings, quinceañeras, birthdays, corporate events, schools and celebrations throughout Chicagoland.</p>
+    </section>
+
+    <section class="raffle-entry" aria-labelledby="booking-title">
+      <div class="form-heading">
+        <p class="eyebrow">CHECK AVAILABILITY</p>
+        <h2 id="booking-title">Get pricing for your event.</h2>
+        <p>No payment today. We’ll contact you with availability and package options.</p>
+      </div>
+
+      <form id="bookingForm" novalidate>
+        <div class="field-row">
+          <label><span>First name</span><input name="firstName" autocomplete="given-name" required placeholder="First name"></label>
+          <label><span>Last name</span><input name="lastName" autocomplete="family-name" required placeholder="Last name"></label>
+        </div>
+        <div class="field-row">
+          <label><span>Phone number</span><input name="phone" type="tel" inputmode="tel" autocomplete="tel" maxlength="18" required placeholder="(224) 234-1473"></label>
+          <label><span>Email</span><input name="email" type="email" autocomplete="email" required placeholder="you@example.com"></label>
+        </div>
+        <div class="field-row">
+          <label><span>Event date</span><input name="eventDate" type="date" required></label>
+          <label><span>Event type</span><select name="eventType" required><option value="" selected disabled>Select event type</option><option>Wedding</option><option>Quinceañera</option><option>Birthday</option><option>Corporate Event</option><option>School Event</option><option>Brand Activation</option><option>Other</option></select></label>
+        </div>
+        <label><span>Event address</span><input name="eventAddress" autocomplete="street-address" required placeholder="Street address, city, state and ZIP"></label>
+        <div class="field-row">
+          <label><span>Estimated guest count</span><input name="guestCount" type="number" inputmode="numeric" min="1" max="3000" required placeholder="Number of guests"></label>
+          <label><span>Rental length</span><select name="rentalLength" required><option value="" selected disabled>Select hours</option><option>2 hours</option><option>3 hours</option><option>4 hours</option><option>5 hours</option><option>6 hours</option><option>Not sure yet</option></select></label>
+        </div>
+        <button type="submit">Get Pricing &amp; Check My Date <span>→</span></button>
+        <p class="form-status" id="bookingStatus" aria-live="polite">No obligation. Submitting this form does not reserve your date.</p>
+      </form>
+    </section>
+  </main>
+  <script src="book.js" defer></script>
+</body>
+</html>
