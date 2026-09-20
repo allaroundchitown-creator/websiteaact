@@ -41,19 +41,6 @@ typography.textContent = `
 `;
 document.head.append(typography);
 
-// Add your Google Analytics Measurement ID (for example, G-ABC123DEF4) to activate analytics.
-const GA_MEASUREMENT_ID = '';
-if (/^G-[A-Z0-9]+$/i.test(GA_MEASUREMENT_ID)) {
-  const analyticsScript = document.createElement('script');
-  analyticsScript.async = true;
-  analyticsScript.src = `https://www.googletagmanager.com/gtag/js?id=${GA_MEASUREMENT_ID}`;
-  document.head.append(analyticsScript);
-  window.dataLayer = window.dataLayer || [];
-  window.gtag = function gtag() { window.dataLayer.push(arguments); };
-  window.gtag('js', new Date());
-  window.gtag('config', GA_MEASUREMENT_ID);
-}
-
 const trackConversion = (eventName, parameters = {}) => {
   if (typeof window.gtag === 'function') window.gtag('event', eventName, parameters);
 };
