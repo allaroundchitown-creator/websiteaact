@@ -115,9 +115,36 @@ document.querySelectorAll('[data-track-contact]').forEach((link) => link.addEven
   trackConversion('contact_click', { method: link.dataset.trackContact });
 }));
 
+const phoneInput = document.querySelector('input[name="phone"]');
+const fakePhoneNumbers = new Set([
+  '0000000000', '1111111111', '1234567890', '0123456789',
+  '9876543210', '0987654321', '1231231234', '5555555555'
+]);
+
+const validatePhone = () => {
+  const digits = phoneInput.value.replace(/\D/g, '');
+  const hasValidNanpShape = /^[2-9]\d{2}[2-9]\d{6}$/.test(digits);
+  const isRepeatedNumber = /^(\d)\1{9}$/.test(digits);
+  const isFake = fakePhoneNumbers.has(digits) || isRepeatedNumber;
+  phoneInput.setCustomValidity(
+    digits.length === 10 && hasValidNanpShape && !isFake
+      ? ''
+      : 'Enter a valid 10-digit phone number.'
+  );
+  return phoneInput.checkValidity();
+};
+
+phoneInput.addEventListener('input', () => phoneInput.setCustomValidity(''));
+phoneInput.addEventListener('blur', validatePhone);
+
 document.getElementById('quickQuoteForm').addEventListener('submit', async (event) => {
   event.preventDefault();
   const form = event.currentTarget;
+  if (!validatePhone()) {
+    phoneInput.reportValidity();
+    phoneInput.focus();
+    return;
+  }
   const note = document.getElementById('formNote');
   const button = form.querySelector('button[type="submit"]');
   const originalButtonText = button.innerHTML;
