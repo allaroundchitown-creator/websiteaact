@@ -1,0 +1,44 @@
+.degree-pattern {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.degree-pattern span {
+  position: absolute;
+  color: rgba(215, 190, 138, 0.045);
+  font: 800 clamp(130px, 17vw, 280px) / 0.8 var(--display);
+  letter-spacing: -0.08em;
+  white-space: nowrap;
+}
+
+.degree-pattern span:nth-child(1) {
+  top: 12%;
+  left: -10%;
+}
+
+.degree-pattern span:nth-child(2) {
+  top: 43%;
+  right: -18%;
+}
+
+.degree-pattern span:nth-child(3) {
+  bottom: 9%;
+  left: 3%;
+}
+
+@media (max-width: 960px) {
+  .degree-pattern span {
+    font-size: clamp(105px, 25vw, 190px);
+  }
+
+  .degree-pattern span:nth-child(2) {
+    top: 36%;
+  }
+
+  .degree-pattern span:nth-child(3) {
+    bottom: 3%;
+  }
+}
