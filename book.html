@@ -16,7 +16,7 @@
   <main class="raffle-shell">
     <section class="raffle-intro">
       <a class="raffle-logo" href="/" aria-label="All Around Chi-Town home">
-        <img src="all-around-chi-town-logo-transparent.png" alt="All Around Chi-Town 360 Degrees of Fun" width="2172" height="724">
+        <img src="assets/all-around-chi-town-logo-transparent.png" alt="All Around Chi-Town 360 Degrees of Fun" width="2172" height="724">
       </a>
       <div class="raffle-copy">
         <p class="eyebrow">CHICAGO 360 PHOTO BOOTH RENTAL</p>
@@ -40,6 +40,13 @@
         <p>No payment today. We’ll contact you with availability and package options.</p>
       </div>
 
+      <div class="booking-packages" aria-label="360 photo booth packages">
+        <article><p>2 HOURS</p><h3>Essentials</h3><strong>$350</strong><span>Best for shorter celebrations</span></article>
+        <article class="popular"><small>MOST POPULAR</small><p>4 HOURS</p><h3>Signature</h3><strong>$599</strong><span>Best for weddings and quinceañeras</span></article>
+        <article><p>6 HOURS</p><h3>Full Event</h3><strong>$799</strong><span>Best for larger, all-night events</span></article>
+      </div>
+      <p class="package-includes">All packages include a professional attendant, unlimited 360 videos, a custom overlay, props, instant sharing, setup and breakdown.</p>
+
       <form id="bookingForm" novalidate>
         <div class="field-row">
           <label><span>First name</span><input name="firstName" autocomplete="given-name" required placeholder="First name"></label>
@@ -56,7 +63,7 @@
         <label><span>Event address</span><input name="eventAddress" autocomplete="street-address" required placeholder="Street address, city, state and ZIP"></label>
         <div class="field-row">
           <label><span>Estimated guest count</span><input name="guestCount" type="number" inputmode="numeric" min="1" max="3000" required placeholder="Number of guests"></label>
-          <label><span>Rental length</span><select name="rentalLength" required><option value="" selected disabled>Select hours</option><option>2 hours</option><option>3 hours</option><option>4 hours</option><option>5 hours</option><option>6 hours</option><option>Not sure yet</option></select></label>
+          <label><span>Rental length</span><select name="rentalLength" required><option value="" selected disabled>Select hours</option><option value="2 hours">2 hours — $350</option><option value="4 hours">4 hours — $599</option><option value="6 hours">6 hours — $799</option><option value="Not sure yet">Not sure yet</option></select></label>
         </div>
         <button type="submit">Get Pricing &amp; Check My Date <span>→</span></button>
         <p class="form-status" id="bookingStatus" aria-live="polite">No obligation. Submitting this form does not reserve your date.</p>
