@@ -1,16 +1,20 @@
 .conversion-hero {
-  width: min(1380px, 100%);
+  width: min(1280px, 100%);
   max-width: none;
   min-height: calc(100svh - 96px);
-  padding: clamp(42px, 5vw, 76px) max(28px, calc((100vw - 1380px) / 2));
-  grid-template-columns: minmax(360px, 1.12fr) minmax(310px, .82fr) minmax(285px, .76fr);
-  gap: clamp(24px, 3vw, 48px);
-  align-items: center;
+  padding: clamp(38px, 4vw, 62px) max(28px, calc((100vw - 1280px) / 2));
+  grid-template-columns: minmax(0, 1.08fr) minmax(360px, .92fr);
+  grid-template-rows: auto auto;
+  column-gap: clamp(42px, 5vw, 78px);
+  row-gap: 28px;
+  align-content: center;
   background: #fffdfa;
 }
 
 .conversion-hero .hero-copy {
-  align-self: center;
+  grid-column: 1;
+  grid-row: 1;
+  align-self: end;
 }
 
 .conversion-hero .eyebrow {
@@ -18,9 +22,9 @@
 }
 
 .conversion-hero h1 {
-  max-width: 680px;
-  margin-bottom: 22px;
-  font-size: clamp(42px, 4.3vw, 66px);
+  max-width: 640px;
+  margin-bottom: 18px;
+  font-size: clamp(40px, 4.1vw, 60px);
 }
 
 .hero-includes {
@@ -38,19 +42,17 @@
 }
 
 .hero-trust {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 10px 18px;
-  margin-top: 32px;
-  padding-top: 24px;
-  border-top: 1px solid var(--line);
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 20px;
+  margin-top: 20px;
 }
 
 .hero-trust span {
   position: relative;
-  padding-left: 20px;
+  padding-left: 17px;
   color: #565047;
-  font-size: 14px;
+  font-size: 13px;
   font-weight: 700;
 }
 
@@ -63,11 +65,13 @@
 }
 
 .hero-form-card {
-  padding: 30px;
+  grid-column: 1;
+  grid-row: 2;
+  padding: 26px;
   border: 1px solid #d7be8a;
   border-radius: 12px;
   background: #faf7f0;
-  box-shadow: 0 20px 55px rgba(54, 43, 24, .1);
+  box-shadow: 0 14px 40px rgba(54, 43, 24, .08);
 }
 
 .hero-form-card .form-kicker {
@@ -79,13 +83,14 @@
 }
 
 .hero-form-card h2 {
-  margin-bottom: 22px;
-  font-size: 27px;
+  margin-bottom: 18px;
+  font-size: 25px;
   letter-spacing: -.035em;
 }
 
 .hero-form-card form {
   display: grid;
+  grid-template-columns: 1fr 1fr;
   gap: 12px;
 }
 
@@ -116,6 +121,7 @@
 }
 
 .hero-form-card button {
+  grid-column: 1 / -1;
   width: 100%;
   min-height: 54px;
   margin-top: 4px;
@@ -136,9 +142,11 @@
 }
 
 .conversion-hero .hero-media {
+  grid-column: 2;
+  grid-row: 1 / 3;
   position: relative;
-  height: min(610px, calc(100svh - 180px));
-  min-height: 500px;
+  height: min(680px, calc(100svh - 150px));
+  min-height: 570px;
   border-radius: 12px;
   box-shadow: 0 22px 60px rgba(20, 18, 14, .16);
 }
@@ -160,14 +168,23 @@
   .conversion-hero {
     min-height: auto;
     grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto auto;
   }
 
   .conversion-hero .hero-copy {
-    grid-column: 1 / -1;
+    grid-column: 1;
+    grid-row: 1;
+  }
+
+  .hero-form-card {
+    grid-column: 1;
+    grid-row: 2;
   }
 
   .conversion-hero .hero-media {
-    height: 570px;
+    grid-column: 2;
+    grid-row: 1 / 3;
+    height: 620px;
   }
 }
 
@@ -180,6 +197,7 @@
 
   .conversion-hero .hero-copy {
     grid-column: auto;
+    grid-row: auto;
   }
 
   .conversion-hero h1 {
@@ -193,16 +211,27 @@
   }
 
   .hero-trust {
-    grid-template-columns: 1fr;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
     margin-top: 24px;
-    padding-top: 20px;
   }
 
   .hero-form-card {
+    grid-column: auto;
+    grid-row: auto;
     padding: 26px 20px;
   }
 
+  .hero-form-card form {
+    grid-template-columns: 1fr;
+  }
+
+  .hero-form-card button {
+    grid-column: auto;
+  }
+
   .conversion-hero .hero-media {
+    grid-column: auto;
     grid-row: auto;
     height: 560px;
     min-height: 0;
