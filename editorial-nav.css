@@ -67,6 +67,15 @@
   right: 0;
 }
 
+.editorial-nav nav .nav-book-link {
+  color: #9a7538;
+  font-weight: 800;
+}
+
+.editorial-nav nav .nav-book-link::after {
+  right: 0;
+}
+
 .editorial-nav .header-button {
   min-height: 48px;
   border-color: #9a7538;
