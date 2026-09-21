@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Win a Free 360 Photo Booth Event | AACT Booths</title><meta name="robots" content="noindex,follow">
+  <meta name="description" content="Enter for a chance to win a free All Around Chi-Town 360 photo booth experience for your event.">
+  <meta name="robots" content="noindex,nofollow">
+  <meta name="theme-color" content="#202020">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="raffle.css">
+</head>
+<body>
+  <main class="raffle-shell">
+    <section class="raffle-intro">
+      <a class="raffle-logo" href="/" aria-label="All Around Chi-Town home">
+        <img src="assets/all-around-chi-town-logo-transparent.png" alt="All Around Chi-Town 360 Degrees of Fun" width="2172" height="724">
+      </a>
+      <div class="raffle-copy">
+        <p class="eyebrow">CHICAGOLAND EVENT GIVEAWAY</p>
+        <h1>Win a free <span>360 photo booth experience.</span></h1>
+        <p>Enter your event details for a chance to bring the full All Around Chi-Town experience to your celebration.</p>
+        <ul>
+          <li>Professional booth attendant</li>
+          <li>Unlimited 360 videos</li>
+          <li>Custom event overlay</li>
+          <li>Instant sharing for guests</li>
+          <li>Setup and breakdown included</li>
+        </ul>
+      </div>
+      <p class="intro-note">No purchase necessary. One entry per person. Chicagoland events only. Prize date is subject to availability.</p>
+    </section>
+
+    <section class="raffle-entry" aria-labelledby="entry-title">
+      <div class="form-heading">
+        <p class="eyebrow">ENTER THE RAFFLE</p>
+        <h2 id="entry-title">Tell us about your event.</h2>
+        <p>Complete every field to submit your entry.</p>
+      </div>
+
+      <form id="raffleForm" novalidate>
+        <div class="field-row">
+          <label><span>First name</span><input name="firstName" autocomplete="given-name" required placeholder="First name"></label>
+          <label><span>Last name</span><input name="lastName" autocomplete="family-name" required placeholder="Last name"></label>
+        </div>
+        <div class="field-row">
+          <label><span>Phone number</span><input name="phone" type="tel" inputmode="tel" autocomplete="tel" maxlength="18" required placeholder="(224) 234-1473"></label>
+          <label><span>Email</span><input name="email" type="email" autocomplete="email" required placeholder="you@example.com"></label>
+        </div>
+        <div class="field-row">
+          <label><span>Event date</span><input name="eventDate" type="date" required></label>
+          <label><span>Event type</span><select name="eventType" required><option value="" selected disabled>Select event type</option><option>Wedding</option><option>Quinceañera</option></select></label>
+        </div>
+        <label><span>Event address</span><input name="eventAddress" autocomplete="street-address" required placeholder="Street address, city, state and ZIP"></label>
+        <label><span>Estimated guest count</span><input name="guestCount" type="number" inputmode="numeric" min="1" max="2000" required placeholder="Estimated number of guests"></label>
+        <button type="submit">Enter to Win <span>→</span></button>
+        <p class="form-status" id="raffleStatus" aria-live="polite">Your information will only be used to administer this giveaway and contact the winner.</p>
+      </form>
+    </section>
+  </main>
+  <script src="analytics.js" defer></script>
+  <script src="raffle.js" defer></script>
+</body>
+</html>

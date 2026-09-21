@@ -1,0 +1,6 @@
+User-agent: *
+Allow: /
+Disallow: /confirmation.html
+Disallow: /raffle.html
+
+Sitemap: https://allaroundchitown.com/sitemap.xml
