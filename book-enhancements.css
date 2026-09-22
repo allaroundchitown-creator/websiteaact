@@ -14,11 +14,12 @@ header nav a:focus-visible { color: #d7b675; }
 .hero { background: #111; }
 .hero-video {
   position: absolute;
-  inset: 0;
-  width: 100%;
+  inset: 0 0 0 auto;
+  width: min(50vw, 720px);
   height: 100%;
   object-fit: cover;
   object-position: center 38%;
+  background: #111;
 }
 .shade {
   background: linear-gradient(90deg, #090908f5 0%, #090908c4 48%, #0909084d 78%, #09090825);
@@ -53,6 +54,6 @@ header nav a:focus-visible { color: #d7b675; }
   html { scroll-padding-top: 66px; }
   header { padding-left: 4%; padding-right: 4%; }
   header nav { display: none; }
-  .hero-video { object-position: 62% center; }
+  .hero-video { width: 100%; object-position: 62% center; }
   .faq { margin-top: 40px; padding: 72px 6%; }
 }
