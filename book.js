@@ -2,6 +2,7 @@ const bookingForm = document.getElementById('bookingForm');
 const bookingStatus = document.getElementById('bookingStatus');
 const phoneInput = bookingForm.elements.phone;
 const dateInput = bookingForm.elements.eventDate;
+const rentalLengthInput = bookingForm.elements.rentalLength;
 const fakePhoneNumbers = new Set([
   '0000000000', '1111111111', '1234567890', '0123456789',
   '9876543210', '0987654321', '1231231234', '5555555555'
@@ -10,6 +11,11 @@ const fakePhoneNumbers = new Set([
 const today = new Date();
 today.setMinutes(today.getMinutes() - today.getTimezoneOffset());
 dateInput.min = today.toISOString().split('T')[0];
+
+const requestedPackage = new URLSearchParams(window.location.search).get('package');
+if (['2', '4', '6'].includes(requestedPackage)) {
+  rentalLengthInput.value = `${requestedPackage} hours`;
+}
 
 const validatePhone = () => {
   const digits = phoneInput.value.replace(/\D/g, '');
@@ -35,7 +41,7 @@ bookingForm.addEventListener('submit', async (event) => {
   const button = bookingForm.querySelector('button[type="submit"]');
   const originalButton = button.innerHTML;
   const formData = new FormData(bookingForm);
-  formData.append('_subject', `New paid event lead: ${formData.get('firstName')}`);
+  formData.append('_subject', `New paid event lead: ${formData.get('firstName')} ${formData.get('lastName')}`);
   formData.append('_template', 'table');
   formData.append('_captcha', 'false');
   formData.append('_honey', '');
@@ -44,7 +50,7 @@ bookingForm.addEventListener('submit', async (event) => {
   }));
 
   button.disabled = true;
-  button.textContent = 'SENDING…';
+  button.textContent = 'Sending…';
   bookingStatus.textContent = 'Sending your event details…';
 
   try {
