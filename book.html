@@ -2,127 +2,101 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1"><link rel="icon" type="image/svg+xml" href="/favicon.svg"><link rel="icon" type="image/png" sizes="96x96" href="/favicon-96.png"><link rel="shortcut icon" href="/favicon.ico">
-  <title>Book a Chicago 360 Photo Booth | AACT Booths</title><link rel="canonical" href="https://allaroundchitown.com/book.html">
-  <meta name="description" content="Check availability and request pricing for a premium 360 photo booth rental in Chicago and the surrounding suburbs.">
-  <meta name="robots" content="noindex,nofollow">
-  <meta name="theme-color" content="#202020">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="raffle.css">
-  <link rel="stylesheet" href="book-pattern.css">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Book a 360 Photo Booth in Chicago | AACT Booths</title>
+  <meta name="description" content="Check availability for a premium Chicago 360 photo booth. Attendant, custom overlay, props, instant sharing, setup and breakdown included.">
+  <link rel="canonical" href="https://allaroundchitown.com/book.html">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96.png">
+  <link rel="stylesheet" href="book.css">
 </head>
-<body class="book-page">
-  <main class="raffle-shell">
-    <section class="raffle-intro">
-      <a class="raffle-logo booking-wordmark" href="/" aria-label="AACT Booths home">
-        <span class="booking-wordmark-main"><b>AACT</b> BOOTHS</span>
-        <span class="booking-wordmark-tagline">360 DEGREES OF FUN</span>
-      </a>
-      <div class="raffle-copy">
-        <p class="eyebrow">CHICAGO 360 PHOTO BOOTH RENTAL</p>
-        <h1>Make your event <span>the one guests remember.</span></h1>
-        <p>Tell us about your event and we’ll confirm availability, recommend the right rental length, and send your pricing.</p>
-        <ul>
-          <li>Professional booth attendant</li>
-          <li>Unlimited 360 videos</li>
-          <li>Custom event overlay</li>
-          <li>Instant sharing for guests</li>
-          <li>Props, setup and breakdown</li>
-        </ul>
+<body>
+  <header>
+    <a href="/" class="brand" aria-label="AACT Booths home">AACT <span>BOOTHS</span></a>
+    <a href="#quote" class="top">CHECK AVAILABILITY</a>
+  </header>
+  <main>
+    <section class="hero">
+      <div class="shade"></div>
+      <div class="copy">
+        <span>CHICAGO &amp; CHICAGOLAND</span>
+        <h1>The 360 Booth Your Guests <em>Won't Stop Posting.</em></h1>
+        <p>Premium 360 video experiences for weddings, birthdays, corporate events and celebrations—with everything handled for you.</p>
+        <div class="trust"><span>Professional Attendant</span><span>Instant Sharing</span><span>Custom Overlay</span></div>
+        <a class="btn" href="#quote">CHECK MY DATE →</a>
+        <small>Fast quote • No obligation</small>
       </div>
-      <p class="intro-note">Serving weddings, quinceañeras, birthdays, corporate events, schools and celebrations throughout Chicagoland.</p>
-      <div class="degree-pattern" aria-hidden="true"><span>360°</span><span>360°</span><span>360°</span><span>360°</span><span>360°</span><span>360°</span><span>360°</span><span>360°</span><span>360°</span><span>360°</span><span>360°</span><span>360°</span></div>
     </section>
 
-    <section class="raffle-entry" aria-labelledby="booking-title">
-      <div class="form-heading">
-        <p class="eyebrow">CHECK AVAILABILITY</p>
-        <h2 id="booking-title">Get pricing for your event.</h2>
-        <p>No payment today. We’ll contact you with availability and package options.</p>
+    <section class="quote" id="quote">
+      <div>
+        <span>CHECK YOUR DATE</span>
+        <h2>Tell us about your event.</h2>
+        <p>Send us the basics and we'll confirm availability and pricing for your date.</p>
       </div>
-
-      <div class="booking-packages" aria-label="360 photo booth packages">
-        <article><p>2 HOURS</p><h3>Essentials</h3><strong>$350</strong><span>Best for shorter celebrations</span></article>
-        <article class="popular"><small>MOST POPULAR</small><p>4 HOURS</p><h3>Signature</h3><strong>$599</strong><span>Best for weddings and quinceañeras</span></article>
-        <article><p>6 HOURS</p><h3>Full Event</h3><strong>$799</strong><span>Best for larger, all-night events</span></article>
-      </div>
-      <p class="package-includes">All packages include a professional attendant, unlimited 360 videos, a custom overlay, props, instant sharing, setup and breakdown.</p>
-
       <form id="bookingForm" novalidate>
-        <div class="field-row">
-          <label><span>First name</span><input name="firstName" autocomplete="given-name" required placeholder="First name"></label>
-          <label><span>Last name</span><input name="lastName" autocomplete="family-name" required placeholder="Last name"></label>
+        <div class="row">
+          <label>First name<input name="firstName" autocomplete="given-name" required placeholder="Your name"></label>
+          <label>Phone<input name="phone" type="tel" inputmode="tel" autocomplete="tel" maxlength="18" required placeholder="(224) 234-1473"></label>
         </div>
-        <div class="field-row">
-          <label><span>Phone number</span><input name="phone" type="tel" inputmode="tel" autocomplete="tel" maxlength="18" required placeholder="(224) 234-1473"></label>
-          <label><span>Email</span><input name="email" type="email" autocomplete="email" required placeholder="you@example.com"></label>
+        <label>Email<input name="email" type="email" autocomplete="email" required placeholder="you@email.com"></label>
+        <div class="row">
+          <label>Event date<input name="eventDate" type="date" required></label>
+          <label>Event type<select name="eventType" required><option value="" selected disabled>Select one</option><option>Wedding</option><option>Birthday</option><option>Corporate Event</option><option>School Event</option><option>Quinceañera</option><option>Other</option></select></label>
         </div>
-        <div class="field-row">
-          <label><span>Event date</span><input name="eventDate" type="date" required></label>
-          <label><span>Event type</span><select name="eventType" required><option value="" selected disabled>Select event type</option><option>Wedding</option><option>Quinceañera</option><option>Birthday</option><option>Corporate Event</option><option>School Event</option><option>Brand Activation</option><option>Other</option></select></label>
-        </div>
-        <label><span>Event address</span><input name="eventAddress" autocomplete="street-address" required placeholder="Street address, city, state and ZIP"></label>
-        <div class="field-row">
-          <label><span>Estimated guest count</span><input name="guestCount" type="number" inputmode="numeric" min="1" max="3000" required placeholder="Number of guests"></label>
-          <label><span>Rental length</span><select name="rentalLength" required><option value="" selected disabled>Select hours</option><option value="2 hours">2 hours — $350</option><option value="4 hours">4 hours — $599</option><option value="6 hours">6 hours — $799</option><option value="Not sure yet">Not sure yet</option></select></label>
-        </div>
-        <button type="submit">Get Pricing &amp; Check My Date <span>→</span></button>
-        <p class="form-status" id="bookingStatus" aria-live="polite">No obligation. Submitting this form does not reserve your date.</p>
+        <button class="btn" type="submit">GET MY QUOTE →</button>
+        <p id="bookingStatus" class="form-status" aria-live="polite">No obligation. Your date is not reserved until confirmed.</p>
       </form>
-
-      <section class="booking-showcase" aria-labelledby="showcase-title">
-        <div class="showcase-heading">
-          <p class="eyebrow">REAL EVENT VIDEOS</p>
-          <h2 id="showcase-title">See the 360 experience.</h2>
-          <p>Real moments captured at Chicagoland celebrations.</p>
-        </div>
-        <div class="booking-video-grid">
-          <article>
-            <video autoplay muted loop playsinline preload="metadata" aria-label="Corporate event 360 booth video"><source src="https://all-around-chi-town-360.noah630.chatgpt.site/assets/aac-wedding-reel.mp4" type="video/mp4"></video>
-            <p>Corporate Event</p>
-          </article>
-          <article>
-            <video autoplay muted loop playsinline preload="metadata" aria-label="Wedding 360 booth video"><source src="https://all-around-chi-town-360.noah630.chatgpt.site/assets/aac-hero-video.mp4" type="video/mp4"></video>
-            <p>Wedding</p>
-          </article>
-          <article>
-            <video autoplay muted loop playsinline preload="metadata" aria-label="Celebration 360 booth video"><source src="https://all-around-chi-town-360.noah630.chatgpt.site/assets/aac-reel-3.mp4" type="video/mp4"></video>
-            <p>Celebration</p>
-          </article>
-        </div>
-
-        <div class="booking-info-grid">
-          <article>
-            <p class="eyebrow">EVERY PACKAGE INCLUDES</p>
-            <h3>We handle the full setup.</h3>
-            <ul>
-              <li>Professional booth attendant</li>
-              <li>Unlimited 360 videos</li>
-              <li>Custom event overlay</li>
-              <li>Props and instant sharing</li>
-              <li>Delivery, setup and breakdown</li>
-            </ul>
-          </article>
-          <article>
-            <p class="eyebrow">WHAT HAPPENS NEXT</p>
-            <h3>Booking is simple.</h3>
-            <ol>
-              <li><span>1</span><div><strong>We confirm availability</strong><p>We’ll review your date, location and event details.</p></div></li>
-              <li><span>2</span><div><strong>You choose your package</strong><p>We’ll answer questions and confirm the best rental length.</p></div></li>
-              <li><span>3</span><div><strong>Your deposit secures the date</strong><p>Once the deposit is received, your event is officially booked.</p></div></li>
-            </ol>
-          </article>
-        </div>
-        <div class="booking-contact-note">
-          <strong>Have a question before submitting?</strong>
-          <a href="tel:+12242341473">Call (224) 234-1473</a>
-          <a href="mailto:allaroundchitown@gmail.com">allaroundchitown@gmail.com</a>
-        </div>
-      </section>
     </section>
+
+    <section class="reels">
+      <span>REAL EVENTS. REAL MOMENTS.</span>
+      <h2>See the experience in action.</h2>
+      <div class="video-grid">
+        <article><video autoplay muted loop playsinline preload="metadata" aria-label="Wedding 360 booth video"><source src="https://all-around-chi-town-360.noah630.chatgpt.site/assets/aac-hero-video.mp4" type="video/mp4"></video><b>WEDDINGS</b></article>
+        <article><video autoplay muted loop playsinline preload="metadata" aria-label="Celebration 360 booth video"><source src="https://all-around-chi-town-360.noah630.chatgpt.site/assets/aac-reel-3.mp4" type="video/mp4"></video><b>PARTIES</b></article>
+        <article><video autoplay muted loop playsinline preload="metadata" aria-label="Corporate event 360 booth video"><source src="https://all-around-chi-town-360.noah630.chatgpt.site/assets/aac-wedding-reel.mp4" type="video/mp4"></video><b>CORPORATE</b></article>
+      </div>
+    </section>
+
+    <section class="packages">
+      <span>SIMPLE PACKAGES</span>
+      <h2>Pick the experience that fits your event.</h2>
+      <div class="cards">
+        <article><b>ESSENTIAL</b><h3>2 Hours</h3><strong>$350</strong><p>Perfect for birthdays and smaller celebrations.</p><a href="#quote">CHECK AVAILABILITY</a></article>
+        <article class="popular"><i>MOST POPULAR</i><b>SIGNATURE</b><h3>4 Hours</h3><strong>$599</strong><p>The sweet spot for weddings and larger events.</p><a href="#quote">CHECK AVAILABILITY</a></article>
+        <article><b>FULL EVENT</b><h3>6 Hours</h3><strong>$799</strong><p>Maximum coverage for large weddings and corporate events.</p><a href="#quote">CHECK AVAILABILITY</a></article>
+      </div>
+      <p class="included">Every package includes <b>unlimited 360 videos • attendant • custom overlay • props • instant sharing • setup &amp; breakdown</b></p>
+    </section>
+
+    <section class="wedding">
+      <div><span>WEDDINGS</span><h2>Give your guests something they'll actually remember.</h2><p>From cocktail hour through the dance floor, guests get cinematic videos they can share before the night is over.</p><a class="btn" href="#quote">CHECK MY WEDDING DATE →</a></div>
+    </section>
+
+    <section class="steps">
+      <span>EFFORTLESS FROM START TO FINISH</span>
+      <h2>You celebrate. We handle the booth.</h2>
+      <div>
+        <article><b>01</b><h3>Choose your package</h3><p>Tell us your date, venue and event type.</p></article>
+        <article><b>02</b><h3>We customize it</h3><p>We create an overlay to match your celebration.</p></article>
+        <article><b>03</b><h3>Guests step on</h3><p>Our attendant keeps the experience moving.</p></article>
+        <article><b>04</b><h3>Share instantly</h3><p>Guests get their finished videos right at the event.</p></article>
+      </div>
+    </section>
+
+    <section class="faq">
+      <span>FAQ</span><h2>Before you book.</h2>
+      <details><summary>How much space do you need?</summary><p>Plan for a clear 10 × 10-foot area with a standard power outlet nearby.</p></details>
+      <details><summary>Does an attendant stay with the booth?</summary><p>Yes. A professional attendant is included to guide guests and keep everything running smoothly.</p></details>
+      <details><summary>Can the videos match my event?</summary><p>Yes. We create a custom overlay with your names, date, colors or branding.</p></details>
+      <details><summary>Do guests get videos immediately?</summary><p>Yes, when venue internet or cellular service is available.</p></details>
+    </section>
+
+    <section class="final"><h2>Let's make your event unforgettable.</h2><p>Check your date now and get pricing for your event.</p><a class="btn" href="#quote">CHECK AVAILABILITY →</a></section>
   </main>
+  <footer><b>AACT BOOTHS</b><p>Premium 360 photo booth experiences across Chicagoland.</p><a href="tel:+12242341473">(224) 234-1473</a></footer>
+  <a class="sticky" href="#quote">CHECK AVAILABILITY →</a>
   <script src="analytics.js" defer></script>
   <script src="video-autoplay.js" defer></script>
   <script src="book.js" defer></script>
