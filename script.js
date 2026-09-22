@@ -28,12 +28,27 @@ typography.textContent = `
   .perfect-for-label { color: #d7be8a; font-size: 12px; font-weight: 800; letter-spacing: .14em; }
   .perfect-for-item { font-family: var(--display); font-size: 17px; font-weight: 700; letter-spacing: -.01em; }
   .perfect-for-dot { color: #d7be8a; font-size: 13px; }
+  .real-event-gallery { padding: 90px 6%; background: #202020; color: #fffdfa; }
+  .real-event-gallery-header { max-width: 1180px; margin: 0 auto 36px; display: flex; justify-content: space-between; align-items: end; gap: 32px; }
+  .real-event-gallery-header h2 { margin: 7px 0 0; max-width: 680px; font-family: var(--display); font-size: clamp(34px, 4vw, 58px); line-height: 1; letter-spacing: -.045em; }
+  .real-event-gallery-header p:last-child { max-width: 410px; color: #c9c1b4; line-height: 1.65; }
+  .real-event-gallery-grid { max-width: 1180px; margin: auto; display: grid; grid-template-columns: .9fr 1.25fr; gap: 18px; }
+  .real-event-photo { position: relative; min-height: 620px; overflow: hidden; background: #111; }
+  .real-event-photo img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform .7s ease; }
+  .real-event-photo:hover img { transform: scale(1.025); }
+  .real-event-photo figcaption { position: absolute; inset: auto 0 0; padding: 52px 28px 24px; background: linear-gradient(transparent, rgba(0,0,0,.88)); }
+  .real-event-photo small { display: block; color: #d7be8a; font-weight: 800; letter-spacing: .14em; margin-bottom: 7px; }
+  .real-event-photo b { font-family: var(--display); font-size: 24px; }
   @keyframes perfectForRoll { to { transform: translateX(-50%); } }
   @media (prefers-reduced-motion: reduce) { .perfect-for-track { animation: none; } }
   @media (max-width: 760px) {
     .site-header .brand { width: 220px; height: 58px; }
     .hero h1 { font-size: 34px; }
     .section-title h2, .included-heading h2 { font-size: 30px; }
+    .real-event-gallery { padding: 68px 5%; }
+    .real-event-gallery-header { display: block; }
+    .real-event-gallery-grid { grid-template-columns: 1fr; }
+    .real-event-photo { min-height: 470px; }
   }
   @media (max-width: 420px) {
     .hero h1 { font-size: 31px; }
@@ -69,6 +84,25 @@ if (reviewTrack && reviewGroup) {
 }
 
 const videosSection = document.querySelector('.videos');
+const eventGallery = document.createElement('section');
+eventGallery.className = 'real-event-gallery';
+eventGallery.setAttribute('aria-labelledby', 'real-event-gallery-title');
+eventGallery.innerHTML = `
+  <div class="real-event-gallery-header">
+    <div><p class="eyebrow">REAL CHICAGOLAND EVENTS</p><h2 id="real-event-gallery-title">The energy looks even better in person.</h2></div>
+    <p>From the booth setup to the finished wedding moment, these are real celebrations captured with AACT Booths.</p>
+  </div>
+  <div class="real-event-gallery-grid">
+    <figure class="real-event-photo">
+      <img src="https://all-around-chi-town-360.noah630.chatgpt.site/assets/real-360-booth.webp" width="1206" height="1309" loading="lazy" alt="Guest enjoying the AACT 360 photo booth with bubbles and event lighting">
+      <figcaption><small>THE 360 EXPERIENCE</small><b>A full event setup guests notice</b></figcaption>
+    </figure>
+    <figure class="real-event-photo">
+      <img src="https://all-around-chi-town-360.noah630.chatgpt.site/assets/wedding-360-moment.webp" width="941" height="1260" loading="lazy" alt="Newlyweds celebrating in confetti during their AACT 360 wedding video">
+      <figcaption><small>REAL WEDDING</small><b>The kind of moment guests keep sharing</b></figcaption>
+    </figure>
+  </div>`;
+videosSection.insertAdjacentElement('afterend', eventGallery);
 const includedSection = document.createElement('section');
 includedSection.className = 'details included';
 document.querySelector('.reviews').insertAdjacentElement('afterend', includedSection);
