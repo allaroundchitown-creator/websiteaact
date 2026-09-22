@@ -1,0 +1,58 @@
+html { scroll-padding-top: 76px; }
+header { border-bottom: 1px solid #d7b67555; }
+.brand { white-space: nowrap; }
+header nav { display: flex; align-items: center; gap: 28px; }
+header nav a {
+  color: #eee9df;
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 700;
+  transition: color .2s ease;
+}
+header nav a:hover,
+header nav a:focus-visible { color: #d7b675; }
+.hero { background: #111; }
+.hero-video {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 38%;
+}
+.shade {
+  background: linear-gradient(90deg, #090908f5 0%, #090908c4 48%, #0909084d 78%, #09090825);
+}
+.faq {
+  max-width: none;
+  margin: 70px 0 0;
+  background: #ebe4d7;
+  border-top: 1px solid #d7b675;
+  border-bottom: 1px solid #d7b675;
+  padding: 100px max(6%, calc((100% - 850px) / 2));
+}
+.faq::before {
+  content: '';
+  display: block;
+  width: 64px;
+  height: 3px;
+  background: #b58b45;
+  margin: 0 auto 28px;
+}
+.faq details {
+  background: #f6f3ec;
+  border: 1px solid #d5cab7;
+  margin-bottom: 10px;
+  padding: 22px;
+}
+@media (max-width: 960px) {
+  header nav { gap: 16px; }
+  header nav a { font-size: 12px; }
+}
+@media (max-width: 760px) {
+  html { scroll-padding-top: 66px; }
+  header { padding-left: 4%; padding-right: 4%; }
+  header nav { display: none; }
+  .hero-video { object-position: 62% center; }
+  .faq { margin-top: 40px; padding: 72px 6%; }
+}

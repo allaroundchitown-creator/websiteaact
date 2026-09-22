@@ -9,14 +9,24 @@
   <link rel="icon" type="image/svg+xml" href="/favicon.svg">
   <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96.png">
   <link rel="stylesheet" href="book.css">
+  <link rel="stylesheet" href="book-enhancements.css">
 </head>
 <body>
   <header>
     <a href="/" class="brand" aria-label="AACT Booths home">AACT <span>BOOTHS</span></a>
+    <nav aria-label="Booking page navigation">
+      <a href="#experience">Videos</a>
+      <a href="#packages">Packages</a>
+      <a href="#how-it-works">How It Works</a>
+      <a href="#faq">FAQ</a>
+    </nav>
     <a href="#quote" class="top">CHECK AVAILABILITY</a>
   </header>
   <main>
     <section class="hero">
+      <video class="hero-video" autoplay muted loop playsinline preload="auto" aria-label="Wedding guests enjoying the AACT 360 photo booth">
+        <source src="https://all-around-chi-town-360.noah630.chatgpt.site/assets/aac-hero-video.mp4" type="video/mp4">
+      </video>
       <div class="shade"></div>
       <div class="copy">
         <span>CHICAGO &amp; CHICAGOLAND</span>
@@ -49,7 +59,7 @@
       </form>
     </section>
 
-    <section class="reels">
+    <section class="reels" id="experience">
       <span>REAL EVENTS. REAL MOMENTS.</span>
       <h2>See the experience in action.</h2>
       <div class="video-grid">
@@ -59,7 +69,7 @@
       </div>
     </section>
 
-    <section class="packages">
+    <section class="packages" id="packages">
       <span>SIMPLE PACKAGES</span>
       <h2>Pick the experience that fits your event.</h2>
       <div class="cards">
@@ -74,7 +84,7 @@
       <div><span>WEDDINGS</span><h2>Give your guests something they'll actually remember.</h2><p>From cocktail hour through the dance floor, guests get cinematic videos they can share before the night is over.</p><a class="btn" href="#quote">CHECK MY WEDDING DATE →</a></div>
     </section>
 
-    <section class="steps">
+    <section class="steps" id="how-it-works">
       <span>EFFORTLESS FROM START TO FINISH</span>
       <h2>You celebrate. We handle the booth.</h2>
       <div>
@@ -85,7 +95,7 @@
       </div>
     </section>
 
-    <section class="faq">
+    <section class="faq" id="faq">
       <span>FAQ</span><h2>Before you book.</h2>
       <details><summary>How much space do you need?</summary><p>Plan for a clear 10 × 10-foot area with a standard power outlet nearby.</p></details>
       <details><summary>Does an attendant stay with the booth?</summary><p>Yes. A professional attendant is included to guide guests and keep everything running smoothly.</p></details>
