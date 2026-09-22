@@ -299,7 +299,7 @@ for (const page of pages) {
 
 let home = readFileSync(join(out, 'index.html'), 'utf8');
 home = home
-  .replace('<h1 id="hero-title">Chicago 360 Photo Booth Rental</h1>', '<h1 id="hero-title">Chicago 360 Photo Booth Rentals That Guests Remember</h1>')
+  .replace('<h1 id="hero-title">Chicago 360 Photo Booth Rentals That Guests Remember</h1>', '<h1 id="hero-title">Chicago 360 Photo Booth Rental</h1>')
   .replace('<h2>Simple packages for <em>every celebration.</em></h2>', '<h2>Chicago 360 Photo Booth Rental <em>Packages &amp; Pricing</em></h2>')
   .replace('<article class="event-type-card"><span>02</span><div><p>QUINCEAÑERAS</p><h3>A spotlight-worthy experience</h3><small>Custom colors, names and event date</small></div></article>', '<a class="event-type-card" href="/quinceanera-photo-booth-chicago"><span>02</span><div><p>QUINCEAÑERAS</p><h3>A spotlight-worthy experience</h3><small>Custom colors, names and event date</small></div><b>Explore quinceañeras →</b></a>')
   .replace('<article class="event-type-card"><span>04</span><div><p>CELEBRATIONS</p><h3>Keep the whole party involved</h3><small>Birthdays, graduations and school events</small></div></article>', '<a class="event-type-card" href="/birthday-photo-booth-chicago"><span>04</span><div><p>BIRTHDAYS</p><h3>Keep the whole party involved</h3><small>Birthdays, graduations and private events</small></div><b>Explore birthdays →</b></a>')
@@ -315,10 +315,12 @@ home = home
   .replaceAll('preload="metadata" aria-label="Wedding 360 video"', 'preload="none" width="720" height="1280" aria-label="Wedding 360 video"')
   .replaceAll('preload="metadata" aria-label="Celebration 360 video"', 'preload="none" width="540" height="968" aria-label="Celebration 360 video"');
 
-home = home.replace(/<video autoplay muted loop playsinline preload="none"([^>]*)>([\s\S]*?)<\/video>/g, (_, attrs, sources) =>
-  `<video data-lazy-video muted loop playsinline preload="none"${attrs}>${sources.replace(/\s(?:data-)?src=/g, ' data-src=')}</video>`
+home = home.replace(/<video data-lazy-video muted loop playsinline preload="none"([^>]*)>([\s\S]*?)<\/video>/g, (_, attrs, sources) =>
+  `<video autoplay muted loop playsinline preload="metadata"${attrs}>${sources.replace(/\sdata-src=/g, ' src=')}</video>`
 );
-home = home.replace(/<source (?:data-)?src="(?:aac-hero-video|aac-wedding-reel|aac-wedding-video|aac-reel-3)\.mp4" type="video\/mp4">/g, '');
+home = home.replace(/<section class="details" id="details"><div class="section-title"><p class="eyebrow">THE SPECS<\/p><h2>360 photo booth specs <em>at a glance\.<\/em><\/h2><\/div><div class="spec-grid">[\s\S]*?<\/div><div class="included-heading">/, '<section class="details" id="details"><div class="included-heading">');
+home = home.replace('<a href="#details">360 Booth Details</a>', '<a href="#packages">Packages &amp; Pricing</a>');
+home = home.replace('<a href="#included">What’s Included</a>', '<a href="#packages">Packages &amp; Pricing</a>');
 
 const advanceFaq = '<details><summary>How far in advance should I book a 360 photo booth?<span>+</span></summary><p>Popular Friday and Saturday dates can fill early, especially during wedding and graduation seasons. Check availability as soon as your event date and venue are reasonably firm.</p></details>';
 home = home.replaceAll(advanceFaq, '');

@@ -1,15 +1,5 @@
 const autoplayVideos = [...document.querySelectorAll('video')];
 
-const loadLazySources = (video) => {
-  if (!video.hasAttribute('data-lazy-video') || video.dataset.loaded === 'true') return;
-  video.querySelectorAll('source[data-src]').forEach((source) => {
-    source.src = source.dataset.src;
-    source.removeAttribute('data-src');
-  });
-  video.dataset.loaded = 'true';
-  video.load();
-};
-
 const prepareVideo = (video) => {
   video.autoplay = true;
   video.loop = true;
@@ -25,13 +15,12 @@ const prepareVideo = (video) => {
 };
 
 const playVideo = (video) => {
-  loadLazySources(video);
   prepareVideo(video);
   const playback = video.play();
   if (playback && typeof playback.catch === 'function') playback.catch(() => {});
 };
 
-autoplayVideos.filter((video) => !video.hasAttribute('data-lazy-video')).forEach((video) => {
+autoplayVideos.forEach((video) => {
   prepareVideo(video);
   video.addEventListener('canplay', () => playVideo(video), { once: true });
 });

@@ -2,13 +2,26 @@
   width: min(1280px, 100%);
   max-width: none;
   min-height: calc(100svh - 96px);
-  padding: clamp(38px, 4vw, 62px) max(28px, calc((100vw - 1280px) / 2));
+  padding: clamp(38px, 4vw, 62px) clamp(24px, 4vw, 52px);
   grid-template-columns: minmax(0, 1.08fr) minmax(360px, .92fr);
   grid-template-rows: auto auto;
   column-gap: clamp(42px, 5vw, 78px);
   row-gap: 28px;
   align-content: center;
   background: #fffdfa;
+}
+
+/* Keep the primary package marker readable without overlapping ribbons. */
+.package-card.featured {
+  overflow: visible;
+}
+
+.package-card.featured::after {
+  display: none;
+}
+
+.details#details:empty {
+  display: none;
 }
 
 .conversion-hero .hero-copy {
