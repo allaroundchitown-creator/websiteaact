@@ -29,6 +29,36 @@
   grid-row: 1;
   align-self: end;
 }
+.hero-book-cta {
+  grid-column: 1;
+  grid-row: 2;
+  justify-self: start;
+  align-self: start;
+}
+.home-quote-section {
+  display: grid;
+  grid-template-columns: minmax(0, .8fr) minmax(0, 1.2fr);
+  gap: clamp(32px, 6vw, 90px);
+  align-items: center;
+  padding: clamp(70px, 8vw, 115px) max(24px, calc((100vw - 1120px)/2));
+  background: #f4efe6;
+  scroll-margin-top: 105px;
+}
+.home-quote-copy h2 {
+  max-width: 450px;
+  font-size: clamp(32px, 3vw, 44px);
+}
+.home-quote-copy p:last-child {
+  max-width: 390px;
+  color: #59534b;
+  font-size: 17px;
+}
+.home-quote-section .hero-form-card {
+  grid-column: auto;
+  grid-row: auto;
+  width: 100%;
+  scroll-margin-top: 110px;
+}
 
 .conversion-hero .eyebrow {
   margin-bottom: 14px;
@@ -212,6 +242,8 @@
     grid-column: auto;
     grid-row: auto;
   }
+  .hero-book-cta { grid-column: auto; grid-row: auto; }
+  .home-quote-section { grid-template-columns: 1fr; gap: 22px; padding: 64px 20px; }
 
   .conversion-hero h1 {
     margin-bottom: 18px;
