@@ -15,9 +15,18 @@
   width: 100%;
   height: 100%;
   object-fit: cover;
-  object-position: center;
+  object-position: center 28%;
   opacity: 0.24;
   pointer-events: none;
+}
+
+@media (min-width: 961px) {
+  .book-page .raffle-intro {
+    position: sticky;
+    top: 0;
+    align-self: start;
+    height: 100vh;
+  }
 }
 
 .raffle-intro::before {
