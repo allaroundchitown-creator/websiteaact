@@ -229,3 +229,26 @@
   .included-copy ul { grid-template-columns: 1fr; }
   .booking-info-grid #booking-process { margin-top: 62px; }
 }
+.booking-footer { background: #1e1e1e; color: #fffdfa; padding: 72px 24px 28px; }
+.booking-footer-inner { max-width: 1120px; margin: auto; }
+.booking-footer-top { display: flex; justify-content: space-between; align-items: center; gap: 32px; padding-bottom: 48px; border-bottom: 1px solid #504940; }
+.booking-footer-brand { display: inline-flex; flex-direction: column; color: #fffdfa; text-decoration: none; line-height: 1; }
+.booking-footer-brand > span { font: 800 31px/1.1 var(--display); letter-spacing: -.065em; }
+.booking-footer-brand b { color: #d7be8a; }
+.booking-footer-brand small { margin-top: 6px; font: 800 10px/1.2 var(--sans); letter-spacing: .31em; color: #dfd9cc; }
+.booking-footer-top p { max-width: 390px; margin: 22px 0 0; color: #bfbab1; line-height: 1.6; }
+.booking-footer-cta { display: inline-flex; align-items: center; justify-content: space-between; gap: 30px; padding: 16px 20px; min-width: 215px; background: #d7be8a; color: #202020; text-decoration: none; font-weight: 800; }
+.booking-footer-cta:hover,.booking-footer-cta:focus-visible { background: #ead4a9; }
+.booking-footer-links { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; padding: 40px 0 54px; }
+.booking-footer-links > div { display: flex; flex-direction: column; align-items: flex-start; gap: 10px; }
+.booking-footer-links h2 { margin: 0 0 7px; color: #d7be8a; font: 800 12px/1.4 var(--sans); text-transform: uppercase; letter-spacing: .14em; }
+.booking-footer-links a { color: #e2ded7; text-decoration: none; overflow-wrap: anywhere; }
+.booking-footer-links a:hover,.booking-footer-links a:focus-visible { color: #d7be8a; text-decoration: underline; }
+.booking-footer-bottom { display: flex; justify-content: space-between; gap: 20px; padding-top: 24px; border-top: 1px solid #504940; color: #aaa49a; font-size: 13px; }
+@media (max-width: 600px) {
+  .booking-footer { padding: 58px 20px 28px; }
+  .booking-footer-top { display: block; }
+  .booking-footer-cta { width: 100%; margin-top: 30px; }
+  .booking-footer-links { grid-template-columns: 1fr; gap: 32px; padding: 36px 0 42px; }
+  .booking-footer-bottom { flex-direction: column; gap: 6px; }
+}
