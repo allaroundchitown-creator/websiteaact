@@ -1,40 +1,26 @@
-.story-section { background:#f7f6f2; color:#202020; padding:112px 24px 120px; }
-.story-inner { max-width:1130px; margin:auto; }
-.story-opening { display:grid; grid-template-columns:1.18fr .82fr; gap:7%; align-items:center; }
-.story-collage { display:grid; grid-template-columns:1.1fr .85fr; grid-template-rows:165px 290px 90px; gap:16px; align-items:stretch; }
-.story-collage img,.story-collage video,.story-feature-media img,.story-feature-media video { display:block; width:100%; height:100%; object-fit:cover; background:#171717; }
-.story-booth-photo { grid-column:1; grid-row:1/3; object-position:50% 48%; }
-.story-collage-video { grid-column:2; grid-row:1/3; object-position:50% 50%; }
-.story-wedding-photo { grid-column:1/3; grid-row:3; object-position:50% 48%; }
-.story-opening-copy { align-self:center; }
-.story-opening-copy .eyebrow,.story-number { color:#906927; font-size:13px; font-weight:800; letter-spacing:.15em; }
-.story-opening-copy h2 { font-size:clamp(34px,3.5vw,54px); max-width:500px; margin:18px 0 23px; }
-.story-opening-copy > p:not(.eyebrow) { max-width:390px; color:#595650; line-height:1.7; font-size:18px; }
-.story-opening-copy a { display:inline-flex; gap:22px; align-items:center; margin-top:14px; border-bottom:2px solid #aa854a; padding-bottom:7px; font-weight:800; }
-.story-features { margin-top:126px; }
-.story-feature { display:grid; grid-template-columns:1fr 1fr; gap:10%; align-items:center; margin-top:96px; }
-.story-feature:first-child { margin-top:0; }
-.story-feature-reverse .story-feature-media { order:2; }
-.story-feature-reverse .story-feature-copy { order:1; }
-.story-feature-media { width:100%; height:500px; }
-.story-feature-media img { object-position:center 43%; }
-.story-feature-copy { max-width:430px; }
-.story-feature-copy h3 { font:800 clamp(30px,3vw,45px)/1.12 var(--display); letter-spacing:-.04em; margin:18px 0; }
-.story-feature-copy h3:after { content:""; display:block; width:54px; border-top:2px solid #b89155; margin-top:24px; }
-.story-feature-copy p { color:#55514b; font-size:18px; line-height:1.75; }
-@media (max-width:800px) {
-  .story-section { padding:78px 22px; }
-  .story-opening { grid-template-columns:1fr; gap:34px; }
-  .story-opening-copy { grid-row:1; }
-  .story-collage { grid-row:2; grid-template-rows:100px 220px 70px; gap:10px; }
-  .story-features { margin-top:72px; }
-  .story-feature { gap:32px; margin-top:72px; }
-  .story-feature-media { height:400px; }
-}
-@media (max-width:600px) {
-  .story-collage { grid-template-rows:100px 170px 65px; }
-  .story-feature { grid-template-columns:1fr; gap:22px; }
-  .story-feature-reverse .story-feature-media,.story-feature-reverse .story-feature-copy { order:initial; }
-  .story-feature-media { height:390px; }
-  .story-feature-copy p { font-size:16px; }
-}
+.story-section{background:#fff;color:#202020;padding:100px 24px 108px}
+.story-inner{max-width:1140px;margin:auto}
+.story-mosaic{display:grid;grid-template-columns:1fr 1fr;grid-template-rows:330px 430px;column-gap:4%;row-gap:28px;align-items:center}
+.story-mosaic img,.story-mosaic video,.story-feature-media video{display:block;width:100%;height:100%;object-fit:cover;background:#151515}
+.story-mosaic-booth{grid-column:1;grid-row:1;width:83%!important;object-position:50% 49%}
+.story-mosaic-heading{grid-column:2;grid-row:1;max-width:470px;align-self:center;padding:0 0 15px 7%}
+.story-section .eyebrow{color:#96733b;font:800 13px/1.5 var(--sans);letter-spacing:.15em}
+.story-mosaic-heading h2{font:800 clamp(34px,3.5vw,52px)/1.12 var(--display);letter-spacing:-.04em;margin:16px 0}
+.story-mosaic-heading>p:last-child{font-size:17px;line-height:1.65;color:#5e5951;max-width:380px}
+.story-mosaic-wedding{grid-column:1;grid-row:2;width:64%!important;margin-left:19%;object-position:50% 50%}
+.story-mosaic-video{grid-column:2;grid-row:2;height:100%;width:64%;margin-left:9%;position:relative;background:#171717}
+.story-mosaic-video span{position:absolute;left:13px;bottom:13px;background:#171717da;color:#fff;font:800 11px/1.3 var(--sans);letter-spacing:.12em;padding:8px 10px}
+.story-feature{display:grid;grid-template-columns:1fr 1fr;gap:10%;align-items:center;margin:125px auto 0;max-width:1030px}
+.story-feature-media{height:495px;max-width:390px;width:100%;margin:0 auto;background:#171717}
+.story-feature-reverse .story-feature-media{order:2}
+.story-feature-reverse .story-feature-copy{order:1}
+.story-feature-copy{max-width:430px}
+.story-feature-copy h3,.story-close h3{font:800 clamp(30px,3vw,43px)/1.16 var(--display);letter-spacing:-.035em;margin:17px 0 22px}
+.story-feature-copy h3:after{content:"";display:block;width:58px;border-top:2px solid #c89a3d;margin-top:20px}
+.story-feature-copy p:last-child,.story-close p:not(.eyebrow){font-size:17px;line-height:1.75;color:#56534e}
+.story-close{margin:115px auto 0;max-width:1030px;padding:36px 0 0;border-top:1px solid #dcd7ce;display:flex;gap:35px;align-items:end;justify-content:space-between}
+.story-close>div{max-width:560px}
+.story-close a{display:inline-flex;align-items:center;gap:22px;white-space:nowrap;background:#d9bd88;padding:15px 19px;color:#202020;font-weight:800;text-decoration:none}
+.story-close a:hover,.story-close a:focus-visible{background:#caa861}
+@media(max-width:800px){.story-section{padding:75px 22px}.story-mosaic{grid-template-rows:290px 320px;gap:20px}.story-mosaic-heading{padding-left:0}.story-mosaic-wedding,.story-mosaic-video{width:85%!important;margin-left:0}.story-feature{gap:5%;margin-top:90px}.story-feature-media{height:420px}.story-close{margin-top:80px}}
+@media(max-width:620px){.story-section{padding:64px 20px}.story-mosaic{grid-template-columns:1fr 1fr;grid-template-rows:auto 260px 310px;gap:12px}.story-mosaic-heading{grid-column:1/3;grid-row:1;padding:0 0 16px}.story-mosaic-booth{grid-column:1/3;grid-row:2;width:100%!important;object-position:50% 52%}.story-mosaic-wedding{grid-column:1;grid-row:3;width:100%!important;height:100%}.story-mosaic-video{grid-column:2;grid-row:3;width:100%!important;height:100%}.story-feature{display:flex;flex-direction:column;align-items:stretch;gap:24px;margin-top:78px}.story-feature-media{height:390px;max-width:none}.story-feature-reverse .story-feature-media,.story-feature-reverse .story-feature-copy{order:initial}.story-close{display:block;margin-top:75px}.story-close a{white-space:normal;margin-top:12px}.story-feature-copy p:last-child,.story-close p:not(.eyebrow){font-size:16px}}
