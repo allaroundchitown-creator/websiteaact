@@ -36,11 +36,15 @@
   margin-right: auto;
 }
 .booking-showcase {
+  width: 100%;
+  max-width: none;
+  margin-top: 0;
+  border-top: 0;
   padding: 86px max(5vw, calc((100vw - 1120px)/2)) 94px;
   background: #202020;
   color: #fffdfa;
 }
-.booking-showcase .showcase-heading { max-width: 1120px; margin: 0 auto 34px; }
+.booking-showcase .showcase-heading { width: 100%; max-width: 1120px; margin: 0 auto 34px; }
 .booking-showcase .showcase-heading h2 { max-width: 700px; }
 .booking-showcase .showcase-heading > p:last-child { color: #c8c3b9; }
 .booking-showcase .booking-video-grid {
