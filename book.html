@@ -12,9 +12,11 @@
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="raffle.css">
   <link rel="stylesheet" href="book-pattern.css">
+  <link rel="stylesheet" href="book-flow.css">
 </head>
 <body class="book-page">
-  <main class="raffle-shell">
+  <main>
+   <div class="raffle-shell">
     <section class="raffle-intro">
       <video class="booking-intro-video" autoplay muted loop playsinline preload="metadata" aria-label="AACT 360 photo booth event video background">
         <source src="https://all-around-chi-town-360.noah630.chatgpt.site/assets/aact-hero-hq.mp4" type="video/mp4">
@@ -27,6 +29,7 @@
         <p class="eyebrow">CHICAGO 360 PHOTO BOOTH RENTAL</p>
         <h1>Make your event <span>the one guests remember.</span></h1>
         <p>Tell us about your event and we’ll confirm availability, recommend the right rental length, and send your pricing.</p>
+        <a class="hero-quote-link" href="#bookingForm">Check Your Date &amp; Get Pricing <span aria-hidden="true">→</span></a>
         <ul>
           <li>Professional booth attendant</li>
           <li>Unlimited 360 videos</li>
@@ -46,34 +49,35 @@
         <p>No payment today. We’ll contact you with availability and package options.</p>
       </div>
 
-      <div class="booking-packages" aria-label="360 photo booth packages">
-        <article><p>2 HOURS</p><h3>Essentials</h3><strong>$350</strong><span>Best for shorter celebrations</span></article>
-        <article class="popular"><small>MOST POPULAR</small><p>4 HOURS</p><h3>Signature</h3><strong>$599</strong><span>Best for weddings and quinceañeras</span></article>
-        <article><p>6 HOURS</p><h3>Full Event</h3><strong>$799</strong><span>Best for larger, all-night events</span></article>
-      </div>
-      <p class="package-includes">All packages include a professional attendant, unlimited 360 videos, a custom overlay, props, instant sharing, setup and breakdown.</p>
-
       <form id="bookingForm" novalidate>
         <div class="field-row">
           <label><span>First name</span><input name="firstName" autocomplete="given-name" required placeholder="First name"></label>
-          <label><span>Last name</span><input name="lastName" autocomplete="family-name" required placeholder="Last name"></label>
-        </div>
-        <div class="field-row">
           <label><span>Phone number</span><input name="phone" type="tel" inputmode="tel" autocomplete="tel" maxlength="18" required placeholder="(224) 234-1473"></label>
-          <label><span>Email</span><input name="email" type="email" autocomplete="email" required placeholder="you@example.com"></label>
         </div>
         <div class="field-row">
           <label><span>Event date</span><input name="eventDate" type="date" required></label>
           <label><span>Event type</span><select name="eventType" required><option value="" selected disabled>Select event type</option><option>Wedding</option><option>Quinceañera</option><option>Birthday</option><option>Corporate Event</option><option>School Event</option><option>Brand Activation</option><option>Other</option></select></label>
         </div>
-        <label><span>Event address</span><input name="eventAddress" autocomplete="street-address" required placeholder="Street address, city, state and ZIP"></label>
-        <div class="field-row">
-          <label><span>Estimated guest count</span><input name="guestCount" type="number" inputmode="numeric" min="1" max="3000" required placeholder="Number of guests"></label>
-          <label><span>Rental length</span><select name="rentalLength" required><option value="" selected disabled>Select hours</option><option value="2 hours">2 hours — $350</option><option value="4 hours">4 hours — $599</option><option value="6 hours">6 hours — $799</option><option value="Not sure yet">Not sure yet</option></select></label>
-        </div>
-        <button type="submit">Get Pricing &amp; Check My Date <span>→</span></button>
+        <label><span>City / ZIP</span><input name="cityZip" autocomplete="address-level2" required maxlength="80" placeholder="City or ZIP code"></label>
+        <button type="submit">Check Your Date &amp; Get Pricing <span aria-hidden="true">→</span></button>
         <p class="form-status" id="bookingStatus" aria-live="polite">No obligation. Submitting this form does not reserve your date.</p>
       </form>
+    </section>
+   </div>
+
+  <section class="booking-after" aria-label="Packages, event videos and booking details">
+    <section class="booking-package-section" aria-labelledby="packages-title">
+      <div class="showcase-heading">
+        <p class="eyebrow">PACKAGES</p>
+        <h2 id="packages-title">Find the right amount of time.</h2>
+        <p>We’ll help you choose after checking your date and event details.</p>
+      </div>
+      <div class="booking-packages" aria-label="360 photo booth packages">
+        <article><p>2 HOURS</p><h3>Essentials</h3><strong>$350</strong><span>Best for shorter celebrations</span></article>
+        <article class="popular"><small>MOST POPULAR</small><p>4 HOURS</p><h3>Signature</h3><strong>$599</strong><span>Best for weddings and quinceañeras</span></article>
+        <article><p>6 HOURS</p><h3>Full Event</h3><strong>$799</strong><span>Best for larger, all-night events</span></article>
+      </div>
+    </section>
 
       <section class="booking-showcase" aria-labelledby="showcase-title">
         <div class="showcase-heading">
@@ -96,8 +100,9 @@
           </article>
         </div>
 
-        <div class="booking-info-grid">
-          <article>
+      </section>
+      <div class="booking-info-grid">
+          <article id="included">
             <p class="eyebrow">EVERY PACKAGE INCLUDES</p>
             <h3>We handle the full setup.</h3>
             <ul>
@@ -108,7 +113,7 @@
               <li>Delivery, setup and breakdown</li>
             </ul>
           </article>
-          <article>
+          <article id="booking-process">
             <p class="eyebrow">WHAT HAPPENS NEXT</p>
             <h3>Booking is simple.</h3>
             <ol>
@@ -117,14 +122,13 @@
               <li><span>3</span><div><strong>Your deposit secures the date</strong><p>Once the deposit is received, your event is officially booked.</p></div></li>
             </ol>
           </article>
-        </div>
+      </div>
         <div class="booking-contact-note">
           <strong>Have a question before submitting?</strong>
           <a href="tel:+12242341473">Call (224) 234-1473</a>
           <a href="mailto:allaroundchitown@gmail.com">allaroundchitown@gmail.com</a>
         </div>
-      </section>
-    </section>
+  </section>
   </main>
   <script src="analytics.js" defer></script>
   <script src="video-autoplay.js" defer></script>
