@@ -171,3 +171,61 @@
   .booking-info-grid { margin-top: 55px; }
   .booking-info-grid, .booking-contact-note { width: calc(100% - 36px); }
 }
+.booking-after .booking-info-grid {
+  display: block;
+  max-width: 1120px;
+  margin: 72px auto 0;
+}
+.booking-info-grid #included {
+  display: grid;
+  grid-template-columns: minmax(0, .85fr) minmax(0, 1.15fr);
+  min-height: 410px;
+  padding: 0;
+  overflow: hidden;
+  border: 0;
+  border-radius: 3px;
+  background: #202020;
+  color: #fffdfa;
+}
+.included-media { min-height: 410px; }
+.included-media img { display: block; width: 100%; height: 100%; object-fit: cover; object-position: center 45%; }
+.included-copy { padding: clamp(36px, 4vw, 64px); align-self: center; }
+.included-copy .eyebrow { color: #d8bc87; }
+.booking-info-grid .included-copy h3 { max-width: 400px; font-size: clamp(28px, 3vw, 40px); line-height: 1.1; margin-bottom: 28px; }
+.included-copy ul { grid-template-columns: 1fr 1fr; gap: 14px 22px; }
+.included-copy ul li { font-size: 15px; line-height: 1.4; }
+.booking-info-grid .included-copy ul li:before { color: #d8bc87; }
+.booking-info-grid #booking-process {
+  margin-top: 80px;
+  padding: 0;
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+}
+.booking-info-grid #booking-process h3 { font-size: clamp(29px, 3vw, 38px); margin-bottom: 34px; }
+.booking-info-grid #booking-process ol { grid-template-columns: repeat(3, minmax(0,1fr)); gap: 18px; }
+.booking-info-grid #booking-process ol li {
+  display: block;
+  min-height: 175px;
+  padding: 24px 24px 18px;
+  border-top: 3px solid #cba86d;
+  background: #fffdfa;
+}
+.booking-info-grid #booking-process ol li > span { width: 34px; height: 34px; margin-bottom: 19px; font-size: 15px; }
+.booking-info-grid #booking-process ol strong { font-size: 17px; }
+.booking-info-grid #booking-process ol p { font-size: 14px; line-height: 1.5; }
+.booking-after .booking-contact-note { max-width: 1120px; margin: 28px auto 0; border-radius: 3px; }
+@media (max-width: 800px) {
+  .booking-info-grid #included { grid-template-columns: 1fr; }
+  .included-media { height: 360px; min-height: 0; }
+  .booking-info-grid #booking-process ol { grid-template-columns: 1fr; }
+  .booking-info-grid #booking-process ol li { min-height: 0; }
+}
+@media (max-width: 600px) {
+  .booking-after .booking-info-grid, .booking-after .booking-contact-note { width: calc(100% - 36px); }
+  .booking-after .booking-info-grid { margin-top: 54px; }
+  .included-media { height: 290px; }
+  .included-copy { padding: 30px 24px 36px; }
+  .included-copy ul { grid-template-columns: 1fr; }
+  .booking-info-grid #booking-process { margin-top: 62px; }
+}
