@@ -255,3 +255,5 @@
   .booking-footer-links { grid-template-columns: 1fr; gap: 32px; padding: 36px 0 42px; }
   .booking-footer-bottom { flex-direction: column; gap: 6px; }
 }
+
+.booking-packages{grid-template-columns:repeat(2,minmax(0,1fr))}@media(max-width:650px){.booking-packages{grid-template-columns:1fr}}
