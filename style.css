@@ -20,3 +20,25 @@ nav{min-height:90px;padding-top:10px;padding-bottom:10px}.brand img{width:155px}
 header{background:#fffdf9;border-bottom:1px solid #d9c5b9;position:relative}nav{max-width:1340px;min-height:90px;padding:9px 6%;gap:45px}.brand img{width:155px;height:auto}.nav-side{gap:42px;font-family:'Playfair Display',Georgia,serif;font-size:17px;letter-spacing:.4px}.nav-side.right{gap:38px}.nav-side a:not(.nav-book){color:#3c2830;position:relative;padding:7px 0}.nav-side a:not(.nav-book)::after{content:'';position:absolute;bottom:2px;left:0;right:0;height:1px;background:#a75a76;transform:scaleX(0);transform-origin:left;transition:transform .2s}.nav-side a:not(.nav-book):hover{text-decoration:none}.nav-side a:not(.nav-book):hover::after{transform:scaleX(1)}.nav-book{font-family:'DM Sans',Arial,sans-serif;font-size:12px;font-weight:500;letter-spacing:1.1px;text-transform:uppercase;border-radius:2px;background:#914360;border:1px solid #914360;color:#fff;padding:12px 21px;line-height:1.5;transition:background .2s,border-color .2s}.nav-book:hover{background:#74344d;border-color:#74344d;text-decoration:none}.menu{border-radius:2px;font-size:12px;letter-spacing:1px;text-transform:uppercase;background:transparent;border-color:#cbb8af;color:#3c2830}.mobile-links:not([hidden]){background:#fffdf9;border-top:1px solid #e9ded6}.mobile-links a{font-family:'Playfair Display',Georgia,serif;font-size:18px}.mobile-links a:last-child{background:#914360;border-radius:2px;font-family:'DM Sans',Arial,sans-serif;font-size:12px;letter-spacing:1px;text-transform:uppercase;padding:12px 20px}@media(max-width:1050px){nav{min-height:90px;padding:9px 5%;gap:30px}.nav-side{gap:30px}.nav-side.right{gap:25px}.brand img{width:150px}}@media(max-width:750px){.nav-side{gap:20px;font-size:16px}.nav-side.right{gap:18px}.brand img{width:140px}.nav-book{padding:11px 15px;font-size:11px;letter-spacing:.7px}}@media(max-width:650px){nav{min-height:76px;padding:8px 7%}.brand img{width:125px}.menu{padding:9px 16px}.mobile-links:not([hidden]){padding:20px 7% 25px;gap:14px}}@media(prefers-reduced-motion:reduce){.nav-side a::after,.nav-book{transition:none}}
 
 .package-grid{grid-template-columns:repeat(2,minmax(0,1fr));max-width:1000px;margin-inline:auto}@media(max-width:700px){.package-grid{grid-template-columns:1fr}}
+
+/* Wedding footer */
+footer.site-footer{display:block;background:#f7e8ed;border-top:1px solid #dfcbd1;padding:64px max(6%,calc((100vw - 1240px)/2)) 24px;color:#301e27;font-size:14px}
+.site-footer .footer-invitation{display:flex;justify-content:space-between;align-items:center;gap:32px;padding-bottom:48px;border-bottom:1px solid #d5b8c3}
+.site-footer .footer-invitation .eyebrow{margin-bottom:16px;color:#8d3656;font-size:10px}
+.site-footer .footer-invitation h2{font-size:clamp(38px,4.5vw,58px);margin-bottom:0;letter-spacing:-1.5px}
+.site-footer .footer-invitation h2 em{color:#a74064}
+.site-footer .footer-invitation .button{gap:20px;flex-shrink:0}
+.site-footer .footer-invitation .button span{color:inherit;font-size:20px}
+.site-footer .footer-directory{display:grid;grid-template-columns:1.3fr 1fr 1fr 1.3fr;gap:36px;padding:46px 0}
+.site-footer .footer-wordmark{font:500 38px/1 Georgia,serif;letter-spacing:-2px;display:inline-flex;flex-direction:column;gap:6px}
+.site-footer .footer-wordmark span{font:600 11px/1.4 'DM Sans',Arial,sans-serif;letter-spacing:5px;color:#301e27}
+.site-footer .footer-tagline{font-size:9px;letter-spacing:2px;margin:15px 0 20px;color:#8d3656}
+.site-footer .footer-identity>p:last-child{font-size:13px;color:#68545d;margin:0;line-height:1.8}
+.site-footer .footer-links{display:flex;flex-direction:column;align-items:flex-start;gap:11px;min-width:0}
+.site-footer .footer-links h3{font:600 11px/1.5 'DM Sans',Arial,sans-serif;text-transform:uppercase;letter-spacing:1.5px;color:#8d3656;margin:0 0 9px}
+.site-footer .footer-links a{font-size:13px;overflow-wrap:anywhere}
+.site-footer a:hover{text-decoration:underline;text-underline-offset:4px}
+.site-footer .footer-bottom{display:flex;align-items:center;justify-content:space-between;gap:20px;border-top:1px solid #d5b8c3;padding-top:22px;font-size:11px;color:#68545d}
+.site-footer .footer-bottom p{margin:0}
+@media(max-width:1000px){.site-footer .footer-directory{grid-template-columns:repeat(2,minmax(0,1fr));gap:34px}}
+@media(max-width:600px){footer.site-footer{padding:44px 7% 22px}.site-footer .footer-invitation{align-items:flex-start;flex-direction:column;padding-bottom:34px;gap:24px}.site-footer .footer-directory{padding:34px 0;gap:30px 20px}.site-footer .footer-identity,.site-footer .footer-contact{grid-column:1/-1}.site-footer .footer-bottom{align-items:flex-start;flex-direction:column;gap:12px}.site-footer .footer-invitation .button{width:100%}}
