@@ -42,3 +42,23 @@ footer.site-footer{display:block;background:#f7e8ed;border-top:1px solid #dfcbd1
 .site-footer .footer-bottom p{margin:0}
 @media(max-width:1000px){.site-footer .footer-directory{grid-template-columns:repeat(2,minmax(0,1fr));gap:34px}}
 @media(max-width:600px){footer.site-footer{padding:44px 7% 22px}.site-footer .footer-invitation{align-items:flex-start;flex-direction:column;padding-bottom:34px;gap:24px}.site-footer .footer-directory{padding:34px 0;gap:30px 20px}.site-footer .footer-identity,.site-footer .footer-contact{grid-column:1/-1}.site-footer .footer-bottom{align-items:flex-start;flex-direction:column;gap:12px}.site-footer .footer-invitation .button{width:100%}}
+
+/* Contrasting wedding footer finish */
+footer.site-footer{padding:0;background:#301e27;color:#fffaf8;border:0}
+.site-footer .footer-invitation{background:#f5a5bb;color:#301e27;padding:54px max(6%,calc((100vw - 1240px)/2));border:0;position:relative;overflow:hidden}
+.site-footer .footer-invitation:before{content:"";position:absolute;width:270px;height:270px;right:32%;top:-100px;border:1px solid #301e2720;border-radius:50%;pointer-events:none}
+.site-footer .footer-invitation:after{content:"";position:absolute;width:330px;height:330px;right:30%;top:-130px;border:1px solid #301e2715;border-radius:50%;pointer-events:none}
+.site-footer .footer-invitation>div,.site-footer .footer-invitation>.button{position:relative;z-index:1}
+.site-footer .footer-invitation .eyebrow{color:#6a2d44}
+.site-footer .footer-invitation h2 em{color:#71364c}
+.site-footer .footer-directory{padding:56px max(6%,calc((100vw - 1240px)/2));grid-template-columns:1.4fr 1fr 1fr 1.35fr;gap:40px}
+.site-footer .footer-wordmark{color:#fffaf8;font-size:46px}
+.site-footer .footer-wordmark span{color:#f5a5bb}
+.site-footer .footer-tagline{color:#f5a5bb;font-size:9px}
+.site-footer .footer-identity>p:last-child{color:#ddcbd2}
+.site-footer .footer-links h3{color:#f5a5bb}
+.site-footer .footer-links a{color:#fffaf8;line-height:1.8}
+.site-footer .footer-links a:hover{color:#f5a5bb}
+.site-footer .footer-bottom{margin:0 max(6%,calc((100vw - 1240px)/2));padding:22px 0 26px;border-color:#ffffff25;color:#ddcbd2}
+@media(max-width:1000px){.site-footer .footer-directory{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:600px){footer.site-footer{padding:0}.site-footer .footer-invitation{padding:40px 7%;gap:24px}.site-footer .footer-invitation h2{font-size:42px}.site-footer .footer-directory{padding:40px 7%;gap:32px 24px}.site-footer .footer-bottom{margin:0 7%}.site-footer .footer-invitation:before,.site-footer .footer-invitation:after{right:-100px}}
