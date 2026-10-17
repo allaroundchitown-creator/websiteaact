@@ -78,48 +78,67 @@ footer.site-footer{padding:0;background:#242424;color:#fffdf8;border:0}
 /* Event-specific content uses the existing site's neutral visual language. */
 .events-types .section-heading{max-width:730px}.event-type-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:35px 40px}.event-type-grid article{padding:25px 0;border-top:1px solid #d8d1c4}.event-type-grid article>span{font:italic 22px Georgia,serif;color:#80663b}.event-type-grid h3{font:28px/1.2 'Playfair Display',Georgia,serif;margin:15px 0}.event-type-grid p{color:#64615b;font-size:14px;margin-bottom:20px}.event-type-grid a{font-size:12px;color:#6e5b36;text-decoration:underline;text-underline-offset:4px}.events-page .package-card>p:not(.eyebrow):not(.package-price){min-height:55px}.events-page .package-card .button{margin-top:20px}.events-page .booking{scroll-margin-top:20px}.events-page .legal-form-note{color:#64615b}.events-page .site-footer .legal-footer-links{color:#ddd6c8}@media(max-width:850px){.event-type-grid{grid-template-columns:1fr 1fr;gap:25px 30px}}@media(max-width:600px){.event-type-grid{grid-template-columns:1fr;gap:10px}.event-type-grid article{padding:22px 0}.event-type-grid h3{font-size:27px}.events-page .hero-description{max-width:340px;margin:0 auto 30px}.events-page .hero-description br{display:none}.events-page .package-card>p:not(.eyebrow):not(.package-price){min-height:0}}
 
-/* Black and electric blue event palette. */
-.events-page{--pink:#246de6;--ink:#f5f7fc;--paper:#090c12;--line:#2a3445;color-scheme:dark;background:var(--paper);color:var(--ink)}
-.events-page header{background:#090c12;border-color:var(--line)}
+/* Modern luxury event palette. */
+.events-page{--pink:#d9d9d6;--ink:#f5f5f2;--paper:#0b0b0b;--line:#343434;color-scheme:dark;background:var(--paper);color:var(--ink)}
+.events-page header{background:#0b0b0b;border-color:var(--line)}
 .events-page .nav-side a:not(.nav-book),.events-page .event-navigation .menu{color:var(--ink)}
-.events-page .nav-side a:not(.nav-book)::after{background:#72aaff}
-.events-page .event-navigation .menu{border-color:#46536b;background:transparent}
-.events-page .event-navigation .mobile-links:not([hidden]){background:#090c12;border-color:var(--line)}
-.events-page .nav-book,.events-page .event-navigation .mobile-links a:last-child,.events-page .button.pink,.events-page .button.dark{background:#246de6;border-color:#246de6;color:#fff}
-.events-page .nav-book:hover,.events-page .event-navigation .mobile-links a:last-child:hover,.events-page .button:hover{background:#195ac5;border-color:#195ac5;color:#fff}
-.events-page a:focus-visible,.events-page button:focus-visible{outline-color:#72aaff}
-.events-page .hero{background:#090c12}
-.events-page .hero-shade{background:linear-gradient(180deg,rgba(4,9,18,.45),rgba(4,9,18,.58) 55%,rgba(4,9,18,.72))}
-.events-page h1 em,.events-page h2 em{color:#72aaff}
-.events-page .eyebrow{color:#91bcff}
-.events-page .hero .eyebrow{color:#d4e5ff}
-.events-page .experience-strip{background:#1557b8}
+.events-page .nav-side a:not(.nav-book)::after{background:#d4d4d0}
+.events-page .event-navigation .menu{border-color:#606060;background:transparent}
+.events-page .event-navigation .mobile-links:not([hidden]){background:#0b0b0b;border-color:var(--line)}
+.events-page .nav-book,.events-page .event-navigation .mobile-links a:last-child,.events-page .button.pink,.events-page .button.dark{background:#d9d9d6;border-color:#d9d9d6;color:#fff}
+.events-page .nav-book:hover,.events-page .event-navigation .mobile-links a:last-child:hover,.events-page .button:hover{background:#ffffff;border-color:#ffffff;color:#fff}
+.events-page a:focus-visible,.events-page button:focus-visible{outline-color:#d4d4d0}
+.events-page .hero{background:#0b0b0b}
+.events-page .hero-shade{background:linear-gradient(180deg,rgba(5,5,5,.45),rgba(5,5,5,.58) 55%,rgba(5,5,5,.72))}
+.events-page h1 em,.events-page h2 em{color:#d4d4d0}
+.events-page .eyebrow{color:#c7c7c2}
+.events-page .hero .eyebrow{color:#e4e4e0}
+.events-page .experience-strip{background:#202020}
 .events-page .experience-strip strong,.events-page .experience-strip span{color:#fff}
-.events-page .section-heading>p:last-child,.events-page .event-type-grid p,.events-page .package-card>p:not(.eyebrow):not(.package-price),.events-page .package-note,.events-page .steps p,.events-page .booking-copy>p:not(.eyebrow),.events-page .faq-list details p,.events-page .form-note,.events-page .legal-form-note{color:#b4bfd1}
+.events-page .section-heading>p:last-child,.events-page .event-type-grid p,.events-page .package-card>p:not(.eyebrow):not(.package-price),.events-page .package-note,.events-page .steps p,.events-page .booking-copy>p:not(.eyebrow),.events-page .faq-list details p,.events-page .form-note,.events-page .legal-form-note{color:#b8b8b3}
 .events-page .event-type-grid article,.events-page .event-gallery,.events-page .booking-trust,.events-page .package-card ul{border-color:var(--line)}
-.events-page .event-type-grid article>span,.events-page .event-type-grid a,.events-page .steps article>span,.events-page .faq-list summary::after{color:#72aaff}
-.events-page .packages,.events-page .how,.events-page .booking{background:#101622}
-.events-page .package-card{background:#151d2b;border-color:#303d52}
-.events-page .package-card.featured{background:#132747;border-color:#438dff}
-.events-page .inquiry-form input,.events-page .inquiry-form select{background:#090f1b;border-color:#46536b;color:#f5f7fc;accent-color:#438dff}
-.events-page .inquiry-form input::placeholder{color:#a8b5cb;opacity:1}
-.events-page .inquiry-form input:focus,.events-page .inquiry-form select:focus{outline-color:#72aaff}
-.events-page .selected-package{background:#19345c;color:#e0edff}
+.events-page .event-type-grid article>span,.events-page .event-type-grid a,.events-page .steps article>span,.events-page .faq-list summary::after{color:#d4d4d0}
+.events-page .packages,.events-page .how,.events-page .booking{background:#111111}
+.events-page .package-card{background:#171717;border-color:#393939}
+.events-page .package-card.featured{background:#202020;border-color:#a5a5a0}
+.events-page .inquiry-form input,.events-page .inquiry-form select{background:#0c0c0c;border-color:#606060;color:#f5f5f2;accent-color:#a5a5a0}
+.events-page .inquiry-form input::placeholder{color:#a6a6a1;opacity:1}
+.events-page .inquiry-form input:focus,.events-page .inquiry-form select:focus{outline-color:#d4d4d0}
+.events-page .selected-package{background:#2a2a2a;color:#ededeb}
 .events-page .form-note.error{color:#ff9d9d}
 .events-page .form-note.success{color:#8ce5ad}
-.events-page .final-cta{background:#122647}
-.events-page footer.site-footer{background:#06090f;color:#f5f7fc}
-.events-page .site-footer .footer-wordmark,.events-page .site-footer .footer-links a{color:#f5f7fc}
-.events-page .site-footer .footer-wordmark span,.events-page .site-footer .footer-tagline,.events-page .site-footer .footer-links h3,.events-page .site-footer .footer-links a:hover{color:#91bcff}
-.events-page .site-footer .footer-identity>p:last-child,.events-page .site-footer .footer-bottom,.events-page .site-footer .legal-footer-links{color:#b4bfd1}
+.events-page .final-cta{background:#1a1a1a}
+.events-page footer.site-footer{background:#080808;color:#f5f5f2}
+.events-page .site-footer .footer-wordmark,.events-page .site-footer .footer-links a{color:#f5f5f2}
+.events-page .site-footer .footer-wordmark span,.events-page .site-footer .footer-tagline,.events-page .site-footer .footer-links h3,.events-page .site-footer .footer-links a:hover{color:#c7c7c2}
+.events-page .site-footer .footer-identity>p:last-child,.events-page .site-footer .footer-bottom,.events-page .site-footer .legal-footer-links{color:#b8b8b3}
 .events-page .site-footer .footer-bottom{border-color:var(--line)}
 
 /* Translucent header over the hero, with fully opaque navigation text. */
-.events-page header.event-navigation{position:absolute;top:0;left:0;width:100%;z-index:10;background:rgba(9,12,18,.7);border-bottom-color:rgba(255,255,255,.14);-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px)}
+.events-page header.event-navigation{position:absolute;top:0;left:0;width:100%;z-index:10;background:rgba(11,11,11,.7);border-bottom-color:rgba(255,255,255,.14);-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px)}
 .events-page .hero{height:100svh}
 .events-page .hero-content{padding-top:150px}
-.events-page header.event-navigation .mobile-links:not([hidden]){background:rgba(9,12,18,.96)}
+.events-page header.event-navigation .mobile-links:not([hidden]){background:rgba(11,11,11,.96)}
 @media(max-width:650px){.events-page .hero-content{padding-top:126px}}
 
 /* Preserve the second video’s native frame and overlay. */
-.events-page .event-gallery .reel-grid video{height:auto;aspect-ratio:720 / 968;object-fit:contain;object-position:center;background:#090c12}
+.events-page .event-gallery .reel-grid video{height:auto;aspect-ratio:720 / 968;object-fit:contain;object-position:center;background:#0b0b0b}
+
+/* Quiet silver details and restrained motion. */
+.events-page .nav-book,.events-page .event-navigation .mobile-links a:last-child,.events-page .button.pink,.events-page .button.dark{background:#d9d9d6;border:1px solid #d9d9d6;color:#111}
+.events-page .nav-book:hover,.events-page .event-navigation .mobile-links a:last-child:hover,.events-page .button:hover{background:#fff;border-color:#fff;color:#111;transform:translateY(-2px)}
+.events-page .button{border-radius:3px;font-size:12px;letter-spacing:1.1px;padding:15px 27px;transition:background .25s,color .25s,transform .25s}
+.events-page .nav-book{letter-spacing:1.5px}
+.events-page .hero .hero-description{color:#e0e0dc;max-width:580px;margin-inline:auto}
+.events-page .hero-content{animation:luxury-arrive .9s ease-out both}
+.events-page .event-type-grid article{border-color:#414141}
+.events-page .event-type-grid article>span{font-size:17px;color:#a5a5a0}
+.events-page .event-type-grid a{letter-spacing:.7px}
+.events-page .package-card{border-radius:2px}
+.events-page .package-card.featured{border-color:#969692}
+.events-page .package-card .eyebrow{color:#c7c7c2}
+.events-page .package-price{letter-spacing:-2px}
+.events-page .event-gallery .reel-grid video{border-radius:3px;border:1px solid #484848;box-shadow:0 20px 55px rgba(0,0,0,.28)}
+.events-page .inquiry-form input,.events-page .inquiry-form select{border-radius:2px}
+@keyframes luxury-arrive{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:translateY(0)}}
+@media(prefers-reduced-motion:reduce){.events-page .hero-content{animation:none}.events-page .button{transition:none}.events-page .button:hover{transform:none}}
