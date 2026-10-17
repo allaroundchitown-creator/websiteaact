@@ -120,3 +120,6 @@ footer.site-footer{padding:0;background:#242424;color:#fffdf8;border:0}
 .events-page .hero-content{padding-top:150px}
 .events-page header.event-navigation .mobile-links:not([hidden]){background:rgba(9,12,18,.96)}
 @media(max-width:650px){.events-page .hero-content{padding-top:126px}}
+
+/* Preserve the second video’s native frame and overlay. */
+.events-page .event-gallery .reel-grid video{height:auto;aspect-ratio:720 / 968;object-fit:contain;object-position:center;background:#090c12}
