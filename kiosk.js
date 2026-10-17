@@ -9,8 +9,6 @@ const submit = form.querySelector('[type="submit"]');
 const warning = document.querySelector('#idle-warning');
 const phone = form.elements.phone;
 let sending = false, resetTimer, idleTimer, warnTimer, seconds = 15;
-const dateParts = new Intl.DateTimeFormat('en-CA', {timeZone:'America/Chicago', year:'numeric', month:'2-digit', day:'2-digit'}).formatToParts(new Date());
-form.elements.eventDate.min = ['year','month','day'].map(key => dateParts.find(x => x.type === key).value).join('-');
 function stopTimers() { clearInterval(resetTimer); clearTimeout(idleTimer); clearTimeout(warnTimer); warning.hidden = true; }
 function reset() {
   stopTimers(); form.reset(); phone.setCustomValidity(''); entry.hidden = false; success.hidden = true; sending = false;
@@ -50,7 +48,7 @@ form.addEventListener('submit', async event => {
   stopTimers(); sending = true; submit.disabled = true; submit.firstElementChild.textContent = 'Sending…';
   status.className = 'status'; status.textContent = 'Sending your request…';
   const data = new FormData(form); data.delete('website');
-  data.set('phone',digits); data.set('_subject',`AACT Booths expo inquiry — ${data.get('eventType')} — ${data.get('eventDate')}`);
+  data.set('phone',digits); data.set('_subject','AACT Booths expo inquiry');
   data.set('_template','table'); data.set('_captcha','false');
   data.set('source',phoneMode ? 'Expo QR / phone' : 'Expo Chromebook kiosk');
   data.set('offer','EVENT50 — $50 off when booked within 48 hours of inquiry');
