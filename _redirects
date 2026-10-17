@@ -1,3 +1,9 @@
+/terms /terms-and-conditions 301!
+/privacy /privacy-policy 301!
+/terms-and-conditions.html /terms-and-conditions 301!
+/privacy-policy.html /privacy-policy 301!
+/terms-and-conditions /terms-and-conditions.html 200
+/privacy-policy /privacy-policy.html 200
 /photobooth-marketing.html /photobooth-marketing 301!
 /photobooth-marketing /photobooth-marketing.html 200
 /kiosk.html /kiosk 301!
