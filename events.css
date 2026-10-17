@@ -113,3 +113,10 @@ footer.site-footer{padding:0;background:#242424;color:#fffdf8;border:0}
 .events-page .site-footer .footer-wordmark span,.events-page .site-footer .footer-tagline,.events-page .site-footer .footer-links h3,.events-page .site-footer .footer-links a:hover{color:#91bcff}
 .events-page .site-footer .footer-identity>p:last-child,.events-page .site-footer .footer-bottom,.events-page .site-footer .legal-footer-links{color:#b4bfd1}
 .events-page .site-footer .footer-bottom{border-color:var(--line)}
+
+/* Translucent header over the hero, with fully opaque navigation text. */
+.events-page header.event-navigation{position:absolute;top:0;left:0;width:100%;z-index:10;background:rgba(9,12,18,.7);border-bottom-color:rgba(255,255,255,.14);-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px)}
+.events-page .hero{height:100svh}
+.events-page .hero-content{padding-top:150px}
+.events-page header.event-navigation .mobile-links:not([hidden]){background:rgba(9,12,18,.96)}
+@media(max-width:650px){.events-page .hero-content{padding-top:126px}}
