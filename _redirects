@@ -1,3 +1,5 @@
+/kiosk.html /kiosk 301!
+/kiosk /kiosk.html 200
 /index.html / 301!
 /book.html /book 301!
 https://www.allaroundchitown.com/* https://allaroundchitown.com/:splat 301!
