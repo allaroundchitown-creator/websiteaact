@@ -1,0 +1,18 @@
+/* The shared navigation definition for every public website page. */
+(()=>{
+ 'use strict';
+ const header=document.querySelector('.aact-header');
+ if(!header)return;
+ header.innerHTML="<nav class=\"aact-nav\" aria-label=\"Main navigation\"><div class=\"aact-nav-links aact-nav-left\"><a href=\"/\">Home</a><a href=\"/wedding-photo-booth-chicago\">Weddings</a><a href=\"/quinceanera-photo-booth-chicago\">Quinceañeras</a></div><a class=\"aact-brand\" href=\"/\" aria-label=\"AACT Booths home\"><span>AACT</span><small>BOOTHS</small></a><div class=\"aact-nav-links aact-nav-right\"><a href=\"/#packages\">Packages</a><a href=\"/#book\" class=\"aact-nav-cta\">Check Your Date</a></div><button class=\"menu aact-menu\" type=\"button\" aria-label=\"Open navigation\" aria-expanded=\"false\" aria-controls=\"aact-mobile-navigation\">Menu</button></nav><div class=\"mobile-links aact-mobile-links\" id=\"aact-mobile-navigation\" hidden><a href=\"/\">Home</a><a href=\"/wedding-photo-booth-chicago\">Weddings</a><a href=\"/quinceanera-photo-booth-chicago\">Quinceañeras</a><a href=\"/#packages\">Packages</a><a href=\"/#book\" class=\"aact-nav-cta\">Check Your Date</a></div>";
+ const button=header.querySelector('.aact-menu');
+ const panel=header.querySelector('.aact-mobile-links');
+ const close=()=>{panel.hidden=true;button.setAttribute('aria-expanded','false');button.setAttribute('aria-label','Open navigation');button.textContent='Menu';};
+ button.addEventListener('click',()=>{const open=button.getAttribute('aria-expanded')!=='true';panel.hidden=!open;button.setAttribute('aria-expanded',String(open));button.setAttribute('aria-label',open?'Close navigation':'Open navigation');button.textContent=open?'Close':'Menu';});
+ panel.querySelectorAll('a').forEach(link=>link.addEventListener('click',close));
+ header.addEventListener('keydown',event=>{if(event.key==='Escape'&&!panel.hidden){close();button.focus();}});
+ document.addEventListener('click',event=>{if(!header.contains(event.target))close();});
+ const desktop=matchMedia('(min-width:1001px)');
+ desktop.addEventListener('change',()=>{if(desktop.matches)close();});
+ const path=location.pathname.replace(/\/index\.html$/,'/').replace(/\/$/,'')||'/';
+ header.querySelectorAll('a').forEach(link=>{const url=new URL(link.getAttribute('href'),location.origin);if(!url.hash&&url.pathname===path&&!link.classList.contains('aact-brand'))link.setAttribute('aria-current','page');});
+})();

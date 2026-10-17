@@ -1,0 +1,22 @@
+/* Shared header: isolated from each page's content palette. */
+body header.aact-header{position:relative;inset:auto;z-index:50;display:block;width:100%;height:auto;min-height:0;margin:0;padding:0;background:rgba(11,11,11,.82);color:#f5f5f2;border:0;border-bottom:1px solid rgba(255,255,255,.16);border-radius:0;box-shadow:none;-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px);font-family:'DM Sans',Arial,sans-serif;line-height:1.5;box-sizing:border-box}
+body header.aact-header *{box-sizing:border-box}
+body.events-page header.aact-header{position:absolute;top:0;left:0}
+body header.aact-header nav.aact-nav{display:grid;grid-template-columns:1fr auto 1fr;align-items:center;justify-content:normal;gap:32px;max-width:1340px;min-height:90px;width:100%;height:auto;margin:0 auto;padding:10px 6%;background:transparent;color:inherit;border:0;position:static;transform:none}
+body header.aact-header .aact-brand{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:6px;width:auto;height:auto;margin:0;padding:0;border:0;color:#f5f5f2;background:transparent;text-decoration:none;line-height:1}
+body header.aact-header .aact-brand span{font:500 34px/1 Georgia,serif;letter-spacing:-1.5px;color:inherit}
+body header.aact-header .aact-brand small{font:600 9px/1 'DM Sans',Arial,sans-serif;letter-spacing:4px;padding-left:4px;color:#c7c7c2}
+body header.aact-header .aact-nav-links{display:flex;align-items:center;gap:26px;font:400 14px/1.5 'DM Sans',Arial,sans-serif;letter-spacing:.15px}
+body header.aact-header .aact-nav-right{justify-content:flex-end}
+body header.aact-header a{color:#f5f5f2;text-decoration:none;text-transform:none}
+body header.aact-header .aact-nav-links a{white-space:nowrap;padding:6px 0;border:0;background:transparent;transition:color .2s}
+body header.aact-header .aact-nav-links a:hover,body header.aact-header .aact-mobile-links a:hover{color:#c7c7c2;text-decoration:underline;text-underline-offset:6px}
+body header.aact-header a[aria-current="page"]{text-decoration:underline;text-underline-offset:6px;text-decoration-color:#a5a5a0}
+body header.aact-header .aact-nav-links .aact-nav-cta,body header.aact-header .aact-mobile-links .aact-nav-cta{padding:12px 19px;border:1px solid #d9d9d6;border-radius:3px;background:#d9d9d6;color:#111;font:600 11px/1.5 'DM Sans',Arial,sans-serif;letter-spacing:1px;text-transform:uppercase;white-space:nowrap}
+body header.aact-header .aact-nav-links .aact-nav-cta:hover,body header.aact-header .aact-mobile-links .aact-nav-cta:hover{background:#fff;border-color:#fff;color:#111;text-decoration:none}
+body header.aact-header button.aact-menu{display:none;min-width:72px;min-height:42px;margin:0;padding:9px 16px;border:1px solid #606060;border-radius:3px;background:transparent;color:#f5f5f2;box-shadow:none;font:500 12px/1.5 'DM Sans',Arial,sans-serif;letter-spacing:1px;text-transform:uppercase;cursor:pointer;transform:none}
+body header.aact-header .aact-mobile-links{display:none;margin:0;padding:22px 7% 26px;background:rgba(11,11,11,.96);border:0;border-top:1px solid #343434}
+body header.aact-header .aact-mobile-links[hidden]{display:none!important}
+body header.aact-header a:focus-visible,body header.aact-header button:focus-visible{outline:2px solid #d9d9d6;outline-offset:5px}
+@media(max-width:1000px){body header.aact-header nav.aact-nav{display:flex;justify-content:space-between;min-height:76px;padding:10px 7%;gap:20px}body header.aact-header .aact-nav-links{display:none}body header.aact-header button.aact-menu{display:block}body header.aact-header .aact-brand span{font-size:29px}body header.aact-header .aact-brand small{font-size:8px}body header.aact-header .aact-mobile-links:not([hidden]){display:flex;flex-direction:column;align-items:flex-start;gap:15px}body header.aact-header .aact-mobile-links a{display:block;width:auto;align-self:flex-start;max-width:100%;margin:0;padding:4px 0;border:0;border-radius:0;background:transparent;color:#f5f5f2;font:400 16px/1.6 'DM Sans',Arial,sans-serif;letter-spacing:0;text-transform:none}}
+@media(prefers-reduced-motion:reduce){body header.aact-header a{transition:none}}

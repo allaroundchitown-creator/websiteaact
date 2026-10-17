@@ -1,7 +1,4 @@
 'use strict';
-const menu=document.querySelector('.menu'),links=document.querySelector('.mobile-links');
-menu.addEventListener('click',()=>{const open=menu.getAttribute('aria-expanded')!=='true';menu.setAttribute('aria-expanded',String(open));links.hidden=!open;menu.textContent=open?'Close':'Menu';});
-links.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{links.hidden=true;menu.setAttribute('aria-expanded','false');menu.textContent='Menu';}));
 const hero=document.querySelector('.hero video');if(matchMedia('(prefers-reduced-motion: reduce)').matches){hero.autoplay=false;hero.pause();}
 const form=document.querySelector('#events-inquiry'),statusNote=document.querySelector('#events-status'),phone=form.elements.phone;
 const dateParts=new Intl.DateTimeFormat('en-CA',{timeZone:'America/Chicago',year:'numeric',month:'2-digit',day:'2-digit'}).formatToParts(new Date());
