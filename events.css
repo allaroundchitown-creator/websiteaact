@@ -142,3 +142,9 @@ footer.site-footer{padding:0;background:#242424;color:#fffdf8;border:0}
 .events-page .inquiry-form input,.events-page .inquiry-form select{border-radius:2px}
 @keyframes luxury-arrive{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:translateY(0)}}
 @media(prefers-reduced-motion:reduce){.events-page .hero-content{animation:none}.events-page .button{transition:none}.events-page .button:hover{transform:none}}
+
+/* Real event photography, with original framing preserved. */
+.events-page .event-photo-grid{grid-column:1/-1;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:24px;width:100%}
+.events-page .event-photo-grid figure{margin:0;min-width:0}
+.events-page .event-photo-grid img{display:block;width:100%;height:auto;aspect-ratio:3/2;border:1px solid #393939;border-radius:3px}
+@media(max-width:650px){.events-page .event-photo-grid{grid-template-columns:1fr;gap:20px}}
