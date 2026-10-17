@@ -2,6 +2,3 @@
 
 /* Real portfolio screenshots supplied by AACT Booths. */
 .mini-examples{padding:22px 0 0;gap:16px;align-items:start}.example-thumb{display:block;min-width:0;background:#fffaf8;border:1px solid #dbc5d0;border-radius:6px;overflow:hidden;box-shadow:0 8px 24px #301e2710;transform:rotate(-3deg)}.example-thumb:nth-child(2){transform:rotate(3deg)}.example-thumb img{width:100%;height:auto;aspect-ratio:1365/767;display:block;object-fit:contain;background:#fffaf8}.example-thumb>span{display:block;padding:10px 12px;font-size:7px;letter-spacing:1px;color:#914360}.example-thumb:hover>span{text-decoration:underline;text-underline-offset:3px}.work-screenshot{border:1px solid #dbc5d0;border-radius:6px;overflow:hidden;background:#fffaf8}.work-screenshot img{display:block;width:100%;height:auto;aspect-ratio:1365/767;object-fit:contain}.work-card:hover .work-screenshot{border-color:#914360}@media(max-width:600px){.mini-examples{gap:12px;padding-top:18px}.example-thumb>span{font-size:6px;padding:9px;letter-spacing:.7px}}
-
-/* Photographic camera visual. */
-.camera-drawing .camera-photo{display:block;width:100%;height:auto;aspect-ratio:4/3;object-fit:contain;border-radius:8px}.content-art{padding-top:35px}.art-label{margin-top:22px}@media(max-width:600px){.content-art{padding-top:30px}}
