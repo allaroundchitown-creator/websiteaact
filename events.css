@@ -77,3 +77,39 @@ footer.site-footer{padding:0;background:#242424;color:#fffdf8;border:0}
 .brand img{filter:grayscale(1)}
 /* Event-specific content uses the existing site's neutral visual language. */
 .events-types .section-heading{max-width:730px}.event-type-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:35px 40px}.event-type-grid article{padding:25px 0;border-top:1px solid #d8d1c4}.event-type-grid article>span{font:italic 22px Georgia,serif;color:#80663b}.event-type-grid h3{font:28px/1.2 'Playfair Display',Georgia,serif;margin:15px 0}.event-type-grid p{color:#64615b;font-size:14px;margin-bottom:20px}.event-type-grid a{font-size:12px;color:#6e5b36;text-decoration:underline;text-underline-offset:4px}.events-page .package-card>p:not(.eyebrow):not(.package-price){min-height:55px}.events-page .package-card .button{margin-top:20px}.events-page .booking{scroll-margin-top:20px}.events-page .legal-form-note{color:#64615b}.events-page .site-footer .legal-footer-links{color:#ddd6c8}@media(max-width:850px){.event-type-grid{grid-template-columns:1fr 1fr;gap:25px 30px}}@media(max-width:600px){.event-type-grid{grid-template-columns:1fr;gap:10px}.event-type-grid article{padding:22px 0}.event-type-grid h3{font-size:27px}.events-page .hero-description{max-width:340px;margin:0 auto 30px}.events-page .hero-description br{display:none}.events-page .package-card>p:not(.eyebrow):not(.package-price){min-height:0}}
+
+/* Black and electric blue event palette. */
+.events-page{--pink:#246de6;--ink:#f5f7fc;--paper:#090c12;--line:#2a3445;color-scheme:dark;background:var(--paper);color:var(--ink)}
+.events-page header{background:#090c12;border-color:var(--line)}
+.events-page .nav-side a:not(.nav-book),.events-page .event-navigation .menu{color:var(--ink)}
+.events-page .nav-side a:not(.nav-book)::after{background:#72aaff}
+.events-page .event-navigation .menu{border-color:#46536b;background:transparent}
+.events-page .event-navigation .mobile-links:not([hidden]){background:#090c12;border-color:var(--line)}
+.events-page .nav-book,.events-page .event-navigation .mobile-links a:last-child,.events-page .button.pink,.events-page .button.dark{background:#246de6;border-color:#246de6;color:#fff}
+.events-page .nav-book:hover,.events-page .event-navigation .mobile-links a:last-child:hover,.events-page .button:hover{background:#195ac5;border-color:#195ac5;color:#fff}
+.events-page a:focus-visible,.events-page button:focus-visible{outline-color:#72aaff}
+.events-page .hero{background:#090c12}
+.events-page .hero-shade{background:linear-gradient(180deg,rgba(4,9,18,.45),rgba(4,9,18,.58) 55%,rgba(4,9,18,.72))}
+.events-page h1 em,.events-page h2 em{color:#72aaff}
+.events-page .eyebrow{color:#91bcff}
+.events-page .hero .eyebrow{color:#d4e5ff}
+.events-page .experience-strip{background:#1557b8}
+.events-page .experience-strip strong,.events-page .experience-strip span{color:#fff}
+.events-page .section-heading>p:last-child,.events-page .event-type-grid p,.events-page .package-card>p:not(.eyebrow):not(.package-price),.events-page .package-note,.events-page .steps p,.events-page .booking-copy>p:not(.eyebrow),.events-page .faq-list details p,.events-page .form-note,.events-page .legal-form-note{color:#b4bfd1}
+.events-page .event-type-grid article,.events-page .event-gallery,.events-page .booking-trust,.events-page .package-card ul{border-color:var(--line)}
+.events-page .event-type-grid article>span,.events-page .event-type-grid a,.events-page .steps article>span,.events-page .faq-list summary::after{color:#72aaff}
+.events-page .packages,.events-page .how,.events-page .booking{background:#101622}
+.events-page .package-card{background:#151d2b;border-color:#303d52}
+.events-page .package-card.featured{background:#132747;border-color:#438dff}
+.events-page .inquiry-form input,.events-page .inquiry-form select{background:#090f1b;border-color:#46536b;color:#f5f7fc;accent-color:#438dff}
+.events-page .inquiry-form input::placeholder{color:#a8b5cb;opacity:1}
+.events-page .inquiry-form input:focus,.events-page .inquiry-form select:focus{outline-color:#72aaff}
+.events-page .selected-package{background:#19345c;color:#e0edff}
+.events-page .form-note.error{color:#ff9d9d}
+.events-page .form-note.success{color:#8ce5ad}
+.events-page .final-cta{background:#122647}
+.events-page footer.site-footer{background:#06090f;color:#f5f7fc}
+.events-page .site-footer .footer-wordmark,.events-page .site-footer .footer-links a{color:#f5f7fc}
+.events-page .site-footer .footer-wordmark span,.events-page .site-footer .footer-tagline,.events-page .site-footer .footer-links h3,.events-page .site-footer .footer-links a:hover{color:#91bcff}
+.events-page .site-footer .footer-identity>p:last-child,.events-page .site-footer .footer-bottom,.events-page .site-footer .legal-footer-links{color:#b4bfd1}
+.events-page .site-footer .footer-bottom{border-color:var(--line)}
