@@ -15,4 +15,22 @@
  desktop.addEventListener('change',()=>{if(desktop.matches)close();});
  const path=location.pathname.replace(/\/index\.html$/,'/').replace(/\/$/,'')||'/';
  header.querySelectorAll('a').forEach(link=>{const url=new URL(link.getAttribute('href'),location.origin);if(!url.hash&&url.pathname===path&&!link.classList.contains('aact-brand'))link.setAttribute('aria-current','page');});
+
+ // Keep navigation out of the way while visitors explore the page.
+ let lastScroll=Math.max(0,window.scrollY),scrollFrame=false;
+ function revealHeader(){header.classList.remove('aact-header-hidden');}
+ function updateHeader(){
+  scrollFrame=false;
+  const current=Math.max(0,window.scrollY),delta=current-lastScroll;
+  if(current<90||!panel.hidden||header.contains(document.activeElement)){
+   revealHeader();lastScroll=current;return;
+  }
+  if(Math.abs(delta)<8)return;
+  header.classList.toggle('aact-header-hidden',delta>0);
+  lastScroll=current;
+ }
+ window.addEventListener('scroll',()=>{if(!scrollFrame){scrollFrame=true;requestAnimationFrame(updateHeader);}},{passive:true});
+ header.addEventListener('focusin',revealHeader);
+ window.addEventListener('pageshow',()=>{lastScroll=Math.max(0,window.scrollY);revealHeader();});
+
 })();
