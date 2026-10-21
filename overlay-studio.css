@@ -68,3 +68,21 @@
 .overlay-studio .overlay-caption{position:absolute;top:100%;left:0;width:100%;padding-top:15px;font-size:9px;letter-spacing:2px}
 .overlay-studio .overlay-workspace{padding-bottom:24px}
 @media(max-width:700px){.overlay-studio .overlay-preview-column{max-width:275px;border-radius:42px;padding:7px}.overlay-studio .overlay-preview{border-radius:33px}.overlay-studio .overlay-preview:before{height:22px;top:9px}.overlay-studio .overlay-workspace{gap:56px}.overlay-studio .overlay-banner{padding-bottom:22px}}
+
+/* More compact design controls, especially on phones. */
+.overlay-studio .overlay-controls{padding:24px;max-width:450px}
+.overlay-studio .overlay-controls textarea{min-height:68px;max-height:150px}
+.overlay-studio .overlay-controls textarea,.overlay-studio .overlay-controls input[type="date"]{min-width:0;max-width:100%;box-sizing:border-box;padding:10px 12px;margin-bottom:7px}
+.overlay-studio .overlay-controls input[type="date"]{min-height:44px;width:100%;appearance:none;-webkit-appearance:none}
+.overlay-studio .overlay-controls>label,.overlay-studio legend{margin-bottom:8px;font-size:11px}
+.overlay-studio .overlay-controls>label[for="overlay-event-date"]{margin-top:16px}
+.overlay-studio .overlay-controls fieldset{margin:18px 0;min-width:0}
+.overlay-studio .overlay-font-options span{padding:8px}
+.overlay-studio .overlay-font-options input:checked+span{padding:7px}
+.overlay-studio .overlay-cursive{font-size:26px}
+.overlay-studio .overlay-block{font-size:17px}
+.overlay-studio .overlay-swatch i{width:28px;height:28px}
+.overlay-studio .overlay-swatch{min-width:42px;gap:8px}
+.overlay-studio .overlay-swatches{gap:12px}
+.home-body .overlay-studio .overlay-save{min-height:44px;padding:11px 16px;margin-top:7px}
+@media(max-width:700px){.overlay-studio .overlay-controls{padding:20px 17px;max-width:390px;justify-self:center}.overlay-studio .overlay-controls textarea{min-height:65px}.overlay-studio .overlay-swatches{gap:10px}.overlay-studio .overlay-hint{margin:6px 0;font-size:10px}}
