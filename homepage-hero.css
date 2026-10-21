@@ -1,0 +1,17 @@
+/* Framed AACT identity over the real event footage. */
+.hero .hero-shade{background:rgba(0,0,0,.46)}
+.hero .hero-content{max-width:1440px;padding-top:165px;padding-bottom:145px}
+.hero .hero-brand-frame{display:flex;align-items:stretch;width:min(740px,100%);border:8px solid #fff;margin-bottom:35px;min-height:142px;color:#fff}
+.hero .hero-brand-initial{flex:0 0 119px;display:flex;align-items:center;justify-content:center;background:#fff;color:#080808;font:400 102px/1 'Bodoni Moda',Didot,'Times New Roman',serif;padding:0 8px 7px 0}
+.hero .hero-brand-name{flex:1;min-width:0;display:flex;align-items:center;justify-content:center;padding:3px 18px 12px;font:400 clamp(48px,7.1vw,102px)/1 'Bodoni Moda',Didot,'Times New Roman',serif;letter-spacing:-.045em;white-space:nowrap}
+.hero h1{max-width:1150px;font:400 clamp(42px,5.2vw,75px)/1.2 'Bodoni Moda',Didot,'Times New Roman',serif;text-transform:uppercase;letter-spacing:-.035em;margin:0}
+.hero .hero-description{font-size:14px;line-height:1.7;letter-spacing:.35px;margin:17px 0 28px;color:#ecece5;max-width:650px}
+.hero .hero-actions{display:flex;flex-wrap:wrap;gap:12px}
+.hero .hero-actions .button{min-width:175px;min-height:48px;border-radius:0;padding:13px 24px;font-size:12px;font-weight:400;letter-spacing:1.2px;border:1px solid #fff;line-height:1.5}
+.hero .hero-actions .hero-services{background:#fff;color:#191919}
+.hero .hero-actions .hero-services:hover{background:#e7e7e1;border-color:#e7e7e1}
+.hero .hero-actions .hero-book{background:transparent;color:#fff}
+.hero .hero-actions .hero-book:hover{background:#fff;color:#191919}
+@media(max-width:1000px){.hero .hero-brand-frame{width:min(660px,100%);border-width:7px;min-height:122px;margin-bottom:28px}.hero .hero-brand-initial{flex-basis:100px;font-size:88px}.hero .hero-brand-name{font-size:clamp(48px,8.5vw,85px);padding-bottom:10px}.hero h1{font-size:clamp(35px,5.3vw,58px)}}
+@media(max-width:650px){.hero .hero-content{padding-top:140px;padding-bottom:135px}.hero .hero-brand-frame{border-width:5px;min-height:82px;width:100%;margin-bottom:25px}.hero .hero-brand-initial{flex-basis:63px;font-size:62px;padding:0 5px 5px 0}.hero .hero-brand-name{font-size:clamp(38px,10.6vw,66px);padding:3px 8px 7px;letter-spacing:-.05em}.hero h1{font-size:clamp(27px,7vw,44px);line-height:1.25;letter-spacing:-.04em;white-space:nowrap}.hero .hero-description{font-size:11px;letter-spacing:0;margin:15px 0 25px}.hero .hero-actions{gap:10px;flex-wrap:nowrap}.hero .hero-actions .button{flex:1;min-width:0;min-height:45px;padding:12px 10px;font-size:10px;letter-spacing:.8px}}
+@media(max-width:360px){.hero .hero-brand-initial{flex-basis:54px;font-size:54px}.hero .hero-brand-frame{min-height:73px}.hero .hero-brand-name{font-size:35px}.hero h1{font-size:25px}}
