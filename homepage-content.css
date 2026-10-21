@@ -1,0 +1,61 @@
+/* The homepage content continues the hero's dark, photographic direction. */
+.home-body{--ink:#f3f3ed;--muted:#b3b3aa;--line:#393935;background:#111;color:var(--ink);color-scheme:dark}
+.home-body .section{padding-block:82px}
+.home-body h2{font-weight:500;letter-spacing:-.04em;line-height:1.15}
+.home-body .home-photos{grid-template-columns:1.45fr 1fr;gap:30px;padding-top:42px;padding-bottom:26px}
+.home-body .home-photos figure:nth-child(2){padding-top:74px}
+.home-body .home-photos img{height:460px;object-fit:cover;object-position:60% center;aspect-ratio:auto;border-radius:0}
+.home-body .home-photos figure:nth-child(2) img{height:386px;object-position:65% center}
+.home-body .home-photos figcaption{color:#a7a79f;font-size:11px;margin-top:13px}
+.home-body .events-types{display:grid;grid-template-columns:220px 1fr;gap:30px;padding-top:34px;padding-bottom:50px;border:0}
+.home-body .events-types h2{font-size:21px;line-height:1.5;letter-spacing:-.02em}
+.home-body .event-links{display:flex;flex-wrap:wrap;gap:15px 27px;align-items:center}
+.home-body .event-links a{display:inline-flex;gap:9px;font-size:13px;line-height:1.6;color:#d3d3ca;border-bottom:1px solid #64645b;padding-bottom:5px}
+.home-body .event-links a:hover{color:#fff;border-color:#fff}
+.home-body .event-links a span{color:#939389}
+.home-body .packages{background:#111;border-block:1px solid #363631}
+.home-body .packages .section-heading{max-width:800px;margin-bottom:38px}
+.home-body .packages .section-heading>p:last-child{font-size:14px;max-width:640px;color:#b3b3aa}
+.home-body .package-grid{display:block;max-width:none}
+.home-body .package-card,.home-body .package-card.featured{display:grid;grid-template-columns:115px 1fr 110px 145px;gap:25px;align-items:center;background:transparent;border:0;border-top:1px solid #4a4a42;border-radius:0;padding:30px 0}
+.home-body .package-card:last-child{border-bottom:1px solid #4a4a42}
+.home-body .package-card h3{grid-column:1;grid-row:1;font-size:23px;margin:0}
+.home-body .package-card .package-price{grid-column:3;grid-row:1;font-size:44px;line-height:1.2;margin:0;letter-spacing:-1.8px;text-align:right}
+.home-body .package-card>p:not(.package-price){grid-column:2;grid-row:1;max-width:310px;margin:0;font-size:13px;color:#b3b3aa;line-height:1.8}
+.home-body .package-card .button{grid-column:4;grid-row:1;justify-self:end;min-width:0;min-height:44px;margin:0;padding:10px 0;background:transparent;border:0;border-bottom:1px solid #a4a49a;border-radius:0;color:#e7e7dd;font-size:13px}
+.home-body .package-card .button:hover{color:#fff;border-color:#fff}
+.home-body .package-note{max-width:850px;color:#aaa99f;font-size:12px;margin-top:27px}
+.home-body .package-note strong{color:#dddcd2;font-weight:400}
+.home-body .event-gallery{background:#111;grid-template-columns:1fr 1.1fr;gap:100px;padding-block:90px;border-color:#363631}
+.home-body .event-gallery .section-heading{grid-column:2;grid-row:1;max-width:460px;justify-self:start}
+.home-body .event-gallery .eyebrow{font-size:10px;letter-spacing:1.4px;color:#aaa99e;margin-bottom:23px}
+.home-body .event-gallery .section-heading>p:last-of-type{font-size:14px;color:#b3b3aa;margin-top:24px;margin-bottom:30px;line-height:1.8}
+.home-body .event-gallery .reel-grid{grid-column:1;grid-row:1;max-width:350px;justify-self:center}
+.home-body .event-gallery .reel-grid video{border-radius:0}
+.home-body .button.dark{background:#e8e8df;color:#171717;border-color:#e8e8df;border-radius:2px}
+.home-body .button.dark:hover{background:#fff;border-color:#fff}
+.home-body .booking{background:#171716;gap:90px;border-bottom:1px solid #363631}
+.home-body .booking-copy h2{max-width:390px;font-size:48px}
+.home-body .booking-copy>p:not(.booking-contact){color:#b3b3aa;font-size:14px;line-height:1.8;max-width:360px}
+.home-body .booking-trust{border-color:#494940;max-width:350px;margin-top:34px;padding-top:25px}
+.home-body .booking-trust strong{font-size:16px;font-weight:400}
+.home-body .booking-trust span{color:#aaa99f;font-size:12px}
+.home-body .booking-contact{color:#c5c5bb;font-size:12px}
+.home-body .inquiry-form{background:transparent;padding:0;border:0;border-radius:0;gap:22px}
+.home-body .inquiry-form label{color:#d4d4cb;font-size:12px;font-weight:400;gap:9px}
+.home-body .inquiry-form input,.home-body .inquiry-form select{background:#212120;color:#f3f3ed;border-color:#5b5b50;border-radius:1px;min-height:50px}
+.home-body .inquiry-form input::placeholder{color:#a7a79b}
+.home-body .inquiry-form input:focus,.home-body .inquiry-form select:focus{outline-color:#d2d2c4}
+.home-body .form-note{color:#b2b2a6;font-size:12px}
+.home-body .form-note.success{color:#a9dbaf}
+.home-body .form-note.error{color:#ffb2b2}
+.home-body .selected-package{background:#30302b;color:#e5e5db}
+.home-body .inquiry-form .legal-form-note{color:#a2a296;font-size:10px}
+.home-body .faq{background:#111;border:0;padding-block:65px;grid-template-columns:.8fr 1.2fr;gap:70px}
+.home-body .faq h2{font-size:30px;max-width:260px}
+.home-body .faq-list details{border-color:#3c3c35}
+.home-body .faq-list summary{font-size:14px;font-weight:400;padding-block:21px}
+.home-body .faq-list summary:after{color:#b8b8aa}
+.home-body .faq-list details p{color:#aaa99e;font-size:13px;line-height:1.9}
+@media(max-width:1000px){.home-body .section{padding-block:62px}.home-body .home-photos{padding-top:30px;padding-bottom:20px;gap:22px}.home-body .home-photos img{height:380px}.home-body .home-photos figure:nth-child(2){padding-top:60px}.home-body .home-photos figure:nth-child(2) img{height:320px}.home-body .events-types{grid-template-columns:170px 1fr;padding-top:25px;padding-bottom:40px;gap:25px}.home-body .event-links{gap:14px 20px}.home-body .package-card,.home-body .package-card.featured{grid-template-columns:90px 1fr 90px 120px;gap:18px}.home-body .package-card .package-price{font-size:38px}.home-body .event-gallery,.home-body .booking{gap:50px}.home-body .booking-copy h2{font-size:40px}.home-body .faq{gap:40px}}
+@media(max-width:650px){.home-body .section{padding-block:48px}.home-body .home-photos{grid-template-columns:1fr;gap:28px;padding-top:28px;padding-bottom:20px}.home-body .home-photos img{height:auto;aspect-ratio:4/3;object-position:60% center}.home-body .home-photos figure:nth-child(2){padding-top:0;margin-left:20%}.home-body .home-photos figure:nth-child(2) img{height:auto;aspect-ratio:1/1;object-position:65% center}.home-body .home-photos figcaption{font-size:10px;margin-top:10px}.home-body .events-types{display:block;padding-top:20px;padding-bottom:37px}.home-body .events-types h2{font-size:18px;margin-bottom:19px}.home-body .event-links{gap:17px 20px}.home-body .event-links a{font-size:12px;gap:7px}.home-body .packages .section-heading{margin-bottom:27px}.home-body .packages .section-heading>p:last-child{font-size:13px;line-height:1.8}.home-body .package-card,.home-body .package-card.featured{grid-template-columns:1fr auto;gap:15px 24px;padding:25px 0}.home-body .package-card h3{grid-column:1;grid-row:1;font-size:21px}.home-body .package-card .package-price{grid-column:2;grid-row:1;font-size:36px}.home-body .package-card>p:not(.package-price){grid-column:1/-1;grid-row:2;max-width:290px;font-size:12px}.home-body .package-card .button{grid-column:1;grid-row:3;justify-self:start;width:auto;min-width:0;font-size:12px;min-height:40px;padding:7px 0}.home-body .package-note{font-size:11px;line-height:1.9;margin-top:24px}.home-body .event-gallery{grid-template-columns:1fr;gap:29px;padding-block:50px}.home-body .event-gallery .section-heading{grid-column:1;grid-row:1;max-width:390px}.home-body .event-gallery .reel-grid{grid-column:1;grid-row:2;max-width:285px;justify-self:start;margin-left:12%}.home-body .event-gallery .section-heading>p:last-of-type{font-size:13px;margin-top:18px;margin-bottom:24px}.home-body .event-gallery .eyebrow{font-size:9px;margin-bottom:16px}.home-body .booking{grid-template-columns:1fr;gap:34px}.home-body .booking-copy h2{font-size:36px;max-width:340px}.home-body .booking-copy>p:not(.booking-contact){font-size:13px;margin-top:18px}.home-body .booking-trust{margin-top:24px;padding-top:20px}.home-body .inquiry-form{padding:0;gap:20px}.home-body .faq{grid-template-columns:1fr;gap:24px;padding-block:40px}.home-body .faq h2{font-size:27px;max-width:100%}.home-body .faq-list summary{font-size:13px}.home-body .faq-list details p{font-size:12px}}
