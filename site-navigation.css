@@ -31,3 +31,9 @@ body header.aact-header button.aact-menu{border-color:#ffffff80;background:trans
 body header.aact-header .aact-mobile-links{margin:8px 6% 0;padding:24px;background:#111f;border:1px solid #ffffff25}
 #hero-toggle,.event-strip-toggle,.overlay-playback,button[aria-label^="Pause"],button[aria-label^="pause"]{display:none!important}
 @media(max-width:1000px){body header.aact-header,body.events-page header.aact-header{top:8px}body header.aact-header nav.aact-nav{min-height:65px}}
+
+body header.aact-header{transition:transform .25s ease,opacity .25s ease;will-change:transform}
+body header.aact-header.aact-header-hidden{transform:translateY(calc(-100% - 24px));opacity:0;pointer-events:none}
+body header.aact-header:focus-within{transform:none;opacity:1;pointer-events:auto}
+#design-your-overlay,#packages,#book{scroll-margin-top:110px}
+@media(prefers-reduced-motion:reduce){body header.aact-header{transition:none}}
