@@ -59,3 +59,20 @@
 .home-body .faq-list details p{color:#aaa99e;font-size:13px;line-height:1.9}
 @media(max-width:1000px){.home-body .section{padding-block:62px}.home-body .home-photos{padding-top:30px;padding-bottom:20px;gap:22px}.home-body .home-photos img{height:380px}.home-body .home-photos figure:nth-child(2){padding-top:60px}.home-body .home-photos figure:nth-child(2) img{height:320px}.home-body .events-types{grid-template-columns:170px 1fr;padding-top:25px;padding-bottom:40px;gap:25px}.home-body .event-links{gap:14px 20px}.home-body .package-card,.home-body .package-card.featured{grid-template-columns:90px 1fr 90px 120px;gap:18px}.home-body .package-card .package-price{font-size:38px}.home-body .event-gallery,.home-body .booking{gap:50px}.home-body .booking-copy h2{font-size:40px}.home-body .faq{gap:40px}}
 @media(max-width:650px){.home-body .section{padding-block:48px}.home-body .home-photos{grid-template-columns:1fr;gap:28px;padding-top:28px;padding-bottom:20px}.home-body .home-photos img{height:auto;aspect-ratio:4/3;object-position:60% center}.home-body .home-photos figure:nth-child(2){padding-top:0;margin-left:20%}.home-body .home-photos figure:nth-child(2) img{height:auto;aspect-ratio:1/1;object-position:65% center}.home-body .home-photos figcaption{font-size:10px;margin-top:10px}.home-body .events-types{display:block;padding-top:20px;padding-bottom:37px}.home-body .events-types h2{font-size:18px;margin-bottom:19px}.home-body .event-links{gap:17px 20px}.home-body .event-links a{font-size:12px;gap:7px}.home-body .packages .section-heading{margin-bottom:27px}.home-body .packages .section-heading>p:last-child{font-size:13px;line-height:1.8}.home-body .package-card,.home-body .package-card.featured{grid-template-columns:1fr auto;gap:15px 24px;padding:25px 0}.home-body .package-card h3{grid-column:1;grid-row:1;font-size:21px}.home-body .package-card .package-price{grid-column:2;grid-row:1;font-size:36px}.home-body .package-card>p:not(.package-price){grid-column:1/-1;grid-row:2;max-width:290px;font-size:12px}.home-body .package-card .button{grid-column:1;grid-row:3;justify-self:start;width:auto;min-width:0;font-size:12px;min-height:40px;padding:7px 0}.home-body .package-note{font-size:11px;line-height:1.9;margin-top:24px}.home-body .event-gallery{grid-template-columns:1fr;gap:29px;padding-block:50px}.home-body .event-gallery .section-heading{grid-column:1;grid-row:1;max-width:390px}.home-body .event-gallery .reel-grid{grid-column:1;grid-row:2;max-width:285px;justify-self:start;margin-left:12%}.home-body .event-gallery .section-heading>p:last-of-type{font-size:13px;margin-top:18px;margin-bottom:24px}.home-body .event-gallery .eyebrow{font-size:9px;margin-bottom:16px}.home-body .booking{grid-template-columns:1fr;gap:34px}.home-body .booking-copy h2{font-size:36px;max-width:340px}.home-body .booking-copy>p:not(.booking-contact){font-size:13px;margin-top:18px}.home-body .booking-trust{margin-top:24px;padding-top:20px}.home-body .inquiry-form{padding:0;gap:20px}.home-body .faq{grid-template-columns:1fr;gap:24px;padding-block:40px}.home-body .faq h2{font-size:27px;max-width:100%}.home-body .faq-list summary{font-size:13px}.home-body .faq-list details p{font-size:12px}}
+
+/* Keep the homepage focused on headings, visuals, and controls. */
+.events-page .hero-description,
+.events-page .hero-bottom,
+.events-page .event-strip-top,
+.home-body .eyebrow,
+.home-body .overlay-intro>p,
+.home-body .overlay-caption,
+.home-body .overlay-hint,
+.home-body .packages .section-heading>p,
+.home-body .package-card>p:not(.package-price),
+.home-body .booking-copy>p:not(.booking-contact),
+.home-body .booking-trust,
+.events-page .footer-tagline{display:none!important}
+.home-body .overlay-intro{margin-bottom:30px}
+.home-body .overlay-workspace{padding-bottom:0}
+@media(max-width:700px){.home-body .overlay-workspace{gap:28px}.home-body .overlay-controls>label[for="overlay-event-date"]{margin-top:12px}}
