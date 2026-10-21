@@ -20,3 +20,14 @@ body header.aact-header .aact-mobile-links[hidden]{display:none!important}
 body header.aact-header a:focus-visible,body header.aact-header button:focus-visible{outline:2px solid #d9d9d6;outline-offset:5px}
 @media(max-width:1000px){body header.aact-header nav.aact-nav{display:flex;justify-content:space-between;min-height:76px;padding:10px 7%;gap:20px}body header.aact-header .aact-nav-links{display:none}body header.aact-header button.aact-menu{display:block}body header.aact-header .aact-brand span{font-size:29px}body header.aact-header .aact-brand small{font-size:8px}body header.aact-header .aact-mobile-links:not([hidden]){display:flex;flex-direction:column;align-items:flex-start;gap:15px}body header.aact-header .aact-mobile-links a{display:block;width:auto;align-self:flex-start;max-width:100%;margin:0;padding:4px 0;border:0;border-radius:0;background:transparent;color:#f5f5f2;font:400 16px/1.6 'DM Sans',Arial,sans-serif;letter-spacing:0;text-transform:none}}
 @media(prefers-reduced-motion:reduce){body header.aact-header a{transition:none}}
+
+/* Floating transparent navigation shared by every page. */
+body header.aact-header,body.events-page header.aact-header{position:fixed;top:14px;left:0;right:0;width:100%;background:transparent;border:0;box-shadow:none;backdrop-filter:none;-webkit-backdrop-filter:none}
+body header.aact-header nav.aact-nav{min-height:76px;padding-block:8px}
+body header.aact-header .aact-nav-links a,body header.aact-header .aact-brand,body header.aact-header button.aact-menu{text-shadow:0 1px 12px #000c}
+body header.aact-header .aact-nav-links .aact-nav-cta{background:transparent;color:#fff;border:1px solid #ffffffb0;border-radius:0;text-shadow:0 1px 10px #0008}
+body header.aact-header .aact-nav-links .aact-nav-cta:hover{background:#fff;color:#111;text-shadow:none}
+body header.aact-header button.aact-menu{border-color:#ffffff80;background:transparent}
+body header.aact-header .aact-mobile-links{margin:8px 6% 0;padding:24px;background:#111f;border:1px solid #ffffff25}
+#hero-toggle,.event-strip-toggle,.overlay-playback,button[aria-label^="Pause"],button[aria-label^="pause"]{display:none!important}
+@media(max-width:1000px){body header.aact-header,body.events-page header.aact-header{top:8px}body header.aact-header nav.aact-nav{min-height:65px}}
