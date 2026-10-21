@@ -1,5 +1,5 @@
 /* Framed AACT identity over the real event footage. */
-.hero>video{object-position:center 35%}
+.hero>video{object-position:65% 35%}
 .hero .hero-shade{background:rgba(0,0,0,.46)}
 .hero .hero-content{max-width:1440px;padding-top:165px;padding-bottom:145px}
 .hero .hero-brand-frame{display:flex;align-items:stretch;width:min(740px,100%);border:8px solid #fff;margin-bottom:35px;min-height:142px;color:#fff}
