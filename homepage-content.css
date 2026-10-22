@@ -152,3 +152,14 @@
 .home-promotion .home-promotion-cta{min-height:54px;padding:17px 30px;background:#211d17;border:1px solid #211d17;color:#fff2df;font-size:13px;font-weight:600;letter-spacing:.65px;box-shadow:0 6px 18px #5b3d181c}
 .home-promotion .home-promotion-cta:hover{background:#493721;border-color:#493721}
 @media(max-width:650px){.home-promotion{padding-top:30px;padding-bottom:30px;text-align:center}.home-promotion-label{margin-bottom:15px;font-size:9px}.home-promotion h2{font-size:36px;line-height:1.16}.home-promotion h2 em{font-size:.73em;max-width:300px}.home-promotion-action{margin-top:22px}.home-promotion .home-promotion-cta{width:100%;max-width:340px;min-height:52px;margin:0;font-size:12px}}
+
+/* Compact monochrome offer beneath the hero. */
+.home-promotion{display:flex;justify-content:center;align-items:center;gap:32px;padding:24px 7%;background:#080808;color:#fff;border-top:1px solid #ffffff35;border-bottom:1px solid #ffffff35}
+.home-promotion-copy{max-width:470px}
+.home-promotion-label{margin:0 0 8px;padding:0;background:transparent;color:#bdbdbd;font:500 9px/1.4 'DM Sans',Arial,sans-serif;letter-spacing:1.8px}
+.home-promotion h2{margin:0;font:400 clamp(25px,2.8vw,36px)/1.15 'Bodoni Moda',Georgia,serif;letter-spacing:-.035em;color:#fff}
+.home-promotion p{margin:7px 0 0;font:400 12px/1.5 'DM Sans',Arial,sans-serif;color:#c4c4c4}
+.home-promotion-action{margin:0;flex-shrink:0}
+.home-promotion .home-promotion-cta{margin:0;min-height:44px;min-width:0;width:auto;max-width:none;padding:12px 20px;background:#fff;color:#111;border:1px solid #fff;border-radius:0;box-shadow:none;font-size:11px;letter-spacing:.4px}
+.home-promotion .home-promotion-cta:hover{background:#dedede;color:#111;border-color:#dedede}
+@media(max-width:650px){.home-promotion{display:flex;flex-direction:column;gap:15px;padding:21px 7%;text-align:center}.home-promotion h2{font-size:29px}.home-promotion-label{font-size:9px;margin-bottom:7px}.home-promotion p{font-size:11px;margin-top:6px}.home-promotion-action{margin:0}.home-promotion .home-promotion-cta{margin:0;min-height:43px;max-width:none;width:auto;padding:12px 24px;font-size:11px}}
