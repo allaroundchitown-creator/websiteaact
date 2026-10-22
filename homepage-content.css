@@ -142,3 +142,13 @@
 .home-promotion-cta{display:inline-flex;align-items:center;justify-content:center;flex-shrink:0;min-height:45px;padding:12px 24px;border:1px solid #24211b;background:transparent;color:#191815;font:500 12px/1.5 'DM Sans',Arial,sans-serif;letter-spacing:.6px;border-radius:2px}
 .home-promotion-cta:hover{background:#24211b;color:#f3ece0}
 @media(max-width:650px){.home-promotion{padding:25px 7%;display:block;text-align:center}.home-promotion h2{font-size:28px}.home-promotion p{font-size:12px}.home-promotion-cta{margin-top:17px;min-width:190px}}
+
+/* High-contrast offer with a clear same-day call to action. */
+.home-promotion{position:relative;padding-top:40px;padding-bottom:40px;background:#ebd7b6;color:#171611;border-top:4px solid #b69158;border-bottom:4px solid #b69158;gap:40px}
+.home-promotion-label{display:inline-block;padding:6px 12px;margin-bottom:16px;background:#242019;color:#f6e9d3;font:600 10px/1.5 'DM Sans',Arial,sans-serif;letter-spacing:2px}
+.home-promotion h2{font-size:clamp(30px,3.7vw,49px);line-height:1.12;margin:0;max-width:780px}
+.home-promotion h2 em{display:inline-block;font:inherit;font-style:italic;color:#654517;font-size:.78em;margin-top:7px}
+.home-promotion-action{flex-shrink:0}
+.home-promotion .home-promotion-cta{min-height:54px;padding:17px 30px;background:#211d17;border:1px solid #211d17;color:#fff2df;font-size:13px;font-weight:600;letter-spacing:.65px;box-shadow:0 6px 18px #5b3d181c}
+.home-promotion .home-promotion-cta:hover{background:#493721;border-color:#493721}
+@media(max-width:650px){.home-promotion{padding-top:30px;padding-bottom:30px;text-align:center}.home-promotion-label{margin-bottom:15px;font-size:9px}.home-promotion h2{font-size:36px;line-height:1.16}.home-promotion h2 em{font-size:.73em;max-width:300px}.home-promotion-action{margin-top:22px}.home-promotion .home-promotion-cta{width:100%;max-width:340px;min-height:52px;margin:0;font-size:12px}}
