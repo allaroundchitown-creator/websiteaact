@@ -112,5 +112,8 @@
 .overlay-studio .overlay-banner .overlay-date{flex:0 0 auto;font-size:4cqw;line-height:1.2;letter-spacing:.12em}
 
 
-/* Raise the complete video within the phone screen. */
-.overlay-studio .overlay-preview video{object-position:center 12%}
+
+
+/* Fill the phone behind the uncropped clip and reserve space for its overlay. */
+.overlay-studio .overlay-video-backdrop{position:absolute;inset:-20px;background:#171412 url("/overlay-preview.webp") center/cover no-repeat;filter:blur(22px) brightness(.65);transform:scale(1.08);pointer-events:none}
+.overlay-studio .overlay-preview video{position:relative;z-index:1;width:100%;height:87%;object-fit:contain;object-position:center 20%}
