@@ -50,10 +50,11 @@ studio.querySelector('.overlay-save').addEventListener('click',()=>{
  if(!copy.value.trim()){copy.focus();copy.setCustomValidity('Add your overlay text first.');copy.reportValidity();return;}
  if(!date.reportValidity())return;
  const d=design();attach(d);
- let persisted=true;try{localStorage.setItem(key,JSON.stringify(d));}catch{persisted=false;}
- studio.querySelector('.overlay-save-status').textContent=persisted?'Design saved. Add your event details below.':'Design attached to the form. Add your event details below.';
- location.hash='book';form.scrollIntoView({behavior:matchMedia('(prefers-reduced-motion: reduce)').matches?'auto':'smooth',block:'start'});
- form.elements.firstName.focus({preventScroll:true});
+ const json=JSON.stringify(d);
+ try{localStorage.setItem(key,json);}catch{}
+ try{sessionStorage.setItem(key,json);}catch{}
+ studio.querySelector('.overlay-save-status').textContent='Opening your booking form…';
+ location.assign('/book#overlay='+encodeURIComponent(json));
 });
 copy.addEventListener('input',()=>copy.setCustomValidity(''));
 form.addEventListener('submit',()=>{if(saved)attach({...saved,date:form.elements.date.value});},true);
