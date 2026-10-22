@@ -222,3 +222,8 @@
 .booking-invite-button:hover svg{transform:translateX(4px)}
 @media(max-width:650px){.home-body .booking.booking-invite-scenic{min-height:410px;padding:48px 26px;align-items:flex-start;justify-content:center}.booking-invite-scenic .booking-invite-photo{width:100%;object-position:center 30%;opacity:.65}.booking-invite-scenic::before{background:linear-gradient(90deg,#080808e8,#08080888),linear-gradient(0deg,#08080866,transparent)}.booking-invite-label{font-size:9px;letter-spacing:2px;margin-bottom:22px}.home-body .booking-invite-scenic h2{font-size:46px;margin-bottom:28px}.home-body .booking-invite-scenic .booking-invite-button{min-width:190px}}
 @media(prefers-reduced-motion:reduce){.booking-invite-button svg{transition:none}}
+
+/* Center the closing booking invitation. */
+.home-body .booking.booking-invite-scenic{justify-content:center;text-align:center}
+.booking-invite-scenic .booking-invite-content{width:100%;margin-inline:auto;text-align:center}
+.home-body .booking-invite-scenic .booking-invite-button{margin-inline:auto}
