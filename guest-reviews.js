@@ -14,6 +14,8 @@ track.addEventListener('focusout',()=>{focused=false;});
 track.addEventListener('touchstart',pause,{passive:true});
 track.addEventListener('wheel',pause,{passive:true});
 track.addEventListener('keydown',pause);
+document.querySelector('.review-next').addEventListener('click',()=>{pause();const card=track.children[0];track.scrollBy({left:card.getBoundingClientRect().width+parseFloat(getComputedStyle(track).gap),behavior:reduced.matches?'auto':'smooth'});});
+document.querySelector('.review-previous').addEventListener('click',()=>{pause();const card=track.children[0];if(track.scrollLeft<1)track.scrollLeft=track.children[cards.length].offsetLeft-track.children[0].offsetLeft;track.scrollBy({left:-(card.getBoundingClientRect().width+parseFloat(getComputedStyle(track).gap)),behavior:reduced.matches?'auto':'smooth'});});
 if('IntersectionObserver' in window)new IntersectionObserver(entries=>{visible=entries[0].isIntersecting;}).observe(track);else visible=true;
 function frame(now){
 const delta=last?Math.min(now-last,64):0;last=now;
