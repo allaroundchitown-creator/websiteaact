@@ -195,3 +195,16 @@
 .home-body .package-experiences .package-card.featured{border-color:#ffffff;background:#211e19}
 .package-experiences .package-value{display:block;color:#ffffff;font-size:13px;line-height:1.5;margin:0 0 16px}
 .package-experiences .package-upgrade{display:block;color:#ffffff;font-size:10px;letter-spacing:1.8px;margin:0 0 12px}
+
+/* Compact package cards with all inclusions visible. */
+.home-body .package-experiences .package-grid{max-width:840px;gap:20px}
+.package-experiences .package-photo{aspect-ratio:16/9}
+.package-experiences .package-details{padding:20px}
+.home-body .package-experiences .package-card h3{font-size:30px;margin-bottom:10px}
+.package-experiences .package-cost{font-size:30px}
+.package-experiences .package-value{font-size:12px;margin-bottom:12px}
+.package-experiences .package-upgrade{font-size:9px;margin-bottom:9px;letter-spacing:1.3px}
+.package-experiences .package-inclusions{padding:12px 0;margin:14px 0 6px}
+.package-experiences .package-inclusions li{font-size:12px;line-height:1.45;padding:3px 0}
+.home-body .package-experiences .package-card .button{min-height:42px;padding:10px 12px;font-size:11px}
+@media(max-width:650px){.home-body .package-experiences .package-grid{max-width:330px;gap:20px}.package-experiences .package-photo{aspect-ratio:16/10}.package-experiences .package-details{padding:18px}.home-body .package-experiences .package-card h3{font-size:28px}}
