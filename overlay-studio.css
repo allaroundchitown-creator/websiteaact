@@ -110,3 +110,7 @@
 .overlay-studio .overlay-banner .overlay-title{flex:0 0 auto;min-width:0;font-size:10cqw;line-height:1.1;overflow-wrap:anywhere}
 .overlay-studio .overlay-banner[data-font="block"] .overlay-title{font-size:7cqw;line-height:1.15}
 .overlay-studio .overlay-banner .overlay-date{flex:0 0 auto;font-size:4cqw;line-height:1.2;letter-spacing:.12em}
+
+
+/* Raise the complete video within the phone screen. */
+.overlay-studio .overlay-preview video{object-position:center 12%}
