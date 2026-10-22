@@ -4,3 +4,9 @@
 .guest-reviews-grid::-webkit-scrollbar{display:none}
 .guest-reviews-grid .guest-review{flex:0 0 340px;background:#1b1a18;border:1px solid #ffffff20;border-top:1px solid #a28e6e;padding:27px;min-height:280px;border-radius:4px}
 @media(max-width:700px){.home-body .guest-reviews-grid{gap:16px;max-width:100%}.guest-reviews-grid .guest-review{flex-basis:85%;min-height:265px;padding:24px}}
+
+.guest-review-rating{font:400 10px/1.6 'DM Sans',Arial,sans-serif;color:#dbc8ad;letter-spacing:1px;margin-bottom:20px}
+.guest-reviews-grid .guest-review{flex-basis:360px;min-height:300px}
+.guest-reviews-grid .guest-review blockquote{font-size:17px;line-height:1.75}
+.guest-reviews-source{display:block;width:max-content;max-width:100%;margin:27px auto 0;padding-bottom:5px;border-bottom:1px solid #a28e6e;color:#dbc8ad;font:400 12px/1.6 'DM Sans',Arial,sans-serif}
+@media(max-width:700px){.guest-reviews-grid .guest-review{flex-basis:88%}.guest-reviews-grid .guest-review blockquote{font-size:16px}}
