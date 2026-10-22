@@ -116,4 +116,4 @@
 
 /* Fill the phone behind the uncropped clip and reserve space for its overlay. */
 .overlay-studio .overlay-video-backdrop{position:absolute;inset:-20px;background:#171412 url("/overlay-preview.webp") center/cover no-repeat;filter:blur(22px) brightness(.65);transform:scale(1.08);pointer-events:none}
-.overlay-studio .overlay-preview video{position:relative;z-index:1;width:100%;height:87%;object-fit:contain;object-position:center 20%}
+.overlay-studio .overlay-preview video{position:relative;z-index:1;width:100%;height:87%;object-fit:contain;object-position:center center}
