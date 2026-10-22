@@ -111,7 +111,7 @@
   grid-column: 1;
   grid-row: 2;
   padding: 26px;
-  border: 1px solid #d7be8a;
+  border: 1px solid #ffffff;
   border-radius: 12px;
   background: #faf7f0;
   box-shadow: 0 14px 40px rgba(54, 43, 24, .08);
@@ -149,7 +149,7 @@
   width: 100%;
   height: 49px;
   padding: 0 13px;
-  border: 1px solid #c9c0b0;
+  border: 1px solid #ffffff;
   border-radius: 4px;
   background: #fff;
   color: #202020;
@@ -158,9 +158,9 @@
 
 .hero-form-card input:focus,
 .hero-form-card select:focus {
-  outline: 2px solid #d7be8a;
+  outline: 2px solid #ffffff;
   outline-offset: 1px;
-  border-color: #9a7538;
+  border-color: #ffffff;
 }
 
 .hero-form-card button {
@@ -173,7 +173,7 @@
 
 .hero-form-card .form-note {
   margin: 12px 0 0;
-  color: #6f685d;
+  color: #ffffff;
   font-size: 12px;
   line-height: 1.5;
   text-align: center;

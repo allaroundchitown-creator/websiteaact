@@ -1,7 +1,7 @@
 .site-header.editorial-nav {
   height: 96px;
   background: #faf7f0 !important;
-  border-bottom: 2px solid #d7be8a;
+  border-bottom: 2px solid #ffffff;
   box-shadow: 0 5px 22px rgba(32, 32, 32, 0.05);
 }
 
@@ -26,12 +26,12 @@
 }
 
 .nav-wordmark-main b {
-  color: #9a7538;
+  color: #ffffff;
 }
 
 .nav-wordmark-tagline {
   margin-top: 8px;
-  color: #6f685d;
+  color: #ffffff;
   font-size: 9px;
   font-weight: 800;
   letter-spacing: 0.21em;
@@ -58,7 +58,7 @@
   bottom: 22px;
   left: 0;
   height: 2px;
-  background: #9a7538;
+  background: #ffffff;
   transition: right 0.2s ease;
 }
 
@@ -68,7 +68,7 @@
 }
 
 .editorial-nav nav .nav-book-link {
-  color: #9a7538;
+  color: #ffffff;
   font-weight: 800;
 }
 
@@ -78,13 +78,13 @@
 
 .editorial-nav .header-button {
   min-height: 48px;
-  border-color: #9a7538;
+  border-color: #ffffff;
   background: transparent;
   color: #202020;
 }
 
 .editorial-nav .header-button:hover {
-  background: #d7be8a;
+  background: #ffffff;
 }
 
 @media (max-width: 760px) {

@@ -1,24 +1,24 @@
 @import url('https://fonts.googleapis.com/css2?family=Bodoni+Moda:wght@400;500&family=DM+Sans:wght@400;500;600&display=swap');
 /* Shared AACT visual foundations. */
-:root{--aact-paper:#111110;--aact-panel:#1b1a18;--aact-ivory:#f0ece3;--aact-champagne:#dbc8ad;--aact-muted:#b9b4a9;--aact-rule:#ffffff23}
-body:has(.aact-header){--pink:#dbc8ad;--gold:#dbc8ad;--gold-dark:#b6a080;--cream:#171715;--white:#f0ece3;--ink:#f0ece3;--paper:#111110;--line:#3b3932;--muted:#b9b4a9;--display:'Bodoni Moda',Georgia,serif;--sans:'DM Sans',Arial,sans-serif;background:#111110;color:#f0ece3;font-family:var(--sans);-webkit-font-smoothing:antialiased}
+:root{--aact-paper:#111110;--aact-panel:#1b1a18;--aact-ivory:#f0ece3;--aact-champagne:#ffffff;--aact-muted:#b9b4a9;--aact-rule:#ffffff23}
+body:has(.aact-header){--pink:#ffffff;--gold:#ffffff;--gold-dark:#ffffff;--cream:#171715;--white:#f0ece3;--ink:#f0ece3;--paper:#111110;--line:#3b3932;--muted:#b9b4a9;--display:'Bodoni Moda',Georgia,serif;--sans:'DM Sans',Arial,sans-serif;background:#111110;color:#f0ece3;font-family:var(--sans);-webkit-font-smoothing:antialiased}
 body:has(.aact-header) main{background:#111110}
 body:has(.aact-header) :is(h1,h2){font-family:'Bodoni Moda',Georgia,serif;font-weight:400;letter-spacing:-.035em}
 body:has(.aact-header) h2{line-height:1.17}
 body:has(.aact-header) :is(.button,.primary-action,.booking-package-cta,.hero-quote-link){border-radius:2px;font-family:'DM Sans',Arial,sans-serif;font-weight:500;font-size:12px;letter-spacing:.7px;box-shadow:none;transition:background .2s,border-color .2s,color .2s}
 body:has(.aact-header) .button:hover{transform:none}
-body:has(.aact-header) :is(.button.pink,.button.dark,.booking-package-cta,.hero-quote-link){background:#dbc8ad;color:#171715;border:1px solid #dbc8ad}
-body:has(.aact-header) :is(.button.pink,.button.dark,.booking-package-cta,.hero-quote-link):hover{background:#f0e4d2;border-color:#f0e4d2;color:#171715}
-body:has(.aact-header) :is(a,button,input,select,textarea):focus-visible{outline:2px solid #dbc8ad;outline-offset:4px}
-body:has(.aact-header) .eyebrow{color:#c7b495;font-weight:400;letter-spacing:2px}
-body:has(.aact-header) :is(h1 em,h2 em,.visual-copy em){color:#dbc8ad}
+body:has(.aact-header) :is(.button.pink,.button.dark,.booking-package-cta,.hero-quote-link){background:#ffffff;color:#171715;border:1px solid #ffffff}
+body:has(.aact-header) :is(.button.pink,.button.dark,.booking-package-cta,.hero-quote-link):hover{background:#ffffff;border-color:#ffffff;color:#171715}
+body:has(.aact-header) :is(a,button,input,select,textarea):focus-visible{outline:2px solid #ffffff;outline-offset:4px}
+body:has(.aact-header) .eyebrow{color:#ffffff;font-weight:400;letter-spacing:2px}
+body:has(.aact-header) :is(h1 em,h2 em,.visual-copy em){color:#ffffff}
 body:has(.aact-header) .hero{background:#151512}
 body:has(.aact-header):not(.events-page) .hero-content{padding-top:145px}
 body:has(.aact-header):not(.events-page) :is(.how,.packages,.seo-faq,.seo-trust,.final-cta,.booking-package-section){background:#191917;color:#f0ece3;border-color:#3b3932}
-body:has(.aact-header):not(.events-page) :is(.ribbon,.experience-strip){background:#191917;color:#e2d9c9;border-block:1px solid #3b3932}
+body:has(.aact-header):not(.events-page) :is(.ribbon,.experience-strip){background:#191917;color:#ffffff;border-block:1px solid #3b3932}
 body:has(.aact-header):not(.events-page) :is(.about,.corporate,.seo-content,.seo-links,.booking-after,.booking-showcase){background:#111110;color:#f0ece3}
 body:has(.aact-header):not(.events-page) :is(.about-copy>p:not(.eyebrow),.steps p,.corporate-copy p,.seo-lede,.seo-content article p,.seo-faq details p,.package-card>p,.package-card li,.package-note,.package-includes,.about-foot,.experience-strip span){color:#b9b4a9}
-body:has(.aact-header):not(.events-page) :is(.seo-content article a,.about h2 em,.how h2 em,.corporate h2 em,.steps article>span,.seo-hero .eyebrow,.seo-faq summary span,.experience-strip strong){color:#dbc8ad}
+body:has(.aact-header):not(.events-page) :is(.seo-content article a,.about h2 em,.how h2 em,.corporate h2 em,.steps article>span,.seo-hero .eyebrow,.seo-faq summary span,.experience-strip strong){color:#ffffff}
 body:has(.aact-header):not(.events-page) :is(.package-card,.package-card.featured,.booking-packages article,.booking-packages article.popular){background:#1b1a18;color:#f0ece3;border:1px solid #555044;border-radius:6px;box-shadow:none}
 body:has(.aact-header):not(.events-page) :is(.package-price,.booking-packages strong,.booking-packages h3){color:#f0ece3}
 body:has(.aact-header):not(.events-page) :is(.about-photo img,.seo-video video,.reel-grid video,.booking-video-grid video,.raffle-intro,#included .included-media){border-radius:6px}
@@ -26,18 +26,18 @@ body:has(.aact-header) :is(.seo-form,.inquiry-form,.raffle-entry,.form-card){box
 body:has(.aact-header):not(.events-page) :is(.seo-form,.raffle-entry){padding:30px;background:#1b1a18;color:#f0ece3;border:1px solid #454137;border-radius:6px}
 body:has(.aact-header) :is(.lead-form,.raffle-entry,#bookingForm) :is(input,select,textarea){background:#22221e;color:#f0ece3;border:1px solid #625b4e;border-radius:3px;font-family:'DM Sans',Arial,sans-serif;font-size:16px;color-scheme:dark;min-width:0}
 body:has(.aact-header) :is(.lead-form,.raffle-entry,#bookingForm) :is(input,textarea)::placeholder{color:#b9b4a9;opacity:1}
-body:has(.aact-header) :is(.lead-form,.raffle-entry,#bookingForm) label{color:#ded8cb}
-body:has(.aact-header) :is(.raffle-entry,#bookingForm) button[type=submit]{background:#dbc8ad;color:#171715;border:1px solid #dbc8ad;border-radius:3px;min-height:46px}
+body:has(.aact-header) :is(.lead-form,.raffle-entry,#bookingForm) label{color:#ffffff}
+body:has(.aact-header) :is(.raffle-entry,#bookingForm) button[type=submit]{background:#ffffff;color:#171715;border:1px solid #ffffff;border-radius:3px;min-height:46px}
 body:has(.aact-header):not(.events-page) :is(.form-note,.reel-grid figcaption,.seo-video>span,.confirmation-lead,.price-row span){color:#b9b4a9}
 body.book-page .raffle-shell{padding-top:130px;gap:50px;background:#111110}
 body.book-page .raffle-intro{background:#191917}
-body.book-page :is(.raffle-intro h1 span,.raffle-intro .eyebrow){color:#dbc8ad}
+body.book-page :is(.raffle-intro h1 span,.raffle-intro .eyebrow){color:#ffffff}
 body.book-page #included{background:#1b1a18;color:#f0ece3;border:1px solid #454137}
 body.book-page :is(#included li,#booking-process li p,.booking-packages article>span){color:#b9b4a9}
 body.book-page #booking-process,body.book-page #booking-process li{color:#f0ece3}
-body.book-page #booking-process li>span,body.book-page .booking-packages small{background:#dbc8ad;color:#171715}
+body.book-page #booking-process li>span,body.book-page .booking-packages small{background:#ffffff;color:#171715}
 body.service-page .seo-hero{padding-top:145px}
-body:has(.aact-header) .photo-note{background:#dbc8ad;color:#171715;transform:none;border-radius:2px;font-size:23px}
+body:has(.aact-header) .photo-note{background:#ffffff;color:#171715;transform:none;border-radius:2px;font-size:23px}
 body:has(.aact-header) footer{background:#0b0b0a;color:#f0ece3;border-top:1px solid #35332c}
 body:has(.aact-header) footer :is(span,p){color:#b9b4a9}
 body:has(.aact-header) dialog:not(.event-strip-player){background:#1b1a18;color:#f0ece3;border:1px solid #555044}
@@ -45,7 +45,7 @@ body:has(.aact-header) dialog .close{color:#f0ece3}
 body:has(.aact-header) .home-body :is(.booking-copy h2,.faq h2){font-family:'Bodoni Moda',Georgia,serif;font-weight:400}
 body:has(.aact-header) .home-body .booking{background:#171715;border-top:1px solid #35332c}
 body:has(.aact-header) .home-body .inquiry-form{padding:27px;border:1px solid #454137;border-radius:5px;background:#1b1a18}
-body:has(.aact-header) .home-body .inquiry-form .button{background:#dbc8ad;border-color:#dbc8ad;color:#171715;border-radius:2px;letter-spacing:.7px}
+body:has(.aact-header) .home-body .inquiry-form .button{background:#ffffff;border-color:#ffffff;color:#171715;border-radius:2px;letter-spacing:.7px}
 body:has(.aact-header) .home-body .faq-list summary{font-weight:400}
 body:has(.aact-header) .home-body .package-experiences .package-card{border-radius:5px}
 body:has(.aact-header) .home-body .package-experiences .package-card .button{border-radius:2px}

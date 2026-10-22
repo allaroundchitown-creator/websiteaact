@@ -53,7 +53,7 @@ h3 {
 }
 
 .site-header nav a:hover {
-  color: #a67d29;
+  color: #ffffff;
 }
 
 .site-header .button-small {
@@ -82,7 +82,7 @@ h3 {
 
 .hero .eyebrow {
   margin-bottom: 18px;
-  color: #a67d29;
+  color: #ffffff;
   font-size: .72rem;
   font-weight: 800;
   letter-spacing: .06em;
@@ -244,7 +244,7 @@ h3 {
 
 .quick-field input:focus,
 .quick-field textarea:focus {
-  outline: 2px solid #9a806f;
+  outline: 2px solid #ffffff;
   outline-offset: 2px;
 }
 
@@ -309,7 +309,7 @@ h3 {
 
 .reels-kicker {
   margin: 0 0 10px;
-  color: #a67d29;
+  color: #ffffff;
   font-size: .72rem;
   font-weight: 800;
   letter-spacing: .06em;

@@ -26,13 +26,13 @@
 }
 
 /* Quote offer integrated into the hero. */
-.hero .hero-offer{margin:25px 0 20px;max-width:480px;padding:0 0 0 19px;border-left:2px solid #dbc8ad;text-align:left}
-.hero .hero-offer-label{display:inline-block;background:#e7d4b7;color:#201b13;padding:5px 10px;font:600 9px/1.5 'DM Sans',Arial,sans-serif;letter-spacing:1.8px;margin-bottom:10px}
-.hero .hero-offer-headline{margin:0;color:#fff6e7;font:400 clamp(25px,2.7vw,36px)/1.2 'Bodoni Moda',Georgia,serif;letter-spacing:-.025em}
-.hero .hero-offer-headline strong{font-weight:400;font-style:italic;color:#e7cda5}
-.hero .hero-offer-detail{margin:9px 0 0;font:400 12px/1.65 'DM Sans',Arial,sans-serif;color:#eee4d4;max-width:340px}
+.hero .hero-offer{margin:25px 0 20px;max-width:480px;padding:0 0 0 19px;border-left:2px solid #ffffff;text-align:left}
+.hero .hero-offer-label{display:inline-block;background:#ffffff;color:#201b13;padding:5px 10px;font:600 9px/1.5 'DM Sans',Arial,sans-serif;letter-spacing:1.8px;margin-bottom:10px}
+.hero .hero-offer-headline{margin:0;color:#ffffff;font:400 clamp(25px,2.7vw,36px)/1.2 'Bodoni Moda',Georgia,serif;letter-spacing:-.025em}
+.hero .hero-offer-headline strong{font-weight:400;font-style:italic;color:#ffffff}
+.hero .hero-offer-detail{margin:9px 0 0;font:400 12px/1.65 'DM Sans',Arial,sans-serif;color:#ffffff;max-width:340px}
 .hero .hero-actions{align-items:center;gap:23px}
-.hero .hero-actions .hero-claim{background:#e7d4b7;color:#17130d;border:1px solid #e7d4b7;min-width:245px;min-height:54px;padding:16px 25px;font-size:12px;font-weight:600;letter-spacing:.6px;box-shadow:0 5px 20px #0003}
-.hero .hero-actions .hero-claim:hover{background:#fff0d7;border-color:#fff0d7}
-.hero .hero-explore{display:inline-block;color:#f0ece3;font:400 12px/1.5 'DM Sans',Arial,sans-serif;border-bottom:1px solid #c9bca8;padding:6px 0}
+.hero .hero-actions .hero-claim{background:#ffffff;color:#17130d;border:1px solid #ffffff;min-width:245px;min-height:54px;padding:16px 25px;font-size:12px;font-weight:600;letter-spacing:.6px;box-shadow:0 5px 20px #0003}
+.hero .hero-actions .hero-claim:hover{background:#ffffff;border-color:#ffffff}
+.hero .hero-explore{display:inline-block;color:#f0ece3;font:400 12px/1.5 'DM Sans',Arial,sans-serif;border-bottom:1px solid #ffffff;padding:6px 0}
 @media(max-width:650px){.hero .hero-content{padding-top:125px;padding-bottom:75px}.hero .hero-brand-frame{margin-bottom:20px}.hero .hero-offer{margin:23px 0 19px;padding-left:14px;max-width:100%}.hero .hero-offer-headline{font-size:28px}.hero .hero-offer-detail{font-size:12px;max-width:285px}.hero .hero-actions{flex-wrap:wrap;gap:12px 22px}.hero .hero-actions .hero-claim{flex:0 1 auto;width:100%;max-width:330px;min-width:0;min-height:50px;font-size:12px;padding:15px 20px}.hero .hero-explore{font-size:11px}}
