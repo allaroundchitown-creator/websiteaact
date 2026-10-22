@@ -60,7 +60,7 @@ studio.querySelector('.overlay-save').addEventListener('click',()=>{
 copy.addEventListener('input',()=>copy.setCustomValidity(''));
 const video=studio.querySelector('video'),play=studio.querySelector('.overlay-playback');
 video.muted=true;video.defaultMuted=true;video.autoplay=true;
-const start=()=>video.play().catch(()=>{play.textContent='Play preview';});
+const start=()=>{if(!video.querySelector('source[src]'))return;return video.play().catch(()=>{play.textContent='Play preview';});};
 play.addEventListener('click',()=>{if(video.paused)start();else video.pause();});
 video.addEventListener('play',()=>{play.textContent='Pause preview';});
 video.addEventListener('pause',()=>{play.textContent='Play preview';});

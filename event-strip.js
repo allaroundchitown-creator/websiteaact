@@ -12,6 +12,30 @@
 
     track.append(clone);
   });
+  // Fetch poster images only when the strip and individual cards approach the viewport.
+  const hydratePoster=video=>{
+    if(video.dataset.poster&&!video.hasAttribute('poster'))video.poster=video.dataset.poster;
+  };
+  if('IntersectionObserver' in window){
+    const posters=new IntersectionObserver(entries=>entries.forEach(entry=>{
+      if(entry.isIntersecting){hydratePoster(entry.target);posters.unobserve(entry.target);}
+    }),{root:viewport,rootMargin:'0px 220px',threshold:0});
+    const nearStrip=new IntersectionObserver(entries=>{
+      if(entries.some(entry=>entry.isIntersecting)){
+        track.querySelectorAll('video').forEach(video=>posters.observe(video));
+        nearStrip.disconnect();
+      }
+    },{rootMargin:'250px 0px',threshold:0});
+    nearStrip.observe(strip);
+  }else{
+    const near=()=>{
+      if(strip.getBoundingClientRect().top<innerHeight+250){
+        track.querySelectorAll('video').forEach(hydratePoster);
+        window.removeEventListener('scroll',near);
+      }
+    };
+    window.addEventListener('scroll',near,{passive:true});near();
+  }
   const videos = [...track.querySelectorAll('video')];
   videos.forEach(video => { video.muted = true; });
   const player = document.createElement('dialog');
