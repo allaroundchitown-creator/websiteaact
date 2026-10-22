@@ -21,6 +21,7 @@ bookingForm.addEventListener('submit',async event=>{
  const overlay=window.aactBookingOverlay;
  const data=new FormData(bookingForm);
  data.set('addOns',data.getAll('addOns').join('; ')||'None');
+ data.set('packageIncludes',data.get('package')==='The Premiere'?'4 hours; professional attendant; instant sharing; unlimited videos; backdrop; cold spark machines; professional lighting setup; stanchions; carpet; custom overlay; setup and breakdown':'2 hours; unlimited 360 videos; custom overlay; props and instant sharing; professional attendant; setup and breakdown');
  data.set('phone',phoneInput.value.replace(/\D/g,'').replace(/^1(?=\d{10}$)/,''));
  data.set('_subject','AACT event inquiry — '+data.get('firstName')+' — '+data.get('eventDate')+(overlay?.design?' — custom overlay':''));
  data.set('_template','table');data.set('_captcha','false');data.set('_honey','');

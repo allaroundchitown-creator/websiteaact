@@ -187,3 +187,11 @@
 .home-body .booking-invite .booking-copy h2{font:400 clamp(32px,4vw,50px)/1.15 'Bodoni Moda',Georgia,serif;max-width:650px;margin:0}
 .home-body .booking-invite>.button{min-width:180px;padding:17px 32px;text-align:center}
 @media(max-width:650px){.home-body .booking.booking-invite{flex-direction:column;align-items:flex-start;padding-block:48px}.home-body .booking-invite>.button{width:100%}}
+
+/* Make the package difference clear within the photographic cards. */
+.home-body .package-experiences .package-card,.home-body .package-experiences .package-card.featured{display:flex;flex-direction:column}
+.package-experiences .package-details{display:flex;flex-direction:column;flex:1}
+.package-experiences .package-details .button{margin-top:auto}
+.home-body .package-experiences .package-card.featured{border-color:#bba282;background:#211e19}
+.package-experiences .package-value{display:block;color:#c9c2b7;font-size:13px;line-height:1.5;margin:0 0 16px}
+.package-experiences .package-upgrade{display:block;color:#d9c3a1;font-size:10px;letter-spacing:1.8px;margin:0 0 12px}
