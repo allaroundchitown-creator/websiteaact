@@ -227,3 +227,24 @@
 .home-body .booking.booking-invite-scenic{justify-content:center;text-align:center}
 .booking-invite-scenic .booking-invite-content{width:100%;margin-inline:auto;text-align:center}
 .home-body .booking-invite-scenic .booking-invite-button{margin-inline:auto}
+
+/* Compact FAQ and a quieter finish to the page. */
+.home-body .faq.faq-compact{padding-block:52px;grid-template-columns:minmax(0,.7fr) minmax(0,1.3fr);gap:56px}
+.home-body .faq-compact h2{font:400 clamp(30px,3.2vw,44px)/1.13 'Bodoni Moda',Georgia,serif;letter-spacing:-.035em;max-width:330px}
+.home-body .faq-compact .faq-list details{border-color:#ffffff24}
+.home-body .faq-compact .faq-list summary{font-size:14px;font-weight:400;line-height:1.4;padding:16px 30px 16px 0}
+.home-body .faq-compact .faq-list summary:after{content:"+";top:13px;right:2px;color:#fff;font:300 24px/1 Arial,sans-serif;transform:rotate(0);transition:transform .2s}
+.home-body .faq-compact .faq-list details[open] summary:after{content:"+";transform:rotate(45deg)}
+.home-body .faq-compact .faq-list details p{font-size:12px;line-height:1.75;color:#bdbdbd;padding:0 28px 17px 0;max-width:620px}
+.events-page .site-footer.footer-compact{background:#090909;border-top:1px solid #ffffff24;padding:0}
+.footer-compact-inner{max-width:1200px;margin:0 auto;padding:34px max(0px,0%);width:88%}
+.footer-topline{display:flex;align-items:center;justify-content:space-between;gap:24px}
+.footer-compact .footer-wordmark{font-size:34px;letter-spacing:-1.4px}
+.footer-compact .footer-wordmark span{color:#fff;font-size:8px;letter-spacing:3.5px}
+.footer-direct{display:flex;align-items:center;gap:28px;font-size:12px}
+.footer-essential-links{display:flex;gap:26px;flex-wrap:wrap;margin:26px 0;padding:0;background:none;font-size:12px}
+.footer-smallprint{display:flex;align-items:center;justify-content:space-between;gap:18px;border-top:1px solid #ffffff18;padding-top:16px;font-size:10px;color:#929292}
+.footer-smallprint>div{display:flex;gap:20px}
+.footer-smallprint p{margin:0}
+@media(max-width:650px){.home-body .faq.faq-compact{grid-template-columns:1fr;gap:24px;padding-block:34px}.home-body .faq-compact h2{font-size:32px;max-width:none}.home-body .faq-compact h2 br{display:none}.home-body .faq-compact .faq-list summary{font-size:13px;padding-block:14px}.home-body .faq-compact .faq-list summary:after{top:11px}.home-body .faq-compact .faq-list details p{font-size:12px;padding-bottom:15px}.footer-compact-inner{width:86%;padding-block:27px}.footer-direct{align-items:flex-end;flex-direction:column;gap:7px;font-size:11px}.footer-essential-links{gap:22px;margin:23px 0;font-size:11px}.footer-compact .footer-wordmark{font-size:31px}.footer-smallprint{font-size:9px;gap:12px}.footer-smallprint>div{gap:15px}}
+@media(prefers-reduced-motion:reduce){.home-body .faq-compact .faq-list summary:after{transition:none}}
