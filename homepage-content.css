@@ -182,3 +182,8 @@
 
 .home-promotion::before{opacity:.17}
 @media(max-width:650px){.home-promotion::before{opacity:.17}}
+
+.home-body .booking.booking-invite{display:flex;align-items:center;justify-content:space-between;gap:28px;padding-block:64px}
+.home-body .booking-invite .booking-copy h2{font:400 clamp(32px,4vw,50px)/1.15 'Bodoni Moda',Georgia,serif;max-width:650px;margin:0}
+.home-body .booking-invite>.button{min-width:180px;padding:17px 32px;text-align:center}
+@media(max-width:650px){.home-body .booking.booking-invite{flex-direction:column;align-items:flex-start;padding-block:48px}.home-body .booking-invite>.button{width:100%}}

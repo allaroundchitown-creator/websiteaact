@@ -4,11 +4,18 @@ const studio=document.querySelector('.overlay-studio');
 if(!studio)return;
 const banner=studio.querySelector('.overlay-banner'),copy=studio.querySelector('#overlay-copy'),date=studio.querySelector('#overlay-event-date');
 const colors={Black:'#111111',White:'#ffffff',Pink:'#f3a6c4',Blue:'#78b6e8',Transparent:'transparent'};
-const form=document.querySelector('#events-inquiry'),summary=form.querySelector('.overlay-saved-summary');
 const key='aact-event-overlay-v1';
-let background='White',ink='Black',saved=null;
+let background='White',ink='Black';
 const font=()=>studio.querySelector('[name="overlay-font"]:checked').value;
 const design=()=>({text:copy.value.trim(),date:date.value,font:font(),background,textColor:ink});
+function fitLettering(){
+ const title=banner.querySelector('.overlay-title');
+ title.style.fontSize='';
+ let size=parseFloat(getComputedStyle(title).fontSize);
+ while(banner.scrollHeight>banner.clientHeight+1&&size>10){
+  size-=1;title.style.fontSize=size+'px';
+ }
+}
 function render(){
  banner.style.setProperty('--overlay-bg',colors[background]);
  banner.style.setProperty('--overlay-ink',colors[ink]);
@@ -17,13 +24,7 @@ function render(){
  banner.querySelector('.overlay-date').textContent=date.value?date.value.split('-').slice(1).concat(date.value.split('-')[0]).join('.'):'';
  studio.querySelector('.overlay-contrast').hidden=background!==ink;
  studio.querySelectorAll('[data-colors]').forEach(group=>group.querySelectorAll('button').forEach(button=>button.setAttribute('aria-pressed',String(button.dataset.color===(group.dataset.colors==='text'?ink:background)))));
-}
-function attach(d){
- saved=d;
- const fields={overlayText:d.text,overlayDate:d.date,overlayFont:d.font,overlayBackground:d.background,overlayTextColor:d.textColor};
- Object.entries(fields).forEach(([name,value])=>{form.elements[name].value=value;});
- if(d.date)form.elements.date.value=d.date;
- summary.hidden=false;summary.textContent='Your saved overlay: '+d.text+(d.date?' • '+d.date:'')+'\n'+d.font+' lettering • '+d.background+' background • '+d.textColor+' text';
+ requestAnimationFrame(fitLettering);
 }
 studio.querySelectorAll('[data-colors]').forEach(group=>{
  const type=group.dataset.colors;
@@ -43,13 +44,13 @@ try{
  const d=JSON.parse(localStorage.getItem(key));
  if(d&&typeof d.text==='string'&&d.text.length<=70&&['cursive','block'].includes(d.font)&&Object.hasOwn(colors,d.background)&&Object.hasOwn(colors,d.textColor)&&d.textColor!=='Transparent'&&typeof d.date==='string'&&(/^\d{4}-\d{2}-\d{2}$/.test(d.date)||d.date==='')){
   copy.value=d.text;date.value=d.date;background=d.background;ink=d.textColor;
-  studio.querySelector('[name="overlay-font"][value="'+d.font+'"]').checked=true;attach(d);
+  studio.querySelector('[name="overlay-font"][value="'+d.font+'"]').checked=true;
  }
 }catch{}
 studio.querySelector('.overlay-save').addEventListener('click',()=>{
  if(!copy.value.trim()){copy.focus();copy.setCustomValidity('Add your overlay text first.');copy.reportValidity();return;}
  if(!date.reportValidity())return;
- const d=design();attach(d);
+ const d=design();
  const json=JSON.stringify(d);
  try{localStorage.setItem(key,json);}catch{}
  try{sessionStorage.setItem(key,json);}catch{}
@@ -57,7 +58,6 @@ studio.querySelector('.overlay-save').addEventListener('click',()=>{
  location.assign('/book#overlay='+encodeURIComponent(json));
 });
 copy.addEventListener('input',()=>copy.setCustomValidity(''));
-form.addEventListener('submit',()=>{if(saved)attach({...saved,date:form.elements.date.value});},true);
 const video=studio.querySelector('video'),play=studio.querySelector('.overlay-playback');
 video.muted=true;video.defaultMuted=true;video.autoplay=true;
 const start=()=>video.play().catch(()=>{play.textContent='Play preview';});
@@ -67,5 +67,7 @@ video.addEventListener('pause',()=>{play.textContent='Play preview';});
 document.addEventListener('visibilitychange',()=>{if(document.hidden)video.pause();else start();});
 video.addEventListener('canplay',start,{once:true});
 studio.addEventListener('pointerdown',()=>{if(video.paused)start();},{once:true});
+new ResizeObserver(fitLettering).observe(banner);
+if(document.fonts)document.fonts.ready.then(fitLettering);
 render();start();
 })();
