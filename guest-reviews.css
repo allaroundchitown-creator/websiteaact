@@ -20,3 +20,18 @@
 .guest-reviews-carousel>button svg{width:20px;height:20px;fill:none;stroke:currentColor;stroke-width:1.8}
 @media(max-width:1000px){.guest-reviews-grid .guest-review{flex-basis:calc((100% - 16px)/2)}}
 @media(max-width:650px){.home-body .guest-reviews{padding-block:38px}.home-body .guest-reviews h2{font-size:34px;margin-bottom:24px}.google-reviews-summary{padding:13px 14px;gap:8px;font-size:13px}.google-reviews-summary>a{font-size:10px}.google-summary-stars svg{width:14px;height:14px}.guest-reviews-grid .guest-review{flex-basis:88%;padding:21px;min-height:310px}.review-previous{left:-12px}.review-next{right:-12px}}
+
+/* Integrate the Google review layout with the AACT palette. */
+.home-body .guest-reviews{background:#111110;border-top:0;border-bottom:1px solid #ffffff1c}
+.home-body .guest-reviews h2{color:#f0ece3;font-weight:400}
+.google-reviews-summary{background:transparent;color:#d9c8af;border-radius:0;padding:0 0 18px;border-bottom:1px solid #ffffff23;font-size:12px;letter-spacing:.3px}
+.google-reviews-summary>a{color:#c3b6a2;font-weight:400}
+.google-summary-stars svg,.guest-review-rating svg{fill:#cdb38c}
+.guest-reviews-grid .guest-review{background:#1b1a18;color:#f0ece3;border:1px solid #454036;border-radius:5px}
+.google-review-person{color:#f0ece3;font-weight:500}
+.google-review-avatar{background:#393229;color:#e7d7c2;border:1px solid #6d5e49}
+.google-review-brand{color:#d9c8af;font-size:20px}
+.guest-reviews-grid .guest-review blockquote{color:#d0cbc0;font-size:14px;line-height:1.8}
+.guest-reviews-carousel>button{background:#25231f;color:#e7d7c2;border:1px solid #6d604d;box-shadow:0 2px 12px #0004}
+.guest-reviews-carousel>button:hover{background:#dbc8ad;color:#171715}
+@media(max-width:650px){.google-reviews-summary{padding-bottom:14px}.google-reviews-summary>a{font-size:10px}}
