@@ -134,3 +134,11 @@
 .home-body .package-experiences .package-card .button:hover{background:#f4e8d6;border-color:#f4e8d6}
 .home-body .package-experiences .package-note{max-width:800px;text-align:center;margin:22px auto 0;font-size:11px}
 @media(max-width:650px){.home-body .package-experiences{padding-top:40px;padding-bottom:40px}.home-body .package-experiences .package-grid{grid-template-columns:1fr;gap:24px;max-width:390px}.home-body .package-experiences .section-heading{margin-bottom:25px}.home-body .package-experiences h2{font-size:38px}.package-experiences .package-photo{aspect-ratio:4/3}.package-experiences .package-details{padding:23px}.home-body .package-experiences .package-card h3{font-size:32px}.package-experiences .package-cost{font-size:34px}.package-experiences .package-inclusions{margin-top:17px;padding:15px 0}.package-experiences .package-inclusions li{font-size:12px}}
+
+/* Homepage quote promotion. */
+.home-promotion{display:flex;align-items:center;justify-content:space-between;gap:26px;padding:30px max(6%,calc((100vw - 1200px)/2));background:#e3d1b6;color:#191815;border-block:1px solid #c7b393}
+.home-promotion h2{font:400 clamp(25px,2.8vw,36px)/1.2 'Bodoni Moda',Georgia,serif;letter-spacing:-.035em;margin:0 0 7px}
+.home-promotion p{margin:0;color:#423b30;font:400 13px/1.6 'DM Sans',Arial,sans-serif}
+.home-promotion-cta{display:inline-flex;align-items:center;justify-content:center;flex-shrink:0;min-height:45px;padding:12px 24px;border:1px solid #24211b;background:transparent;color:#191815;font:500 12px/1.5 'DM Sans',Arial,sans-serif;letter-spacing:.6px;border-radius:2px}
+.home-promotion-cta:hover{background:#24211b;color:#f3ece0}
+@media(max-width:650px){.home-promotion{padding:25px 7%;display:block;text-align:center}.home-promotion h2{font-size:28px}.home-promotion p{font-size:12px}.home-promotion-cta{margin-top:17px;min-width:190px}}
