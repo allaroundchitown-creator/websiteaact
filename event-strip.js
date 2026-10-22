@@ -14,7 +14,8 @@
   });
   // Fetch poster images only when the strip and individual cards approach the viewport.
   const hydratePoster=video=>{
-    if(video.dataset.poster&&!video.hasAttribute('poster'))video.poster=video.dataset.poster;
+    const poster=matchMedia('(max-width:650px)').matches?(video.dataset.posterMobile||video.dataset.poster):video.dataset.poster;
+    if(poster&&!video.hasAttribute('poster'))video.poster=poster;
   };
   if('IntersectionObserver' in window){
     const posters=new IntersectionObserver(entries=>entries.forEach(entry=>{
