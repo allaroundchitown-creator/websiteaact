@@ -20,6 +20,7 @@ bookingForm.addEventListener('submit',async event=>{
  const button=bookingForm.querySelector('button[type="submit"]'),original=button.innerHTML;
  const overlay=window.aactBookingOverlay;
  const data=new FormData(bookingForm);
+ data.set('addOns',data.getAll('addOns').join('; ')||'None');
  data.set('phone',phoneInput.value.replace(/\D/g,'').replace(/^1(?=\d{10}$)/,''));
  data.set('_subject','AACT event inquiry — '+data.get('firstName')+' — '+data.get('eventDate')+(overlay?.design?' — custom overlay':''));
  data.set('_template','table');data.set('_captcha','false');data.set('_honey','');
