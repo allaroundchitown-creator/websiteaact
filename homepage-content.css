@@ -163,3 +163,9 @@
 .home-promotion .home-promotion-cta{margin:0;min-height:44px;min-width:0;width:auto;max-width:none;padding:12px 20px;background:#fff;color:#111;border:1px solid #fff;border-radius:0;box-shadow:none;font-size:11px;letter-spacing:.4px}
 .home-promotion .home-promotion-cta:hover{background:#dedede;color:#111;border-color:#dedede}
 @media(max-width:650px){.home-promotion{display:flex;flex-direction:column;gap:15px;padding:21px 7%;text-align:center}.home-promotion h2{font-size:29px}.home-promotion-label{font-size:9px;margin-bottom:7px}.home-promotion p{font-size:11px;margin-top:6px}.home-promotion-action{margin:0}.home-promotion .home-promotion-cta{margin:0;min-height:43px;max-width:none;width:auto;padding:12px 24px;font-size:11px}}
+
+/* Faint diagonal lettering behind the monochrome promotion. */
+.home-promotion{position:relative;isolation:isolate;overflow:hidden}
+.home-promotion::before{content:"FREE OVERLAY";position:absolute;z-index:-1;top:50%;left:50%;transform:translate(-50%,-50%) rotate(-13deg);font:600 clamp(70px,12vw,170px)/1 'DM Sans',Arial,sans-serif;letter-spacing:.04em;white-space:nowrap;color:#fff;opacity:.07;pointer-events:none;user-select:none}
+.home-promotion-copy,.home-promotion-action{position:relative;z-index:1}
+@media(max-width:650px){.home-promotion::before{font-size:92px;transform:translate(-50%,-50%) rotate(-20deg);opacity:.075}}
