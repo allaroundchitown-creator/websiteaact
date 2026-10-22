@@ -1,0 +1,13 @@
+@import url('https://fonts.googleapis.com/css2?family=Great+Vibes&family=Montserrat:wght@800&display=swap');
+body.book-page .booking-overlay[hidden]{display:none}
+body.book-page .booking-overlay{display:block;margin:26px 0 30px;padding:22px;border:1px solid #615642;background:#161613;border-radius:5px;color:#f0ece3}
+body.book-page .booking-overlay h3{font:400 29px/1.2 'Bodoni Moda',Georgia,serif;margin:0 0 20px}
+.booking-overlay-layout{display:grid;grid-template-columns:130px minmax(0,1fr);gap:20px;align-items:center}
+.booking-overlay-preview{position:relative;width:130px;aspect-ratio:9/16;overflow:hidden;border-radius:8px;background:#111}
+.booking-overlay-preview video,.booking-overlay-preview canvas{position:absolute;inset:0;display:block;width:100%;height:100%;object-fit:cover}
+.booking-overlay-preview canvas{z-index:1;pointer-events:none}
+body.book-page .booking-overlay-description{font:400 12px/1.8 'DM Sans',Arial,sans-serif;color:#cec5b5;white-space:pre-wrap;overflow-wrap:anywhere;margin:0 0 14px}
+.booking-overlay-edit{font-size:12px;color:#dbc8ad;text-decoration:underline;text-underline-offset:4px}
+body.book-page #bookingForm .booking-overlay-confirm{display:flex;flex-direction:row;align-items:flex-start;gap:10px;margin:22px 0 0;font:400 13px/1.6 'DM Sans',Arial,sans-serif;color:#e7dcc9}
+body.book-page #bookingForm .booking-overlay-confirm input{appearance:auto;-webkit-appearance:auto;width:18px;min-width:18px;height:18px;min-height:18px;margin:2px 0 0;padding:0;accent-color:#dbc8ad}
+@media(max-width:400px){body.book-page .booking-overlay{padding:17px}.booking-overlay-layout{grid-template-columns:100px minmax(0,1fr);gap:14px}.booking-overlay-preview{width:100px}}
