@@ -1,0 +1,1 @@
+{"name":"aact-website","private":true,"scripts":{"build":"node scripts/build-static.mjs","test":"node --test tests/*.test.mjs"},"dependencies":{"@netlify/blobs":"^10.0.0"},"engines":{"node":">=22"}}
