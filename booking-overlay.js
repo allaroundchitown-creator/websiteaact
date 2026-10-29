@@ -29,7 +29,12 @@ const canvas=panel.querySelector('canvas'),ctx=canvas.getContext('2d');
 const description=panel.querySelector('.booking-overlay-description');
 description.textContent=design.text+(design.date?' · '+design.date:'')+' — '+(design.font==='cursive'?'Cursive':'Block')+' · '+design.background+' background · '+design.textColor+' text';
 const confirm=panel.querySelector('[name="overlayConfirmed"]');
-confirm.required=true;
+confirm.required=false;
+confirm.checked=true;
+confirm.defaultChecked=true;
+panel.querySelector('h3').textContent='Overlay saved';
+const previewVideo=panel.querySelector('video');
+if(previewVideo){previewVideo.pause();previewVideo.removeAttribute('autoplay');previewVideo.removeAttribute('src');previewVideo.querySelectorAll('source').forEach(source=>source.remove());previewVideo.load();}
 if(design.date)form.elements.eventDate.value=design.date;
 const hidden={overlayText:design.text,overlayDate:design.date,overlayFont:design.font,overlayBackground:design.background,overlayTextColor:design.textColor};
 Object.entries(hidden).forEach(([name,value])=>{
@@ -77,5 +82,5 @@ state.getAttachment=async()=>{
  await state.ready;
  return new Promise((resolve,reject)=>canvas.toBlob(blob=>blob?resolve(blob):reject(new Error('Overlay image could not be created')),'image/png'));
 };
-form.addEventListener('reset',()=>{confirm.checked=false;});
+form.addEventListener('reset',()=>{confirm.checked=true;});
 })();
