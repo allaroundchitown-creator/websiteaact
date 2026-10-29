@@ -1,26 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Great+Vibes&family=Montserrat:wght@800&display=swap');
 body.book-page .booking-overlay[hidden]{display:none}
-body.book-page .booking-overlay{display:block;margin:26px 0 30px;padding:22px;border:1px solid #615642;background:#161613;border-radius:5px;color:#f0ece3}
-body.book-page .booking-overlay h3{font:400 29px/1.2 'Bodoni Moda',Georgia,serif;margin:0 0 20px}
-.booking-overlay-layout{display:grid;grid-template-columns:130px minmax(0,1fr);gap:20px;align-items:center}
-.booking-overlay-preview{position:relative;width:130px;aspect-ratio:9/16;overflow:hidden;border-radius:8px;background:#111}
-.booking-overlay-preview video,.booking-overlay-preview canvas{position:absolute;inset:0;display:block;width:100%;height:100%;object-fit:cover}
-.booking-overlay-preview video{object-fit:contain;object-position:center}
-.booking-overlay-preview canvas{z-index:1;pointer-events:none}
-body.book-page .booking-overlay-description{font:400 12px/1.8 'DM Sans',Arial,sans-serif;color:#ffffff;white-space:pre-wrap;overflow-wrap:anywhere;margin:0 0 14px}
-.booking-overlay-edit{font-size:12px;color:#ffffff;text-decoration:underline;text-underline-offset:4px}
-body.book-page #bookingForm .booking-overlay-confirm{display:flex;flex-direction:row;align-items:flex-start;gap:10px;margin:22px 0 0;font:400 13px/1.6 'DM Sans',Arial,sans-serif;color:#ffffff}
-body.book-page #bookingForm .booking-overlay-confirm input{appearance:auto;-webkit-appearance:auto;width:18px;min-width:18px;height:18px;min-height:18px;margin:2px 0 0;padding:0;accent-color:#ffffff}
-@media(max-width:400px){body.book-page .booking-overlay{padding:17px}.booking-overlay-layout{grid-template-columns:100px minmax(0,1fr);gap:14px}.booking-overlay-preview{width:100px}}
-
-/* Keep the overlay beside the event fields on wide screens. */
-@media (min-width: 960px) {
- body.book-page .raffle-shell:has(#booking-overlay:not([hidden])) {width:min(1120px,calc(100% - 64px));max-width:1120px;margin-inline:auto;grid-template-columns:minmax(0,1fr)}
- body.book-page .raffle-entry:has(#booking-overlay:not([hidden])) {width:100%;max-width:none;padding:32px}
- body.book-page #bookingForm:has(#booking-overlay:not([hidden])) {display:grid;grid-template-columns:300px minmax(0,1fr);column-gap:36px;align-items:start}
- body.book-page #bookingForm:has(#booking-overlay:not([hidden])) > * {grid-column:2;min-width:0}
- body.book-page #bookingForm > #booking-overlay:not([hidden]) {grid-column:1;grid-row:1 / span 30;align-self:start;margin:0;padding:22px}
- body.book-page #booking-overlay .booking-overlay-layout {grid-template-columns:1fr;gap:18px}
- body.book-page #booking-overlay .booking-overlay-preview {width:180px;max-width:100%;margin-inline:auto}
- body.book-page #booking-overlay h3 {font-size:27px}
-}
+body.book-page #bookingForm .booking-overlay{display:flex;align-items:center;justify-content:space-between;gap:16px;margin:0 0 22px;padding:13px 16px;border:1px solid #615642;background:#161613;border-radius:5px;color:#f0ece3}
+body.book-page #bookingForm .booking-overlay h3{font:500 14px/1.4 'DM Sans',Arial,sans-serif;margin:0;color:inherit}
+body.book-page .booking-overlay-layout,body.book-page .booking-overlay-layout>div:last-child{display:contents}
+body.book-page .booking-overlay-preview,body.book-page .booking-overlay-description,body.book-page #bookingForm .booking-overlay-confirm{display:none}
+body.book-page .booking-overlay-edit{font:400 12px/1.4 'DM Sans',Arial,sans-serif;color:inherit;text-decoration:underline;text-underline-offset:3px;white-space:nowrap}
