@@ -9,8 +9,8 @@ export default async request=>{
   const event=JSON.parse(raw);if(!['payment.created','payment.updated'].includes(event.type))return json({received:true});
   const paymentId=event.data?.object?.payment?.id;if(typeof paymentId!=='string')return json({received:true});
   const {ok,data}=await square('payments/'+encodeURIComponent(paymentId));if(!ok)return json({error:'Retry later'},503);
-  const p=data.payment;if(!uuid(p?.reference_id)||!validPayment(p,p.reference_id))return json({received:true});
-  const s=await store();if(!await s.get(p.reference_id,{type:'json'}))return json({received:true});
+  const p=data.payment;if(!uuid(p?.reference_id))return json({received:true});
+  const s=await store();const record=await s.get(p.reference_id,{type:'json'});if(!record||!validPayment(p,p.reference_id,record.totalAmount??10000))return json({received:true});
   // Refresh from Square instead of trusting webhook order; duplicate delivery is harmless.
   await s.setJSON('payment/'+p.reference_id,{paymentId:p.id,status:p.status});
   return json({received:true});

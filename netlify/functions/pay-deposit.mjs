@@ -13,7 +13,7 @@ export default async request=>{
   if(!lock.modified){const attempt=await s.get('attempt/'+record.id,{type:'json'});if(attempt?.sourceHash!==hash(input.sourceId))return json({error:'This checkout already has a payment attempt. Check its status or contact us before trying another card.'},409);}
   const {ok,data}=await square('payments',{method:'POST',body:JSON.stringify(paymentBody(record,input.sourceId))});
   if(!ok)return json({error:'Payment was not confirmed. Check status before starting another request. Contact (224) 234-1473 for help.'},422);
-  if(!validPayment(data.payment,record.id))return json({error:'Payment needs review. Please contact us; do not pay again.'},502);
+  if(!validPayment(data.payment,record.id,record.totalAmount??10000))return json({error:'Payment needs review. Please contact us; do not pay again.'},502);
   // The webhook provides recovery if this write fails after Square captured the payment.
   await s.setJSON('payment/'+record.id,{paymentId:data.payment.id,status:data.payment.status});
   return json({paid:data.payment.status==='COMPLETED',reference:record.id});
