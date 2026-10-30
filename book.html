@@ -18,11 +18,11 @@
     <section class="raffle-entry" aria-labelledby="booking-title">
       <div class="form-heading">
         <p class="eyebrow">CHECK AVAILABILITY</p>
-        <h1 id="booking-title">Get pricing for your event.</h1>
-        <p>No payment today. We’ll contact you with availability and package options.</p>
+        <h1 id="booking-title">Build your event package.</h1>
+        <p>Choose your package and add-ons, then pay the full total securely. Your booking is confirmed when payment succeeds.</p>
       </div>
 
-      <p class="legal-form-note">Ready to pay in full? <a href="/book-and-pay">Choose your package and pay online</a>.</p><form id="bookingForm" novalidate>
+      <form id="bookingForm" novalidate>
 <section class="booking-overlay" id="booking-overlay" aria-labelledby="booking-overlay-heading" hidden>
 <h3 id="booking-overlay-heading">Confirm your overlay.</h3>
 <div class="booking-overlay-layout"><div class="booking-overlay-preview"><video autoplay muted loop playsinline preload="metadata" poster="/overlay-event.webp" aria-label="Your saved overlay on an event video"><source src="/overlay-event-full.mp4" type="video/mp4"></video><canvas width="720" height="1280" aria-label="Your saved custom overlay"></canvas></div><div><p class="booking-overlay-description"></p><a class="booking-overlay-edit" href="/#design-your-overlay">Edit my overlay</a></div></div>
@@ -48,8 +48,8 @@
 </fieldset>
 <div class="booking-estimate" aria-live="polite"><span>Your selection</span><strong id="booking-estimate">Select a package</strong></div>
 <input type="hidden" name="packagePrice"><input type="hidden" name="addOnsTotal" value="$0"><input type="hidden" name="estimatedTotal">
-        <button type="submit">Submit</button>
-        <p class="form-status" id="bookingStatus" aria-live="polite">No obligation. Submitting this form does not reserve your date.</p>
+        <button type="submit">Continue to Payment</button>
+        <p class="form-status" id="bookingStatus" aria-live="polite">Complete payment to confirm your booking.</p>
       <p class="legal-form-note">Read our <a href="/privacy-policy">Privacy Policy</a> and <a href="/terms-and-conditions">Terms &amp; Conditions</a>.</p></form>
     </section></div></main>
-<script src="/analytics.js" defer></script><script src="/booking-overlay.js" defer></script><script src="/booking-options.js" defer></script><script src="/booking-deposit.js" defer></script><script src="/book.js" defer></script><script src="/confirmation-redirect.js" defer></script></body></html>
+<script src="/analytics.js" defer></script><script src="/booking-overlay.js" defer></script><script src="/booking-options.js" defer></script><script src="/full-booking.js" defer></script><script src="/confirmation-redirect.js" defer></script></body></html>
