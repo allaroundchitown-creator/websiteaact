@@ -11,6 +11,22 @@ export default async request=>{
   const totalAmount=input.paymentMode==='full'?bookingTotal(booking):10000;
   const id=randomUUID(),secret=randomUUID();const s=await store();
   await s.setJSON(id,{id,secretHash:hash(secret),booking,totalAmount,createdAt:new Date().toISOString(),expiresAt:Date.now()+3600000,consentVersion:'deposit-v1',status:'awaiting_payment'});
+  // Notify the owner after validating the event and anti-bot token, before a card is charged.
+  // Only allowlisted event fields are sent; never card tokens, secrets, or request bodies.
+  try{
+   const mailResponse=await fetch('https://formsubmit.co/ajax/allaroundchitown@gmail.com',{
+    method:'POST',headers:{'Content-Type':'application/json',Accept:'application/json'},
+    body:JSON.stringify({_subject:'AACT — Pay button submitted — '+booking.firstName+' — '+booking.eventDate,
+     _template:'table',_captcha:'false',notification:'PAYMENT ATTEMPT ONLY — not proof of payment',
+     name:booking.firstName,email:booking.email,phone:booking.phone,eventDate:booking.eventDate,
+     eventType:booking.eventType,cityZip:booking.cityZip,package:booking.package,
+     addOns:booking.addOns.join('; ')||'None',selectedTotal:'USD '+(totalAmount/100).toFixed(2),
+     bookingReference:id,environment:settings().environment,submittedAt:new Date().toISOString()}),
+    signal:AbortSignal.timeout(5000)
+   });
+   const mailResult=await mailResponse.json();
+   if(!mailResponse.ok||!(mailResult.success===true||mailResult.success==='true'))console.error('payment_attempt_email_not_accepted');
+  }catch{console.error('payment_attempt_email_delivery_unconfirmed');}
   return json({id,secret,totalAmount});
  }catch{return json({error:'Unable to prepare checkout. Please try again.'},503);}
 };
