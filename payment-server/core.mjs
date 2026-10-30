@@ -7,7 +7,9 @@ export function settings(){
  const e=process.env;const environment=e.SQUARE_ENVIRONMENT;
  const origin=e.PAYMENTS_ORIGIN||'';
  let validOrigin=false;try{validOrigin=new URL(origin).origin===origin&&origin.startsWith('https://');}catch{}
- const enabled=e.PAYMENTS_ENABLED==='true'&&['sandbox','production'].includes(environment)&&validOrigin&&Boolean(e.SQUARE_APPLICATION_ID&&e.SQUARE_LOCATION_ID&&e.SQUARE_ACCESS_TOKEN&&e.TURNSTILE_SITE_KEY&&e.TURNSTILE_SECRET_KEY&&e.SQUARE_WEBHOOK_SIGNATURE_KEY);
+ // Deposits paused: keep the booking page on the free inquiry flow.
+ const depositsPaused=true;
+ const enabled=!depositsPaused&&e.PAYMENTS_ENABLED==='true'&&['sandbox','production'].includes(environment)&&validOrigin&&Boolean(e.SQUARE_APPLICATION_ID&&e.SQUARE_LOCATION_ID&&e.SQUARE_ACCESS_TOKEN&&e.TURNSTILE_SITE_KEY&&e.TURNSTILE_SECRET_KEY&&e.SQUARE_WEBHOOK_SIGNATURE_KEY);
  return {enabled,environment,origin,applicationId:e.SQUARE_APPLICATION_ID,locationId:e.SQUARE_LOCATION_ID,siteKey:e.TURNSTILE_SITE_KEY,api:environment==='production'?'https://connect.squareup.com':'https://connect.squareupsandbox.com'};
 }
 export function validateBooking(input){
