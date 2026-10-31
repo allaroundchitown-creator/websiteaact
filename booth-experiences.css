@@ -7,3 +7,5 @@ body.digital-page:has(.aact-header){background:#f6f4ef;color:#242424}body.digita
 .experience-card-video{display:block;width:100%;height:360px;object-fit:contain;background:#111;margin-bottom:28px}@media(max-width:700px){.experience-card-video{height:auto;max-height:460px;aspect-ratio:3/4}}
 
 .digital-template{display:grid;grid-template-columns:.8fr 1.2fr;gap:5vw;align-items:center;padding:75px 7vw;background:#242424;color:#fff}.digital-template p{max-width:420px;line-height:1.8}.digital-template figure{margin:0}.digital-template img{display:block;width:100%;height:auto}.digital-template figcaption{font-size:12px;color:#d3d0c9;margin-top:14px;text-align:center}@media(max-width:700px){.digital-template{grid-template-columns:1fr;padding:50px 24px;gap:28px}}
+
+.booth-360-photo{object-position:50% 45%}.events-page .digital-template h2{font:400 clamp(34px,4vw,58px)/1.15 'Bodoni Moda',Georgia,serif;margin:18px 0 30px;letter-spacing:-.04em}@media(max-width:700px){.booth-360-photo{height:460px;object-fit:cover;object-position:50% 45%}}
