@@ -1,3 +1,4 @@
+import {reserveBooths} from '../../payment-server/inventory.mjs';
 import {hash,paymentBody,validPayment} from '../../payment-server/core.mjs';
 import {json,gate,body,store,authenticate,square} from '../../payment-server/http.mjs';
 export default async request=>{
@@ -11,6 +12,7 @@ export default async request=>{
   // Atomically lock this booking to ONE card token. All retries use the same Square key and payload.
   const lock=await s.setJSON('attempt/'+record.id,{sourceHash:hash(input.sourceId)},{onlyIfNew:true});
   if(!lock.modified){const attempt=await s.get('attempt/'+record.id,{type:'json'});if(attempt?.sourceHash!==hash(input.sourceId))return json({error:'This checkout already has a payment attempt. Check its status or contact us before trying another card.'},409);}
+  try{await reserveBooths(s,record);}catch(error){return json({error:error.message},409);}
   const {ok,data}=await square('payments',{method:'POST',body:JSON.stringify(paymentBody(record,input.sourceId))});
   if(!ok)return json({error:'Payment was not confirmed. Check status before starting another request. Contact (224) 234-1473 for help.'},422);
   if(!validPayment(data.payment,record.id,record.totalAmount??10000))return json({error:'Payment needs review. Please contact us; do not pay again.'},502);

@@ -19,7 +19,7 @@ export default async request=>{
     body:JSON.stringify({_subject:'AACT — Pay button submitted — '+booking.firstName+' — '+booking.eventDate,
      _template:'table',_captcha:'false',notification:'PAYMENT ATTEMPT ONLY — not proof of payment',
      name:booking.firstName,email:booking.email,phone:booking.phone,eventDate:booking.eventDate,
-     eventType:booking.eventType,cityZip:booking.cityZip,package:booking.package,
+     eventType:booking.eventType,cityZip:booking.cityZip,package:booking.package,durationHours:booking.durationHours,reserves:booking.resources.join(' + '),
      addOns:booking.addOns.join('; ')||'None',selectedTotal:'USD '+(totalAmount/100).toFixed(2),
      bookingReference:id,environment:settings().environment,submittedAt:new Date().toISOString()}),
     signal:AbortSignal.timeout(5000)
