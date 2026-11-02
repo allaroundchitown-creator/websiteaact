@@ -1,8 +1,8 @@
 // One daily claim per physical booth. Claims remain for manual review on failed or
 // uncertain payments; they are never expired while Square may still capture.
 export async function reserveBooths(s, record) {
- const types=record.booking.resources||['360'];
- const slots={digital:['digital-1'],'360':['360-1','360-2']};
+ const types=['360'];
+ const slots={'360':['360-1','360-2']};
  const reserved=[];
  for(const type of [...types].sort()) {
   let selected;

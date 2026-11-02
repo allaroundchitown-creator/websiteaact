@@ -47,5 +47,6 @@ https://www.allaroundchitown.com/* https://allaroundchitown.com/:splat 301!
 /360-photo-booth-rental-schaumburg /photo-booth-rental-schaumburg 301!
 /book /book.html 200
 
-/digital-photo-booth-chicago.html /digital-photo-booth-chicago 301!
-/digital-photo-booth-chicago /digital-photo-booth-chicago.html 200
+/digital-photo-booth-chicago / 301!
+/digital-photo-booth-chicago.html / 301!
+/digital-photo-booth-chicago/* / 301!

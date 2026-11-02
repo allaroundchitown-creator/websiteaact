@@ -44,23 +44,11 @@ Delete abandoned booking records (createdAt older than your chosen retention per
 
 To stop taking deposits set PAYMENTS_ENABLED=false and redeploy. Existing Square refunds remain available. Keep webhook credentials configured for reconciliation. Never expose secrets through VITE_, NEXT_PUBLIC_, client scripts, logs, or screenshots.
 
-## Digital booth and bundle inventory
+## 360 inventory
 
-Digital Photo Booth is $395 / 2 hours; 360 + Digital Bundle is $995 / 2 hours.
-The existing 360 Signature ($695 / 2h) and Premiere ($1195 / 4h) remain.
-Server validation derives duration and resource requirements from the package;
-customer-supplied prices and resource counts are ignored.
-
-Before submitting a charge, checkout claims physical booth keys in the private
-booking store: two 360 units and one digital unit, per Chicago event date. A
-bundle must own both a digital and a 360 claim before Square is called. Claims
-are idempotent by booking ID and intentionally retained for manual review after
-failed/uncertain payments or a partial bundle claim. Inspect the booking and
-Square payment before manually deleting reservation/YYYY-MM-DD/unit keys in
-Netlify Blobs; never delete a claim for a paid or processing payment. This is a
-conservative whole-day reservation, not a time-slot calendar. Existing/offline
-bookings must be entered as claims before relying on website inventory. Refunds
-and cancellations require manual claim release. No automatic release is used.
-
-Digital page deliberately avoids claims about SMS/email, GIFs, printing, or
-other software-dependent capabilities until the active software plan is verified.
+The server accepts only The Signature ($695 / 2h) and The Premiere ($1195 / 4h).
+Before sending a charge, checkout claims one of two physical 360 booths for the
+event date. Claims are retained for manual payment review and must be released
+manually after checking Square for failed payments, refunds or cancellations.
+Existing and offline bookings must be entered before relying on online inventory.
+Historical booking/payment records are preserved.

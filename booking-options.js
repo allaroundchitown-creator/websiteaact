@@ -1,3 +1,27 @@
-(()=>{'use strict';const form=document.getElementById('bookingForm');if(!form)return;const money=n=>'$'+n.toLocaleString('en-US');const query=new URLSearchParams(location.search).get('service');if(['360','digital','bundle'].includes(query))form.querySelector('[name="service"][value="'+query+'"]').checked=true;
-function update(){const service=form.querySelector('[name="service"]:checked').value;const four=form.querySelector('[name="duration"][value="4"]');four.disabled=service!=='360';if(four.disabled)form.querySelector('[name="duration"][value="2"]').checked=true;const premiere=four.checked;const packages={'360':premiere?'The Premiere':'The Signature',digital:'Digital Photo Booth',bundle:'360 + Digital Bundle'};form.elements.package.value=packages[service];const base=premiere?1195:service==='digital'?395:service==='bundle'?995:695;const sparks=form.querySelector('[name="addOns"][value^="2 cold spark"]');if(premiere)sparks.checked=false;sparks.disabled=premiere;document.querySelector('[data-addon-price="sparks"]').textContent=premiere?'Included':'$200';const extras=form.querySelectorAll('[name="addOns"]:checked').length*200;document.getElementById('booking-estimate').textContent=money(base+extras);form.elements.packagePrice.value=money(base);form.elements.addOnsTotal.value=money(extras);form.elements.estimatedTotal.value=money(base+extras);const invite=document.getElementById('booking-overlay-invite');invite.hidden=service==='digital'||Boolean(window.aactBookingOverlay?.design);}
-form.addEventListener('change',update);form.addEventListener('reset',()=>setTimeout(update,0));update();})();
+(() => {
+'use strict';
+const form=document.getElementById('bookingForm');
+if(!form)return;
+const money=n=>'$'+n.toLocaleString('en-US');
+function update(){
+ const prices={signature:695,premiere:1195};
+ document.querySelectorAll('[data-package-price]').forEach(el=>el.textContent=money(prices[el.dataset.packagePrice]));
+ const selected=form.querySelector('[name="package"]:checked');
+ const premiere=selected?.value==='The Premiere';
+ const sparks=form.querySelector('[name="addOns"][value^="2 cold spark"]');
+ if(sparks){if(premiere)sparks.checked=false;sparks.disabled=Boolean(premiere);}
+ const sparkPrice=document.querySelector('[data-addon-price="sparks"]');
+ if(sparkPrice)sparkPrice.textContent=premiere?'Included':'$200';
+ const extras=Array.from(form.querySelectorAll('[name="addOns"]:checked')).length*200;
+ const base=selected?prices[premiere?'premiere':'signature']:null;
+ document.getElementById('booking-estimate').textContent=selected?money(base+extras):'Select a package';
+ form.elements.packagePrice.value=selected?money(base):'';
+ form.elements.addOnsTotal.value=money(extras);
+ form.elements.estimatedTotal.value=selected?money(base+extras)+' before any travel fees':'';
+ const invite=document.getElementById('booking-overlay-invite');
+ invite.hidden=Boolean(window.aactBookingOverlay?.design);
+}
+form.addEventListener('change',update);
+form.addEventListener('reset',()=>setTimeout(update,0));
+update();
+})();
