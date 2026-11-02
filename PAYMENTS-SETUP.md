@@ -46,7 +46,7 @@ To stop taking deposits set PAYMENTS_ENABLED=false and redeploy. Existing Square
 
 ## 360 inventory
 
-The server accepts only The Signature ($695 / 2h) and The Premiere ($1195 / 4h).
+The server accepts only The Signature ($499 / 2h) and The Premiere ($899 / 4h).
 Before sending a charge, checkout claims one of two physical 360 booths for the
 event date. Claims are retained for manual payment review and must be released
 manually after checking Square for failed payments, refunds or cancellations.

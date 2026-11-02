@@ -4,7 +4,7 @@ const form=document.getElementById('bookingForm');
 if(!form)return;
 const money=n=>'$'+n.toLocaleString('en-US');
 function update(){
- const prices={signature:695,premiere:1195};
+ const prices={signature:499,premiere:899};
  document.querySelectorAll('[data-package-price]').forEach(el=>el.textContent=money(prices[el.dataset.packagePrice]));
  const selected=form.querySelector('[name="package"]:checked');
  const premiere=selected?.value==='The Premiere';
