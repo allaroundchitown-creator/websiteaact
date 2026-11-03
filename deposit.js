@@ -14,7 +14,7 @@ try{
  if(!draft){form.hidden=true;say('Start with your event details on the booking page.');return;}
  const full=draft.paymentMode==='full';
  if(full){
- const total=({'The Signature':499,'The Premiere':899}[draft.package]||0)+(draft.addOns||[]).filter(v=>v==='Floral wall — $200'||(v==='2 cold spark machines — $200'&&draft.package!=='The Premiere')).length*200;
+ const total=({'The Signature':695,'The Premiere':1195}[draft.package]||0)+(draft.addOns||[]).filter(v=>v==='Floral wall — $200'||(v==='2 cold spark machines — $200'&&draft.package!=='The Premiere')).length*200;
  document.querySelector('#checkout h2').textContent='$'+total.toLocaleString('en-US')+' event total';
  pay.textContent='Pay $'+total.toLocaleString('en-US')+' & Book';
  document.querySelector('#checkout h2 + p').textContent='Pay in full for your package and add-ons. Your booking is confirmed when payment succeeds.';
