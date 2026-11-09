@@ -7,13 +7,13 @@ function update(){
  const prices={two:440,three:660,four:880};
  document.querySelectorAll('[data-package-price]').forEach(el=>el.textContent=money(prices[el.dataset.packagePrice]));
  const selected=form.querySelector('[name="package"]:checked');
- const premiere=selected?.value==='4 Hours';
+ const premiere=selected?.value==='The Premiere';
  const sparks=form.querySelector('[name="addOns"][value^="2 cold spark"]');
  if(sparks){if(premiere)sparks.checked=false;sparks.disabled=Boolean(premiere);}
  const sparkPrice=document.querySelector('[data-addon-price="sparks"]');
  if(sparkPrice)sparkPrice.textContent=premiere?'Included':'$200';
  const extras=Array.from(form.querySelectorAll('[name="addOns"]:checked')).length*200;
- const base=selected?prices[{'2 Hours':'two','3 Hours':'three','4 Hours':'four'}[selected.value]]:null;
+ const base=selected?prices[{'The Signature':'two','The Elite':'three','The Premiere':'four'}[selected.value]]:null;
  document.getElementById('booking-estimate').textContent=selected?money(base+extras):'Select a package';
  form.elements.packagePrice.value=selected?money(base):'';
  form.elements.addOnsTotal.value=money(extras);
