@@ -1,6 +1,11 @@
-/book-and-pay /book-and-pay.html 200
-/deposit.html /deposit 301!
-/deposit /deposit.html 200
+/book /#book 301!
+/book.html /#book 301!
+/book-and-pay /#book 301!
+/book-and-pay.html /#book 301!
+/deposit /#book 301!
+/deposit.html /#book 301!
+/confirmation /#book 301!
+/confirmation.html /#book 301!
 /check-my-date.html /check-my-date 301!
 /check-my-date /check-my-date.html 200
 /events.html / 301!
@@ -17,7 +22,6 @@
 /kiosk.html /kiosk 301!
 /kiosk /kiosk.html 200
 /index.html / 301!
-/book.html /book 301!
 https://www.allaroundchitown.com/* https://allaroundchitown.com/:splat 301!
 /360-photo-booth-rental-des-plaines.html /360-photo-booth-rental-des-plaines 301!
 /360-photo-booth-rental-oak-brook.html /360-photo-booth-rental-oak-brook 301!

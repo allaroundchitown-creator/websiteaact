@@ -1,7 +1,0 @@
-@import url('https://fonts.googleapis.com/css2?family=Great+Vibes&family=Montserrat:wght@800&display=swap');
-body.book-page .booking-overlay[hidden]{display:none}
-body.book-page #bookingForm .booking-overlay{display:flex;align-items:center;justify-content:space-between;gap:16px;margin:0 0 22px;padding:13px 16px;border:1px solid #615642;background:#161613;border-radius:5px;color:#f0ece3}
-body.book-page #bookingForm .booking-overlay h3{font:500 14px/1.4 'DM Sans',Arial,sans-serif;margin:0;color:inherit}
-body.book-page .booking-overlay-layout,body.book-page .booking-overlay-layout>div:last-child{display:contents}
-body.book-page .booking-overlay-preview,body.book-page .booking-overlay-description,body.book-page #bookingForm .booking-overlay-confirm{display:none}
-body.book-page .booking-overlay-edit{font:400 12px/1.4 'DM Sans',Arial,sans-serif;color:inherit;text-decoration:underline;text-underline-offset:3px;white-space:nowrap}
