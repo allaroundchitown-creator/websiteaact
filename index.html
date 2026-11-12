@@ -120,10 +120,10 @@ header .btn{padding:.8rem 1.6rem;font-size:.72rem}
 @media(max-width:900px){.steps{grid-template-columns:1fr 1fr}}
 
 /* packages */
-.pkgs{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;margin-top:3rem;align-items:stretch}
+.pkgs{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;margin-top:3.5rem;align-items:stretch}
 .pkg{border:1px solid #e3e3e3;border-radius:10px;padding:2.4rem 2rem;text-align:center;display:flex;flex-direction:column;background:#fff}
-.pkg.pop{border:2px solid var(--blue);box-shadow:0 18px 40px -20px rgba(255,79,163,.55);position:relative}
-.pkg.pop::before{content:"Most Popular";position:absolute;top:-13px;left:50%;transform:translateX(-50%);background:var(--blue);color:#fff;font:600 .68rem Montserrat;letter-spacing:.18em;text-transform:uppercase;padding:.35rem 1rem;border-radius:999px}
+.pkg.featured{border:2px solid var(--blue);box-shadow:0 18px 40px -20px rgba(255,79,163,.55);position:relative}
+.pkg.featured::before{content:"Most Popular";position:absolute;top:0;left:50%;transform:translate(-50%,-50%);white-space:nowrap;z-index:2;line-height:1.4;background:var(--blue);color:#fff;font:600 .68rem Montserrat;letter-spacing:.18em;text-transform:uppercase;padding:.35rem 1rem;border-radius:999px}
 .pkg h3{font-size:1.5rem;font-weight:700;color:#111}
 .pkg .hrs{font-family:Montserrat;font-size:.8rem;letter-spacing:.15em;text-transform:uppercase;color:var(--muted);margin:.3rem 0 1.2rem}
 .pkg .price{font:700 3.2rem Montserrat;color:#111;line-height:1}
@@ -135,7 +135,7 @@ header .btn{padding:.8rem 1.6rem;font-size:.72rem}
 .incl li{padding-left:1.5rem;position:relative;font-size:.97rem}
 .incl li::before{content:"";position:absolute;left:0;top:.45em;width:.7em;height:.4em;border-left:2.5px solid var(--blue);border-bottom:2.5px solid var(--blue);transform:rotate(-45deg)}
 .extra{text-align:center;margin-top:1.3rem;color:var(--muted)}
-@media(max-width:900px){.pkgs{grid-template-columns:1fr}.incl ul{grid-template-columns:1fr 1fr}}
+@media(max-width:900px){.pkgs{grid-template-columns:1fr;gap:2rem}.incl ul{grid-template-columns:1fr 1fr}}
 @media(max-width:520px){.incl ul{grid-template-columns:1fr}}
 
 /* features alternating */
@@ -314,8 +314,8 @@ footer .brand img{height:64px}
     <div class="center"><div class="kicker">Packages</div><h2>Simple, Upfront Pricing</h2></div>
     <div class="pkgs">
       <div class="pkg"><h3>Signature</h3><div class="hrs">2 Hours</div><div class="price">$440</div><p class="for">Great for birthdays and smaller parties.</p><a href="#book" class="btn btn-black" data-pkg="Signature – 2 hrs">Book Signature</a></div>
-      <div class="pkg pop"><h3>Elite</h3><div class="hrs">3 Hours</div><div class="price">$660</div><p class="for">Our go-to for weddings, quinces and sweet 16s.</p><a href="#book" class="btn btn-blue" data-pkg="Elite – 3 hrs">Book Elite</a></div>
-      <div class="pkg"><h3>Premiere</h3><div class="hrs">4 Hours</div><div class="price">$880</div><p class="for">Adds cold sparks, pro lighting, stanchions &amp; carpet.</p><a href="#book" class="btn btn-black" data-pkg="Premiere – 4 hrs">Book Premiere</a></div>
+      <div class="pkg"><h3>Elite</h3><div class="hrs">3 Hours</div><div class="price">$660</div><p class="for">Great for bigger birthdays, graduations and corporate events.</p><a href="#book" class="btn btn-black" data-pkg="Elite – 3 hrs">Book Elite</a></div>
+      <div class="pkg featured"><h3>Premiere</h3><div class="hrs">4 Hours</div><div class="price">$880</div><p class="for">Our go-to for weddings, quinces and sweet 16s. Adds cold sparks, pro lighting, stanchions &amp; carpet.</p><a href="#book" class="btn btn-blue" data-pkg="Premiere – 4 hrs">Book Premiere</a></div>
     </div>
     <div class="incl">
       <h3>Every package includes</h3>
