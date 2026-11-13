@@ -22,6 +22,8 @@
 /kiosk.html /kiosk 301!
 /kiosk /kiosk.html 200
 /index.html / 301!
+/thank-you.html /thank-you 301!
+/thank-you /thank-you.html 200
 https://www.allaroundchitown.com/* https://allaroundchitown.com/:splat 301!
 /360-photo-booth-rental-des-plaines.html /360-photo-booth-rental-des-plaines 301!
 /360-photo-booth-rental-oak-brook.html /360-photo-booth-rental-oak-brook 301!

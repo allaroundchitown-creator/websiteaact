@@ -207,6 +207,111 @@ for (const p of pages) {
   console.log('built', p.slug);
 }
 
+// ---------- thank-you page (shown after a lead form is sent; not indexed) ----------
+{
+  const toHome = s => s.replace(/href="#(\w+)"/g, 'href="/#$1"').replace('href="#top" class="brand"', 'href="/" class="brand"');
+  const footerOnly = footerAndPopup.slice(0, footerAndPopup.indexOf('</footer>') + '</footer>'.length);
+  const tyCss = `
+.ty{background:#000;color:#fff;padding:80px 0 90px}
+.ty .grid{display:grid;grid-template-columns:1.15fr .85fr;gap:4rem;align-items:center}
+.ty .script{display:block;font-family:"Caveat Brush",cursive;font-variant:small-caps;color:var(--blue);font-size:clamp(2.8rem,5vw,4.2rem);line-height:.9;margin-bottom:.4rem}
+.ty h1{font-size:clamp(2.1rem,4vw,3.2rem);font-weight:800;line-height:1.08;margin-bottom:1.1rem}
+.ty .lead{color:#bbb;font-size:1.15rem;max-width:32em;margin-bottom:1.6rem}
+.ty .recap{display:none;border:1.5px solid var(--blue);background:rgba(255,79,163,.1);border-radius:12px;padding:1rem 1.3rem;margin-bottom:1.8rem;font-family:Montserrat,sans-serif;font-size:.95rem;max-width:30em}
+.ty .recap b{color:var(--blue)}
+.ty .acts{display:flex;flex-wrap:wrap;gap:1rem}
+.ty .btn-ghost{background:transparent;color:#fff;border:1.5px solid #fff}.ty .btn-ghost:hover{background:#fff;color:#111}
+.ty .vid{border-radius:16px;overflow:hidden;aspect-ratio:9/14;max-height:620px;justify-self:center;width:100%;max-width:400px;background:#111;box-shadow:0 30px 60px -25px rgba(255,79,163,.45)}
+.ty .vid video{width:100%;height:100%;object-fit:cover;display:block}
+.next{background:var(--gray)}
+.social{text-align:center}
+.social .row{display:flex;justify-content:center;flex-wrap:wrap;gap:1rem;margin-top:1.8rem}
+@media(max-width:900px){.ty .grid{grid-template-columns:1fr;gap:3rem}.ty{padding:50px 0 70px}.next .steps{grid-template-columns:1fr!important;gap:2.2rem}}
+`;
+  const html = `<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Thank You | AACT Booths</title>
+<link rel="icon" href="/img/logo.png">
+<meta name="robots" content="noindex,nofollow">
+<meta name="theme-color" content="#000000">
+<script src="/analytics.js" defer></script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Open+Sans:wght@400;600&family=Caveat+Brush&display=swap" rel="stylesheet">
+<style>${css}${tyCss}</style>
+</head>
+<body>
+
+${toHome(header)}
+<section class="ty">
+  <div class="wrap grid">
+    <div>
+      <span class="script">You’re on our list</span>
+      <h1 id="tyTitle">Thank you! We got your request.</h1>
+      <p class="lead">We’re checking our calendar now and will reach out with availability and your quote, usually the same day. Keep an eye on your texts and email.</p>
+      <div class="recap" id="recap"></div>
+      <div class="acts">
+        <a class="btn btn-blue" href="tel:2242341473">Call or Text Us</a>
+        <a class="btn btn-ghost" href="/#packages">See Packages</a>
+      </div>
+      <span class="urgency" style="color:#fff">Need an answer fast? Call or text (224) 234-1473</span>
+    </div>
+    <div class="vid"><video src="/aac-hero-video.mp4" poster="/event-preview.webp" autoplay muted loop playsinline aria-label="AACT 360 booth video from a real event"></video></div>
+  </div>
+</section>
+
+<section class="next">
+  <div class="wrap center">
+    <div class="kicker">What happens next</div>
+    <h2>Your Date, Locked In 3 Steps</h2>
+    <div class="steps" style="grid-template-columns:repeat(3,1fr)">
+      <div class="step"><div class="n">1</div><h3>We check your date</h3><p>We confirm availability for your date and venue.</p></div>
+      <div class="step"><div class="n">2</div><h3>You get your quote</h3><p>We send your package options and price by text or email.</p></div>
+      <div class="step"><div class="n">3</div><h3>Lock it in</h3><p>Pick your package and we reserve your date and start on your overlay.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="social">
+  <div class="wrap">
+    <div class="kicker">While you wait</div>
+    <h2>See the Booth in Action</h2>
+    <div class="row">
+      <a class="btn btn-black" href="https://www.tiktok.com/@allaroundchitown/" target="_blank" rel="noopener">TikTok</a>
+      <a class="btn btn-black" href="https://www.instagram.com/allaroundchitown360/" target="_blank" rel="noopener">Instagram</a>
+      <a class="btn btn-black" href="https://www.facebook.com/profile.php?id=61556657095887" target="_blank" rel="noopener">Facebook</a>
+    </div>
+  </div>
+</section>
+
+${toHome(footerOnly)}
+
+<script>
+document.getElementById('yr').textContent = new Date().getFullYear();
+(function(){
+  const c=document.getElementById('contact');
+  [['tel:2242341473','(224) 234-1473'],['mailto:allaroundchitown@gmail.com','allaroundchitown@gmail.com'],['https://www.instagram.com/allaroundchitown360/','Instagram'],['https://www.tiktok.com/@allaroundchitown/','TikTok'],['https://www.facebook.com/profile.php?id=61556657095887','Facebook']]
+    .forEach(([h,t])=>{const a=document.createElement('a');a.href=h;a.textContent=t;c.appendChild(a);});
+  let lead=null; try{lead=JSON.parse(sessionStorage.getItem('aactLead')||'null')}catch(_){}
+  if(!lead) return;
+  const first=(lead.name||'').trim().split(/\\s+/)[0];
+  if(first) document.getElementById('tyTitle').textContent='Thank you, '+first+'! We got your request.';
+  const bits=[];
+  if(lead.type) bits.push('<b>'+lead.type.replace(/</g,'')+'</b>');
+  if(lead.date){const d=new Date(lead.date+'T12:00:00'); if(!isNaN(d)) bits.push('on <b>'+d.toLocaleDateString('en-US',{weekday:'long',month:'long',day:'numeric',year:'numeric'})+'</b>');}
+  if(bits.length){const r=document.getElementById('recap'); r.innerHTML='Checking availability for your '+bits.join(' ')+'.'; r.style.display='block';}
+})();
+</script>
+</body>
+</html>
+`;
+  writeFileSync('thank-you.html', html);
+  console.log('built thank-you');
+}
+
 // ---------- sitemap ----------
 const extra = ['check-my-date', 'terms-and-conditions', 'privacy-policy'];
 const sm = [`  <url><loc>${ORIGIN}/</loc><lastmod>${TODAY}</lastmod><priority>1.0</priority></url>`,

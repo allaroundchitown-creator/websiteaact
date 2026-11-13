@@ -502,7 +502,9 @@ document.getElementById('bookForm').addEventListener('submit', async e => {
     if(!r.ok||!(j.success===true||j.success==='true')) throw new Error();
     [...f.children].forEach(x => { if (x.id!=='ok') x.style.display='none'; });
     document.getElementById('ok').style.display='block';
-    if (window.gtag) gtag('event','generate_lead',{form:'homepage_check_availability'});
+    try { sessionStorage.setItem('aactLead', JSON.stringify({ name: data.get('name'), date: data.get('date'), type: data.get('type') })); } catch(_) {}
+    let gone=false; const go=()=>{ if(!gone){ gone=true; location.href='/thank-you'; } };
+    if (window.gtag) { gtag('event','generate_lead',{form:'homepage_check_availability',event_callback:go}); setTimeout(go,1200); } else go();
   } catch(_) {
     st.textContent='We couldn’t send that. Please try again or call/text '+CONFIG.phone+'.'; st.style.color='#e5484d';
   } finally { btn.disabled=false; btn.textContent='Check Availability'; }
