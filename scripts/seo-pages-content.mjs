@@ -51,13 +51,13 @@ export const pages = [
     script: 'Spin Into Forever',
     h1: 'Wedding 360 Photo Booth Rental in Chicago',
     intro: `Give your guests the moment they'll post the next morning. Our 360 video booth turns your reception into slow-motion clips with your names and wedding date on every one.`,
-    hero: { src: '/package-premiere.webp', alt: 'Bride and groom celebrating on the AACT 360 booth with confetti at their Chicago wedding reception' },
+    hero: { src: '/strip-wedding-confetti.webp', alt: 'Bride and groom celebrating on the AACT 360 booth with confetti at their Chicago wedding reception' },
     area: 'Chicago',
     service: 'Wedding 360 photo booth rental',
     dedicated: {
       navLabel: 'Weddings',
       ticks: ['Your names and wedding date on every video', 'An attendant with the booth all night', 'Cold sparks, pro lighting, stanchions and carpet with Premiere'],
-      video: { src: '/wedding-hero.mp4', poster: '/package-premiere.webp', ratio: '3/4', caption: 'Real AACT wedding video with a custom overlay' },
+      image: { src: '/strip-wedding-confetti.webp', alt: 'Couple celebrating with confetti on the AACT 360 booth at their Chicago wedding reception', pos: '50% 42%' },
       order: ['highlights', 'split', 'timeline', 'packages', 'why', 'specs'],
       highlights: { kicker: 'Why couples book it', h2: 'More Than a Photo Strip', items: [
         ['overlay', 'Your Names on Every Clip', 'We design a custom overlay with your names, date and wedding colors, and send it for your approval before the wedding.'],
@@ -67,7 +67,7 @@ export const pages = [
       split: { h2: 'Made for the Dress, the Tux and the Dance Floor',
         text: ['A traditional booth gives you a strip of stills. A 360 booth gives you video: the dress twirling, the groomsmen showing off, grandma’s surprise dance move, all in slow motion with music.',
           'Go Premiere and the booth becomes part of the room, with cold spark machines, professional lighting, stanchions and a carpet under the platform.'],
-        images: [['/360-booth-setup.webp', 'AACT 360 booth set up with lighting at an evening event'], ['/event-preview.webp', 'Bride and groom back to back on the AACT 360 booth with their wedding overlay'], ['/strip-wedding-confetti.webp', 'Couple celebrating with confetti on the AACT 360 booth at their reception']] },
+        images: [['/360-booth-setup.webp', 'AACT 360 booth set up with lighting at an evening event'], ['/event-preview.webp', 'Bride and groom back to back on the AACT 360 booth with their wedding overlay'], ['/package-premiere.webp', 'Bride and groom dancing on the AACT 360 booth at their reception']] },
       timeline: { kicker: 'Your wedding day', h2: 'How the Booth Fits Your Timeline', steps: [
         ['Before guests arrive', 'We coordinate load-in with your venue and planner and set up early. Setup never comes out of your hours.'],
         ['Cocktail hour', 'The booth opens while guests are dressed up and looking for something to do.'],

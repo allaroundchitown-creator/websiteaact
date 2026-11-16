@@ -83,6 +83,7 @@ const dedCss = `
 .dhero .vid video,.dhero .vid img{width:100%;height:100%;object-fit:cover;display:block}
 .dhero figure.wide{max-width:none}
 .dhero figcaption{margin-top:1rem;text-align:center;font:600 .68rem Montserrat,sans-serif;letter-spacing:.16em;text-transform:uppercase;color:#888}
+.hero.dfull .ph video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
 .dfull .crumbs{color:#777;margin-bottom:1.4rem}
 .dfull .lead{margin-bottom:1.3rem}
 .dfull .ticks{list-style:none;display:grid;gap:.6rem;margin-bottom:1.6rem;font-family:Montserrat,sans-serif;font-size:.98rem;font-weight:500}
@@ -206,13 +207,15 @@ ${d.specs.items.map(([big, h, t]) => `      <div class="spec"><b>${big}</b><h3>$
       ${gBadge}
       <div class="hero-cta"><a href="#book" class="btn btn-blue">Check Availability</a><span class="urgency">Spots are filling up quickly!</span></div>`;
   // Photo hero: full-bleed photo beside the text on desktop, photo on top with centered text on phones.
-  const hero = d.image ? `<!-- HERO -->
+  const hero = (d.image || d.video.full) ? `<!-- HERO -->
 <section class="hero dfull" id="top">
   <div class="grid">
     <div class="hero-text">
       ${heroText}
     </div>
-    <div class="ph"><img src="${d.image.src}" alt="${esc(d.image.alt)}"${d.image.pos ? ` style="object-position:${d.image.pos}"` : ''} fetchpriority="high"></div>
+    <div class="ph">${d.image
+      ? `<img src="${d.image.src}" alt="${esc(d.image.alt)}"${d.image.pos ? ` style="object-position:${d.image.pos}"` : ''} fetchpriority="high">`
+      : `<video src="${d.video.src}" poster="${d.video.poster}" autoplay muted loop playsinline preload="metadata" aria-label="${esc(d.video.caption)}"${d.video.pos ? ` style="object-position:${d.video.pos}"` : ''}></video>`}</div>
   </div>
 </section>
 ` : `<!-- HERO -->
