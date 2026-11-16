@@ -44,6 +44,7 @@ header .wrap{display:flex;align-items:center;justify-content:space-between;heigh
 .nav{display:flex;gap:2rem;font-family:Montserrat;font-size:.82rem;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:#222}
 .nav a:hover{color:var(--blue)}
 header .btn{padding:.8rem 1.6rem;font-size:.72rem}
+@media(max-width:1120px){.nav{gap:1.2rem;font-size:.76rem}}
 @media(max-width:900px){.nav{display:none}}
 @media(max-width:480px){header .btn{display:none}}
 
@@ -67,6 +68,7 @@ header .btn{padding:.8rem 1.6rem;font-size:.72rem}
 .ev-row{display:flex;justify-content:space-around;flex-wrap:wrap;gap:2rem 1rem}
 .ev{display:flex;flex-direction:column;align-items:center;gap:.8rem;width:140px;text-align:center}
 .ev svg{width:84px;height:84px;stroke:#111;fill:none;stroke-width:3.2;stroke-linecap:round;stroke-linejoin:round}
+a.ev:hover svg{stroke:var(--blue)}a.ev:hover b{color:var(--blue)}
 .ev b{font-family:Montserrat;font-weight:700;font-size:1.05rem;color:#111;line-height:1.2}
 
 /* why */
@@ -243,7 +245,7 @@ footer .brand img{height:64px}
 <header>
   <div class="wrap">
     <a href="/" class="brand"><img src="/img/logo.png" alt="AACT logo"></a>
-    <nav class="nav"><a href="/#why">Why Us</a><a href="/#packages">Packages</a><a href="/#faq">FAQ</a><a href="/#book">Contact</a></nav>
+    <nav class="nav"><a href="/wedding-photo-booth-chicago">Weddings</a><a href="/corporate-photo-booth-chicago">Corporate</a><a href="/#why">Why Us</a><a href="/#packages">Packages</a><a href="/#faq">FAQ</a><a href="/#book">Contact</a></nav>
     <a href="/#book" class="btn btn-blue">Check Availability</a>
   </div>
 </header>

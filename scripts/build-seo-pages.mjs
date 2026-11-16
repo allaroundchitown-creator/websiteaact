@@ -62,14 +62,196 @@ footer .grid .col a{white-space:nowrap}
 `;
 
 const url = p => `${ORIGIN}/${p.slug}`;
+
+// ---------- dedicated event pages (weddings, corporate) ----------
+// Pages with a `dedicated` block in seo-pages-content.mjs get their own layout
+// instead of the homepage-clone layout. Header, review, FAQ, form and footer stay shared.
+const dedCss = `
+.dhero{background:#000;color:#fff;padding:60px 0 80px;overflow:hidden}
+.dhero .grid{display:grid;grid-template-columns:1.15fr .85fr;gap:4rem;align-items:center}
+.dhero .grid>div{display:flex;flex-direction:column;align-items:flex-start}
+.dhero .crumbs{color:#777;margin-bottom:1.6rem}
+.dhero .script{display:block;font-family:"Caveat Brush",cursive;font-variant:small-caps;color:var(--blue);font-size:clamp(3rem,5.2vw,4.4rem);line-height:.9;margin-bottom:.3rem}
+.dhero h1{font-size:clamp(2.1rem,3.6vw,3.1rem);font-weight:800;line-height:1.08;margin-bottom:1.1rem;text-wrap:balance}
+.dhero .lead{color:#b5b5b5;font-size:1.15rem;max-width:33em;margin-bottom:1.4rem}
+.dhero .ticks{list-style:none;display:grid;gap:.6rem;margin-bottom:1.7rem;font-family:Montserrat,sans-serif;font-size:.98rem;font-weight:500}
+.dhero .ticks li{padding-left:1.8rem;position:relative}
+.dhero .ticks li::before{content:"";position:absolute;left:.1rem;top:.42em;width:.75em;height:.42em;border-left:2.5px solid var(--blue);border-bottom:2.5px solid var(--blue);transform:rotate(-45deg)}
+.dhero .greview{color:#fff;margin-bottom:1.5rem}
+.dhero figure{justify-self:center;width:100%;max-width:390px;margin:0}
+.dhero .vid{border-radius:18px;overflow:hidden;background:#111;box-shadow:0 30px 70px -25px rgba(255,79,163,.6)}
+.dhero .vid video,.dhero .vid img{width:100%;height:100%;object-fit:cover;display:block}
+.dhero figure.wide{max-width:none}
+.dhero figcaption{margin-top:1rem;text-align:center;font:600 .68rem Montserrat,sans-serif;letter-spacing:.16em;text-transform:uppercase;color:#888}
+.dsec .sub{color:var(--muted);max-width:40em;margin:.9rem auto 0;font-size:1.05rem}
+.dsec .feats{padding:50px 0 0}
+.tiles{display:grid;grid-template-columns:repeat(4,1fr);gap:1rem;margin-top:3rem;text-align:left}
+.tile{border:1px solid #e3e3e3;border-radius:12px;padding:1.4rem 1.3rem;border-top:3px solid var(--blue)}
+.tile h3{font-size:1.05rem;font-weight:700;color:#111;margin-bottom:.35rem}
+.tile p{font-size:.93rem;color:var(--muted)}
+.specs{background:var(--gray)}
+.spec-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1.2rem;margin-top:3rem;text-align:left}
+.spec{background:#fff;border:1px solid #e6e8eb;border-radius:12px;padding:1.7rem 1.5rem}
+.spec b{display:block;font:800 1.55rem/1.1 Montserrat,sans-serif;color:var(--blue);margin-bottom:.5rem}
+.spec h3{font-size:.78rem;letter-spacing:.16em;text-transform:uppercase;color:#111;margin-bottom:.45rem}
+.spec p{font-size:.93rem;color:var(--muted)}
+.pkg.featured[data-tag]::before{content:attr(data-tag)}
+.pkgs.two{grid-template-columns:repeat(2,1fr);max-width:780px;margin-left:auto;margin-right:auto}
+@media(max-width:900px){.pkgs.two{grid-template-columns:1fr}}
+.pkg-sub{color:var(--muted);max-width:40em;margin:.9rem auto 0;font-size:1.05rem}
+@media(max-width:900px){.dhero{padding:40px 0 60px}.dhero .grid{grid-template-columns:1fr;gap:2.6rem}.dhero figure{max-width:320px}.dhero figure.wide{max-width:none}.tiles,.spec-grid{grid-template-columns:1fr 1fr}}
+@media(max-width:520px){.tiles,.spec-grid{grid-template-columns:1fr}}
+`;
+const featIcons = Object.fromEntries([...features.matchAll(/<div class="ico" aria-hidden="true">(<svg[\s\S]*?<\/svg>)<\/div><h3>([^<]+)</g)].map(m => [m[2], m[1]]));
+const icons = {
+  overlay: featIcons['Custom Overlays'],
+  share: featIcons['Instant Sharing'],
+  attendant: '<svg viewBox="0 0 24 24"><circle cx="12" cy="7.5" r="3.5"/><path d="M5 20.5c.6-4 3.4-6 7-6s6.4 2 7 6"/><path d="M17.5 3.5l.5 1.2 1.2.5-1.2.5-.5 1.2-.5-1.2-1.2-.5 1.2-.5z"/></svg>',
+  files: '<svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2.5"/><path d="M10 9.5v5l4.5-2.5z"/></svg>',
+};
+
+function renderDedicated(p, faq, areas, pageScript) {
+  const d = p.dedicated;
+  const sections = {
+    highlights: () => `<!-- HIGHLIGHTS -->
+<section class="dsec">
+  <div class="wrap center">
+    <div class="kicker">${d.highlights.kicker}</div><h2>${d.highlights.h2}</h2>
+    <div class="feats">
+${d.highlights.items.map(([ico, h, t]) => `      <div class="feat"><div class="ico" aria-hidden="true">${icons[ico]}</div><h3>${h}</h3><p>${t}</p></div>`).join('\n')}
+    </div>
+  </div>
+</section>
+`,
+    tiles: () => `<!-- BUILT FOR -->
+<section class="dsec">
+  <div class="wrap center">
+    <div class="kicker">${d.tiles.kicker}</div><h2>${d.tiles.h2}</h2>
+    <div class="tiles">
+${d.tiles.items.map(([h, t]) => `      <div class="tile"><h3>${h}</h3><p>${t}</p></div>`).join('\n')}
+    </div>
+  </div>
+</section>
+`,
+    split: () => `<!-- FEATURE -->
+<section class="bluesec">
+  <div class="wrap grid">
+    <div class="collage">
+${d.split.images.map(([src, alt]) => `      <div class="ph"><img src="${src}" alt="${esc(alt)}" loading="lazy"></div>`).join('\n')}
+    </div>
+    <div class="txt">
+      <h2>${d.split.h2}</h2>
+${d.split.text.map(t => `      <p>${t}</p>`).join('\n')}
+      <a href="#book" class="btn btn-white" style="margin-top:1rem">Check Availability</a>
+    </div>
+  </div>
+</section>
+`,
+    timeline: () => `<!-- TIMELINE -->
+<section class="how">
+  <div class="wrap center">
+    <div class="kicker">${d.timeline.kicker}</div>
+    <h2>${d.timeline.h2}</h2>
+    <div class="steps">
+${d.timeline.steps.map(([h, t], i) => `      <div class="step"><div class="n">${i + 1}</div><h3>${h}</h3><p>${t}</p></div>`).join('\n')}
+    </div>
+  </div>
+</section>
+`,
+    packages: () => {
+      const card = (key, name, hrs) => {
+        const f = d.packages.featured === key;
+        return `      <div class="pkg${f ? ' featured' : ''}"${f ? ` data-tag="${esc(d.packages.tag)}"` : ''}><h3>${name}</h3><div class="hrs">${hrs} Hours</div><div class="price">$${PRICES[key]}</div><p class="for">${d.packages.for[key]}</p><a href="#book" class="btn ${f ? 'btn-blue' : 'btn-black'}" data-pkg="${name} – ${hrs} hrs">Book ${name}</a></div>`;
+      };
+      const i = packages.indexOf('<div class="pkgs">'), j = packages.indexOf('<div class="incl">');
+      if (i < 0 || j < 0) throw new Error('Homepage packages markup changed');
+      const head = packages.slice(0, i).replace(/<div class="center">[\s\S]*?<\/h2><\/div>/, `<div class="center"><div class="kicker">Packages</div><h2>${d.packages.h2}</h2><p class="pkg-sub">${d.packages.sub}</p></div>`);
+      if (!head.includes(d.packages.h2)) throw new Error('Homepage packages heading changed');
+      const money = n => '$' + n.toLocaleString('en-US');
+      const custom = d.packages.cards && d.packages.cards.map(c => `      <div class="pkg"><h3>${c.name}</h3><div class="hrs">${c.label}</div><div class="price">${money(c.price)}</div><p class="for">${c.for}</p><a href="#book" class="btn btn-black" data-pkg="${esc(c.pkg)}">Get a Quote</a></div>`);
+      const cards = custom || [card('signature', 'Signature', 2), card('elite', 'Elite', 3), card('premiere', 'Premiere', 4)];
+      let tail = packages.slice(j);
+      if (d.packages.incl) {
+        const re = /<h3>Every package includes<\/h3>\s*<ul>[\s\S]*?<\/ul>/;
+        if (!re.test(tail)) throw new Error('Homepage includes list changed');
+        tail = tail.replace(re, `<h3>${d.packages.inclTitle}</h3>\n      <ul>\n${d.packages.incl.map(x => `        <li>${x}</li>`).join('\n')}\n      </ul>`);
+      }
+      return `${head}<div class="pkgs${custom ? ' two' : ''}">\n${cards.join('\n')}\n    </div>\n    ${custom ? tail.replace(/ Planning a company or school event\?[\s\S]*?<\/a>\./, '') : packages.slice(j)}`;
+    },
+    why: () => why,
+    specs: () => `<!-- LOGISTICS -->
+<section class="specs">
+  <div class="wrap center">
+    <div class="kicker">${d.specs.kicker}</div><h2>${d.specs.h2}</h2>
+    <div class="spec-grid">
+${d.specs.items.map(([big, h, t]) => `      <div class="spec"><b>${big}</b><h3>${h}</h3><p>${t}</p></div>`).join('\n')}
+    </div>
+  </div>
+</section>
+`,
+  };
+
+  const hero = `<!-- HERO -->
+<section class="dhero" id="top">
+  <div class="wrap grid">
+    <div>
+      <nav class="crumbs" aria-label="Breadcrumb"><a href="/">Home</a> › ${p.nav}</nav>
+      <h1><span class="script">${p.script}</span>${p.h1}</h1>
+      <p class="lead">${p.intro}</p>
+      <ul class="ticks">${d.ticks.map(t => `<li>${t}</li>`).join('')}</ul>
+      ${gBadge}
+      <div class="hero-cta"><a href="#book" class="btn btn-blue">Check Availability</a><span class="urgency">Spots are filling up quickly!</span></div>
+    </div>
+    ${d.image
+      ? `<figure class="wide">
+      <div class="vid" style="aspect-ratio:${d.image.ratio}"><img src="${d.image.src}" alt="${esc(d.image.alt)}" fetchpriority="high"></div>
+      <figcaption>${d.image.caption}</figcaption>
+    </figure>`
+      : `<figure>
+      <div class="vid" style="aspect-ratio:${d.video.ratio}"><video src="${d.video.src}" poster="${d.video.poster}" autoplay muted loop playsinline preload="metadata" aria-label="${esc(d.video.caption)}"></video></div>
+      <figcaption>${d.video.caption}</figcaption>
+    </figure>`}
+  </div>
+</section>
+`;
+
+  let bookSec = book
+    .replace('<h2>Check Your Date</h2>', `<h2>${d.book.h2}</h2>`)
+    .replace(/<p class="lead">[\s\S]*?<\/p>/, `<p class="lead">${d.book.lead}</p>`);
+  if (d.book.company) {
+    const emailField = '<div class="f full"><label for="email">Email</label><input id="email" name="email" type="email" autocomplete="email"></div>';
+    if (!bookSec.includes(emailField)) throw new Error('Homepage form markup changed');
+    bookSec = bookSec.replace(emailField, `${emailField}\n      <div class="f full"><label for="company">Company / organization</label><input id="company" name="company" autocomplete="organization"></div>`);
+  }
+  if (d.packages.cards) {
+    const sel = /(<select id="pkg" name="package">)[\s\S]*?(<\/select>)/;
+    if (!sel.test(bookSec)) throw new Error('Homepage package select changed');
+    bookSec = bookSec.replace(sel, `$1<option>Not sure yet</option>${d.packages.cards.map(c => `<option>${c.pkg}</option>`).join('')}$2`);
+  }
+  if (!bookSec.includes(d.book.h2)) throw new Error('Homepage booking heading changed');
+  const k = pageScript.lastIndexOf('</script>');
+  const scriptOut = `${pageScript.slice(0, k)}document.getElementById('type').value=${JSON.stringify(d.book.type)};\n${pageScript.slice(k)}`;
+
+  let footerOut = footerAndPopup, finalScript = scriptOut;
+  if (d.noPromo) {
+    const fi = footerAndPopup.indexOf('<div class="pop-bg"');
+    const si = scriptOut.indexOf('// promo popup'), sj = scriptOut.indexOf('// show labeled placeholder');
+    if (fi < 0 || si < 0 || sj < si) throw new Error('Homepage popup markup changed');
+    footerOut = footerAndPopup.slice(0, fi);
+    finalScript = scriptOut.slice(0, si) + scriptOut.slice(sj);
+  }
+  return { css: dedCss, main: `${hero}\n${d.order.map(s => sections[s]()).join('')}${faq}\n${areas}\n${bookSec}`, script: finalScript, footer: footerOut };
+}
+
 const abs = src => ORIGIN + src;
 
 function schema(p, faqs) {
-  const offers = [
+  const custom = p.dedicated && p.dedicated.packages.cards;
+  const offers = (custom ? custom.map(c => [`${c.label} — ${c.name.toLowerCase()}`, c.price]) : [
     ['The Signature — 2 hours', PRICES.signature],
     ['The Elite — 3 hours', PRICES.elite],
     ['The Premiere — 4 hours', PRICES.premiere],
-  ].map(([name, price]) => ({ '@type': 'Offer', name, price: String(price), priceCurrency: 'USD', url: `${url(p)}#packages` }));
+  ]).map(([name, price]) => ({ '@type': 'Offer', name, price: String(price), priceCurrency: 'USD', url: `${url(p)}#packages` }));
   return {
     '@context': 'https://schema.org',
     '@graph': [
@@ -159,6 +341,7 @@ ${[...eventLinks, ...cityLinks].map(o => `      <a href="/${o.slug}">${o.city ? 
     .replace(`data.append('source','AACT homepage')`, `data.append('source','${p.slug}')`)
     .replace(`form:'homepage_check_availability'`, `form:'${p.slug}'`);
 
+  const ded = p.dedicated ? renderDedicated(p, faq, areas, pageScript) : null;
   const ogImg = abs(p.hero.src);
   return `<!DOCTYPE html>
 <html lang="en">
@@ -186,15 +369,15 @@ ${p.city ? `<meta name="geo.region" content="US-IL">\n<meta name="geo.placename"
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Open+Sans:wght@400;600&family=Caveat+Brush&display=swap" rel="stylesheet">
-<style>${css}${seoCss}</style>
+<style>${css}${seoCss}${ded ? ded.css : ''}</style>
 </head>
 <body>
 
-${header}${hero}
+${header}${ded ? ded.main : `${hero}
 ${body}
 ${why}${blue}${how}${packages}${features}${faq}
 ${areas}
-${book}${footerAndPopup}${pageScript}</body>
+${book}`}${ded ? ded.footer : footerAndPopup}${ded ? ded.script : pageScript}</body>
 </html>
 `;
 }

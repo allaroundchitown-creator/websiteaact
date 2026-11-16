@@ -3,6 +3,8 @@
 // Facts used everywhere must match the homepage (pricing, what's included).
 
 export const PRICES = { signature: 440, elite: 660, premiere: 880 };
+// Corporate events are priced separately from private events.
+export const CORPORATE = { two: 1200, four: 2200 };
 
 const P = PRICES;
 
@@ -25,7 +27,7 @@ export const pages = [
          <p>Setup and pack-down don't eat into your time either. We arrive early so the booth is spinning when your package starts, and every hour you pay for is booth time for your guests.</p>`],
       ['Which package should you pick?',
         `<p><strong>Signature (2 hours)</strong> works for birthdays, smaller parties and events where the booth is one activity among many. Two hours is enough for most guests to take a few spins.</p>
-         <p><strong>Elite (3 hours)</strong> fits bigger birthdays, graduations and corporate events where guests arrive over a longer window and you want the booth running for most of the night.</p>
+         <p><strong>Elite (3 hours)</strong> fits bigger birthdays and graduation parties where guests arrive over a longer window and you want the booth running for most of the night.</p>
          <p><strong>Premiere (4 hours)</strong> is our go-to for weddings, quinceañeras and sweet 16s. It covers cocktail hour through the dance floor, and adds cold spark machines, professional lighting, stanchions and a carpet so the booth looks like part of the décor.</p>`],
       ['What you get at every Chicago event',
         `<p>Guests step onto the platform, the camera arm spins around them, and a few seconds later they have a slow-motion video set to music with your custom overlay on it. They scan a QR code at the booth and the video lands on their phone, ready for TikTok, Instagram Reels or the group chat.</p>
@@ -52,6 +54,36 @@ export const pages = [
     hero: { src: '/package-premiere.webp', alt: 'Bride and groom celebrating on the AACT 360 booth with confetti at their Chicago wedding reception' },
     area: 'Chicago',
     service: 'Wedding 360 photo booth rental',
+    dedicated: {
+      navLabel: 'Weddings',
+      ticks: ['Your names and wedding date on every video', 'An attendant with the booth all night', 'Cold sparks, pro lighting, stanchions and carpet with Premiere'],
+      video: { src: '/wedding-hero.mp4', poster: '/package-premiere.webp', ratio: '3/4', caption: 'Real AACT wedding video with a custom overlay' },
+      order: ['highlights', 'split', 'timeline', 'packages', 'why', 'specs'],
+      highlights: { kicker: 'Why couples book it', h2: 'More Than a Photo Strip', items: [
+        ['overlay', 'Your Names on Every Clip', 'We design a custom overlay with your names, date and wedding colors, and send it for your approval before the wedding.'],
+        ['share', 'On Their Phones in Seconds', 'Guests scan a QR code and their slow-motion video is ready to post that night. You get the videos too.'],
+        ['attendant', 'Nobody Has to Run It', 'Our attendant coaches poses, hands out props and keeps the line moving, so your wedding party stays on the dance floor.'],
+      ] },
+      split: { h2: 'Made for the Dress, the Tux and the Dance Floor',
+        text: ['A traditional booth gives you a strip of stills. A 360 booth gives you video: the dress twirling, the groomsmen showing off, grandma’s surprise dance move, all in slow motion with music.',
+          'Go Premiere and the booth becomes part of the room, with cold spark machines, professional lighting, stanchions and a carpet under the platform.'],
+        images: [['/360-booth-setup.webp', 'AACT 360 booth set up with lighting at an evening event'], ['/event-preview.webp', 'Bride and groom back to back on the AACT 360 booth with their wedding overlay'], ['/strip-wedding-confetti.webp', 'Couple celebrating with confetti on the AACT 360 booth at their reception']] },
+      timeline: { kicker: 'Your wedding day', h2: 'How the Booth Fits Your Timeline', steps: [
+        ['Before guests arrive', 'We coordinate load-in with your venue and planner and set up early. Setup never comes out of your hours.'],
+        ['Cocktail hour', 'The booth opens while guests are dressed up and looking for something to do.'],
+        ['Reception', 'Dinner ends, the dance floor fills and the line at the booth starts.'],
+        ['After the last spin', 'We pack everything down. Guests already have their videos, and you get them too.'],
+      ] },
+      packages: { h2: 'Wedding Packages', sub: 'The same upfront pricing as every AACT event. No setup fee, no attendant fee.', featured: 'premiere', tag: 'Wedding Pick',
+        for: { signature: 'For intimate weddings, or a booth during cocktail hour only.', elite: 'Covers cocktail hour and the first stretch of dancing.', premiere: 'Cocktail hour through the dance floor. Adds cold sparks, pro lighting, stanchions &amp; carpet.' } },
+      specs: { kicker: 'For your venue &amp; planner', h2: 'Easy on Your Venue', items: [
+        ['10×10 ft', 'Space', 'A flat area of about 10×10 ft near the dance floor or cocktail space.'],
+        ['1 outlet', 'Power', 'One standard outlet nearby is all we need.'],
+        ['Early', 'Setup', 'We arrive before your guests and are ready when your package starts.'],
+        ['Chicagoland', 'Service area', 'Downtown hotels and lofts to suburban banquet halls. Farther out, a travel fee may apply.'],
+      ] },
+      book: { h2: 'Check Your Wedding Date', lead: 'Send your date and venue and we’ll get back to you with availability and a quote, usually the same day.', type: 'Wedding' },
+    },
     sections: [
       ['Why couples add a 360 booth to their wedding',
         `<p>A traditional photo booth gives you a strip of stills. A 360 booth gives you video: the dress twirling, the groomsmen showing off, grandma's surprise dance move, all in slow motion with music. Guests share their videos right away, so your wedding shows up all over their stories that night.</p>
@@ -67,6 +99,8 @@ export const pages = [
       ['When should I book a 360 booth for my wedding?', 'As soon as you have your date and venue. Saturdays in peak wedding season go first, so check availability early.'],
       ['Can the overlay match our wedding colors?', 'Yes. We design a custom overlay with your names, date and colors, and send it for your approval before the wedding.'],
       ['Do you work with our venue and planner?', 'Yes. Share your venue and planner contact and we will confirm load-in, space and power ahead of time.'],
+      ['Which package fits a wedding?', 'Premiere (4 hours) covers cocktail hour through most of the reception. For a shorter window, Signature and Elite include the same attendant, unlimited videos and custom overlay.'],
+      ['Does our venue need to approve the cold sparks?', 'Some venues have their own rules about cold spark machines. Check with your venue and mention it in your request, and we will plan around it.'],
     ],
   },
   {
@@ -131,19 +165,66 @@ export const pages = [
     script: 'Your Brand, Spinning',
     h1: 'Corporate 360 Photo Booth Rental in Chicago',
     intro: `Put your logo on hundreds of shareable videos. Our branded 360 booth works for company parties, school events, graduations and brand activations of 12 or 1,200 guests.`,
-    hero: { src: '/review-adler-university.webp', alt: 'Adler University graduates in caps and gowns on the AACT 360 booth at commencement in Chicago' },
+    hero: { src: '/adler-booth-setup.webp', alt: 'AACT 360 booth with stanchions, lighting and a branded backdrop at Adler University’s commencement in Chicago' },
     area: 'Chicago',
     service: 'Corporate 360 photo booth rental',
+    dedicated: {
+      navLabel: 'Corporate',
+      ticks: ['Your logo, event name or hashtag on every video', 'Backdrop, cold sparks, lighting and stanchions included', 'Trusted at a 1,200-guest university commencement'],
+      image: { src: '/adler-booth-setup.webp', alt: 'AACT 360 booth with stanchions, lighting and a branded backdrop, set up for Adler University’s commencement', ratio: '4/3', caption: 'Our setup at Adler University’s commencement' },
+      noPromo: true,
+      order: ['tiles', 'why', 'highlights', 'split', 'timeline', 'packages', 'specs'],
+      tiles: { kicker: 'Built for', h2: 'Events We Bring the Booth To', items: [
+        ['Holiday parties', 'The part of the party people are still talking about on Monday.'],
+        ['Employee appreciation', 'One activity every department lines up for.'],
+        ['Client receptions', 'Guests leave with a branded video on their phone.'],
+        ['Conferences', 'Give attendees a reason to stop, and a clip with your logo on it.'],
+        ['Product launches', 'Put the launch on your guests’ feeds the same night.'],
+        ['Brand activations', 'Your campaign hashtag on every video that gets shared.'],
+        ['School events', 'Dances and campus events of any size.'],
+        ['Graduations', 'Caps, gowns and slow motion, for 12 graduates or 1,200.'],
+      ] },
+      highlights: { kicker: 'What you get', h2: 'Branded Content, Made by Your Guests', items: [
+        ['overlay', 'Your Logo on Every Video', 'Every package includes a custom overlay with your logo, event name or campaign hashtag.'],
+        ['share', 'Shared Before They Leave', 'Guests scan a QR code and post their clip on the spot, so your brand travels well past the room.'],
+        ['files', 'Yours to Reuse', 'You receive the videos to use on your own social and web channels.'],
+      ] },
+      split: { h2: 'A Team That Handles the Logistics',
+        text: ['Large events need a vendor that shows up on time, works with the venue and keeps a line moving. At Adler University’s commencement we loaded in through the lower Wacker loading dock and were set up within minutes.',
+          'Our attendant runs the booth from start to finish, so nobody on your staff gets pulled away to manage it.'],
+        images: [['/adler-graduate-on-booth.webp', 'Adler University graduate in cap and gown on the AACT 360 booth at commencement'], ['/corporate-brand-event.webp', 'Guest filming on the AACT 360 booth at a brand event with a logo overlay'], ['/360-booth-setup.webp', 'AACT 360 booth set up with lighting at an evening event']] },
+      timeline: { kicker: 'How it works', h2: 'From Request to Event Day', steps: [
+        ['Send the details', 'Your date, venue and expected headcount.'],
+        ['Get a clear quote', 'Package options and price, usually the same day.'],
+        ['We brand it', 'Your logo, event name or hashtag goes on the video overlay.'],
+        ['Event day', 'We load in, run the booth and pack it all down.'],
+      ] },
+      packages: { h2: 'Corporate Pricing', sub: 'Upfront pricing for company, school and brand events. Both options are the full setup: backdrop, cold sparks, lighting, stanchions and your branding.',
+        inclTitle: 'Every corporate package includes',
+        incl: ['360° video booth &amp; platform', 'On-site attendant', 'Unlimited videos', 'Custom branding on every video', 'Backdrop', 'Cold spark machines', 'Professional lighting', 'Stanchions', 'Slow-motion &amp; music', 'Instant sharing to phones', 'Props', 'Delivery, setup &amp; breakdown'],
+        cards: [
+          { name: '2 Hours', label: 'Corporate', price: CORPORATE.two, pkg: 'Corporate – 2 hrs', for: 'For a reception, happy hour or a booth during one part of your program.' },
+          { name: '4 Hours', label: 'Corporate', price: CORPORATE.four, pkg: 'Corporate – 4 hrs', for: 'For holiday parties, commencements and all-evening events with a large headcount.' },
+        ] },
+      specs: { kicker: 'Venue logistics', h2: 'What We Need From You', items: [
+        ['10×10 ft', 'Space', 'A flat area of about 10×10 ft, indoors or out.'],
+        ['1 outlet', 'Power', 'One standard outlet nearby is all we need.'],
+        ['Load-in', 'Docks &amp; access', 'Send your venue’s load-in, dock and insurance requirements with your request and we’ll confirm everything before your date.'],
+        ['12 to 1,200', 'Headcount', 'Tell us how many guests to expect so we can plan for the line.'],
+      ] },
+      book: { h2: 'Get a Quote for Your Event', lead: 'Send your date, venue and expected headcount and we’ll confirm logistics and send a quote, usually the same day.', type: 'Corporate', company: true },
+    },
     sections: [
       ['Branded content, made by your guests',
         `<p>Every video from the booth carries a custom overlay with your logo, event name or campaign hashtag. Guests share their clips on the spot, so your brand travels well past the event. You also get the videos for your own social and web channels.</p>`],
       ['Proven at large Chicago events',
         `<p>We handled Adler University's commencement with over 1,200 guests, including load-in through the lower Wacker loading dock and a fast setup. Large events need a team that shows up on time, knows how to work with venue logistics and keeps a line moving. That's what our attendants are trained for.</p>`],
       ['Built for',
-        `<p>Holiday parties, employee appreciation events, client receptions, conferences, product launches, brand activations, school events and graduations. For longer corporate events, <strong>Elite (3 hours, $${P.elite})</strong> or <strong>Premiere (4 hours, $${P.premiere})</strong> keep the booth running through the busiest stretch, and Premiere adds pro lighting, stanchions and a carpet for a polished look.</p>
+        `<p>Holiday parties, employee appreciation events, client receptions, conferences, product launches, brand activations, school events and graduations. Corporate pricing is <strong>$${CORPORATE.two.toLocaleString('en-US')} for 2 hours</strong> or <strong>$${CORPORATE.four.toLocaleString('en-US')} for 4 hours</strong>.</p>
          <p>We serve downtown Chicago venues, hotels and offices along with suburban corporate campuses. Send your venue, date and expected headcount and we'll confirm logistics and send a quote, usually the same day.</p>`],
     ],
     faqs: [
+      ['How much is a 360 booth for a corporate event?', `Corporate pricing is $${CORPORATE.two.toLocaleString('en-US')} for 2 hours or $${CORPORATE.four.toLocaleString('en-US')} for 4 hours, with an attendant, custom branding, a backdrop, cold spark machines, professional lighting, stanchions, unlimited videos and setup included.`],
       ['Can you put our logo on the videos?', 'Yes. Every package includes a custom overlay with your logo, event name or hashtag.'],
       ['Do we get copies of the videos?', 'Yes. You receive the videos to use on your own social and web channels.'],
       ['Can you handle a large event?', 'Yes. We have run the booth at events with more than 1,200 guests, including university commencement.'],
