@@ -278,6 +278,13 @@ footer .grid .col a{white-space:nowrap}
 .dhero .vid video,.dhero .vid img{width:100%;height:100%;object-fit:cover;display:block}
 .dhero figure.wide{max-width:none}
 .dhero figcaption{margin-top:1rem;text-align:center;font:600 .68rem Montserrat,sans-serif;letter-spacing:.16em;text-transform:uppercase;color:#888}
+.dfull .crumbs{color:#777;margin-bottom:1.4rem}
+.dfull .lead{margin-bottom:1.3rem}
+.dfull .ticks{list-style:none;display:grid;gap:.6rem;margin-bottom:1.6rem;font-family:Montserrat,sans-serif;font-size:.98rem;font-weight:500}
+.dfull .ticks li{padding-left:1.8rem;position:relative}
+.dfull .ticks li::before{content:"";position:absolute;left:.1rem;top:.42em;width:.75em;height:.42em;border-left:2.5px solid var(--blue);border-bottom:2.5px solid var(--blue);transform:rotate(-45deg)}
+@media(min-width:901px){.dfull .grid{min-height:640px}.dfull .hero-text{max-width:56vw}}
+@media(max-width:900px){.hero.dfull .ph{min-height:0;aspect-ratio:4/3}.hero.dfull .ph::before{background:linear-gradient(0deg,#000 0%,rgba(0,0,0,.35) 12%,transparent 30%)}.dfull .hero-text{align-items:center;text-align:center;padding-top:26px}.dfull .hero p{margin-left:auto;margin-right:auto}.dfull .ticks{text-align:left}.dfull .hero-cta{align-self:center}}
 .dsec .sub{color:var(--muted);max-width:40em;margin:.9rem auto 0;font-size:1.05rem}
 .dsec .feats{padding:50px 0 0}
 .tiles{display:grid;grid-template-columns:repeat(4,1fr);gap:1rem;margin-top:3rem;text-align:left}

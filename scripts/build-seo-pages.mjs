@@ -83,6 +83,13 @@ const dedCss = `
 .dhero .vid video,.dhero .vid img{width:100%;height:100%;object-fit:cover;display:block}
 .dhero figure.wide{max-width:none}
 .dhero figcaption{margin-top:1rem;text-align:center;font:600 .68rem Montserrat,sans-serif;letter-spacing:.16em;text-transform:uppercase;color:#888}
+.dfull .crumbs{color:#777;margin-bottom:1.4rem}
+.dfull .lead{margin-bottom:1.3rem}
+.dfull .ticks{list-style:none;display:grid;gap:.6rem;margin-bottom:1.6rem;font-family:Montserrat,sans-serif;font-size:.98rem;font-weight:500}
+.dfull .ticks li{padding-left:1.8rem;position:relative}
+.dfull .ticks li::before{content:"";position:absolute;left:.1rem;top:.42em;width:.75em;height:.42em;border-left:2.5px solid var(--blue);border-bottom:2.5px solid var(--blue);transform:rotate(-45deg)}
+@media(min-width:901px){.dfull .grid{min-height:640px}.dfull .hero-text{max-width:56vw}}
+@media(max-width:900px){.hero.dfull .ph{min-height:0;aspect-ratio:4/3}.hero.dfull .ph::before{background:linear-gradient(0deg,#000 0%,rgba(0,0,0,.35) 12%,transparent 30%)}.dfull .hero-text{align-items:center;text-align:center;padding-top:26px}.dfull .hero p{margin-left:auto;margin-right:auto}.dfull .ticks{text-align:left}.dfull .hero-cta{align-self:center}}
 .dsec .sub{color:var(--muted);max-width:40em;margin:.9rem auto 0;font-size:1.05rem}
 .dsec .feats{padding:50px 0 0}
 .tiles{display:grid;grid-template-columns:repeat(4,1fr);gap:1rem;margin-top:3rem;text-align:left}
@@ -191,26 +198,32 @@ ${d.specs.items.map(([big, h, t]) => `      <div class="spec"><b>${big}</b><h3>$
 `,
   };
 
-  const hero = `<!-- HERO -->
-<section class="dhero" id="top">
-  <div class="wrap grid">
-    <div>
-      <nav class="crumbs" aria-label="Breadcrumb"><a href="/">Home</a> › ${p.nav}</nav>
+  const heroText = `<nav class="crumbs" aria-label="Breadcrumb"><a href="/">Home</a> › ${p.nav}</nav>
       <h1><span class="script">${p.script}</span>${p.h1}</h1>
       <p class="lead">${p.intro}</p>
       <ul class="ticks">${d.ticks.map(t => `<li>${t}</li>`).join('')}</ul>
       ${gBadge}
-      <div class="hero-cta"><a href="#book" class="btn btn-blue">Check Availability</a><span class="urgency">Spots are filling up quickly!</span></div>
+      <div class="hero-cta"><a href="#book" class="btn btn-blue">Check Availability</a><span class="urgency">Spots are filling up quickly!</span></div>`;
+  // Photo hero: full-bleed photo beside the text on desktop, photo on top with centered text on phones.
+  const hero = d.image ? `<!-- HERO -->
+<section class="hero dfull" id="top">
+  <div class="grid">
+    <div class="hero-text">
+      ${heroText}
     </div>
-    ${d.image
-      ? `<figure class="wide">
-      <div class="vid" style="aspect-ratio:${d.image.ratio}"><img src="${d.image.src}" alt="${esc(d.image.alt)}" fetchpriority="high"></div>
-      <figcaption>${d.image.caption}</figcaption>
-    </figure>`
-      : `<figure>
+    <div class="ph"><img src="${d.image.src}" alt="${esc(d.image.alt)}"${d.image.pos ? ` style="object-position:${d.image.pos}"` : ''} fetchpriority="high"></div>
+  </div>
+</section>
+` : `<!-- HERO -->
+<section class="dhero" id="top">
+  <div class="wrap grid">
+    <div>
+      ${heroText}
+    </div>
+    <figure>
       <div class="vid" style="aspect-ratio:${d.video.ratio}"><video src="${d.video.src}" poster="${d.video.poster}" autoplay muted loop playsinline preload="metadata" aria-label="${esc(d.video.caption)}"></video></div>
       <figcaption>${d.video.caption}</figcaption>
-    </figure>`}
+    </figure>
   </div>
 </section>
 `;
@@ -240,7 +253,8 @@ ${d.specs.items.map(([big, h, t]) => `      <div class="spec"><b>${big}</b><h3>$
     footerOut = footerAndPopup.slice(0, fi);
     finalScript = scriptOut.slice(0, si) + scriptOut.slice(sj);
   }
-  return { css: dedCss, main: `${hero}\n${d.order.map(s => sections[s]()).join('')}${faq}\n${areas}\n${bookSec}`, script: finalScript, footer: footerOut };
+  const parts = { split: sections.split(), timeline: sections.timeline(), packages: sections.packages(), book: bookSec };
+  return { parts, css: dedCss, main: `${hero}\n${d.order.map(s => sections[s]()).join('')}${faq}\n${areas}\n${bookSec}`, script: finalScript, footer: footerOut };
 }
 
 const abs = src => ORIGIN + src;
@@ -283,7 +297,7 @@ function render(p) {
       ${gBadge}
       <div class="hero-cta"><a href="#book" class="btn btn-blue">Check Availability</a><span class="urgency">Spots are filling up quickly!</span></div>
     </div>
-    <div class="ph" data-label="Event photo"><img src="${p.hero.src}" alt="${esc(p.hero.alt)}" fetchpriority="high"></div>
+    <div class="ph" data-label="Event photo"><img src="${p.hero.src}" alt="${esc(p.hero.alt)}"${p.hero.pos ? ` style="object-position:${p.hero.pos}"` : ''} fetchpriority="high"></div>
   </div>
 </section>
 `;
@@ -299,11 +313,7 @@ function render(p) {
       <span class="script">At a glance</span>
       <h2>${label}</h2>
       <ul>
-        <li>Signature · 2 hrs <b>$${PRICES.signature}</b></li>
-        <li>Elite · 3 hrs <b>$${PRICES.elite}</b></li>
-        <li>Premiere · 4 hrs <b>$${PRICES.premiere}</b></li>
-        <li>Attendant &amp; setup <b>Included</b></li>
-        <li>Videos <b>Unlimited</b></li>
+${(p.quick || [[`Signature · 2 hrs`, `$${PRICES.signature}`], [`Elite · 3 hrs`, `$${PRICES.elite}`], [`Premiere · 4 hrs`, `$${PRICES.premiere}`], ['Attendant &amp; setup', 'Included'], ['Videos', 'Unlimited']]).map(([k, v]) => `        <li>${k} <b>${v}</b></li>`).join('\n')}
       </ul>
       <a href="#book" class="btn btn-blue">Check My Date</a>
       <small>${p.city ? `Serving ${p.city}${p.nearby ? ', ' + p.nearby : ''}.` : 'Serving Chicago &amp; the surrounding suburbs.'}</small>
@@ -342,6 +352,7 @@ ${[...eventLinks, ...cityLinks].map(o => `      <a href="/${o.slug}">${o.city ? 
     .replace(`form:'homepage_check_availability'`, `form:'${p.slug}'`);
 
   const ded = p.dedicated ? renderDedicated(p, faq, areas, pageScript) : null;
+  const classic = ded && p.dedicated.layout === 'classic';
   const ogImg = abs(p.hero.src);
   return `<!DOCTYPE html>
 <html lang="en">
@@ -373,7 +384,11 @@ ${p.city ? `<meta name="geo.region" content="US-IL">\n<meta name="geo.placename"
 </head>
 <body>
 
-${header}${ded ? ded.main : `${hero}
+${header}${classic ? `${hero}
+${body}
+${why}${ded.parts.split}${ded.parts.timeline}${ded.parts.packages}${features}${faq}
+${areas}
+${ded.parts.book}` : ded ? ded.main : `${hero}
 ${body}
 ${why}${blue}${how}${packages}${features}${faq}
 ${areas}

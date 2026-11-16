@@ -165,13 +165,14 @@ export const pages = [
     script: 'Your Brand, Spinning',
     h1: 'Corporate 360 Photo Booth Rental in Chicago',
     intro: `Put your logo on hundreds of shareable videos. Our branded 360 booth works for company parties, school events, graduations and brand activations of 12 or 1,200 guests.`,
-    hero: { src: '/adler-booth-setup.webp', alt: 'AACT 360 booth with stanchions, lighting and a branded backdrop at Adler University’s commencement in Chicago' },
+    hero: { src: '/adler-booth-setup.webp', alt: 'AACT 360 booth with stanchions, lighting and a branded backdrop at Adler University’s commencement in Chicago', pos: '50% 50%' },
+    quick: [['2 hours', '$' + CORPORATE.two.toLocaleString('en-US')], ['4 hours', '$' + CORPORATE.four.toLocaleString('en-US')], ['Backdrop &amp; branding', 'Included'], ['Cold sparks &amp; lighting', 'Included'], ['Attendant &amp; setup', 'Included'], ['Videos', 'Unlimited']],
     area: 'Chicago',
     service: 'Corporate 360 photo booth rental',
     dedicated: {
       navLabel: 'Corporate',
       ticks: ['Your logo, event name or hashtag on every video', 'Backdrop, cold sparks, lighting and stanchions included', 'Trusted at a 1,200-guest university commencement'],
-      image: { src: '/adler-booth-setup.webp', alt: 'AACT 360 booth with stanchions, lighting and a branded backdrop, set up for Adler University’s commencement', ratio: '4/3', caption: 'Our setup at Adler University’s commencement' },
+      image: { src: '/adler-booth-setup.webp', alt: 'AACT 360 booth with stanchions, lighting and a branded backdrop, set up for Adler University’s commencement', pos: '50% 50%' },
       noPromo: true,
       order: ['tiles', 'why', 'highlights', 'split', 'timeline', 'packages', 'specs'],
       tiles: { kicker: 'Built for', h2: 'Events We Bring the Booth To', items: [
@@ -220,7 +221,7 @@ export const pages = [
       ['Proven at large Chicago events',
         `<p>We handled Adler University's commencement with over 1,200 guests, including load-in through the lower Wacker loading dock and a fast setup. Large events need a team that shows up on time, knows how to work with venue logistics and keeps a line moving. That's what our attendants are trained for.</p>`],
       ['Built for',
-        `<p>Holiday parties, employee appreciation events, client receptions, conferences, product launches, brand activations, school events and graduations. Corporate pricing is <strong>$${CORPORATE.two.toLocaleString('en-US')} for 2 hours</strong> or <strong>$${CORPORATE.four.toLocaleString('en-US')} for 4 hours</strong>.</p>
+        `<p>Holiday parties, employee appreciation events, client receptions, conferences, product launches, brand activations, school events and graduations. Corporate pricing is <strong>$${CORPORATE.two.toLocaleString('en-US')} for 2 hours</strong> or <strong>$${CORPORATE.four.toLocaleString('en-US')} for 4 hours</strong>. Both include a backdrop, cold spark machines, professional lighting, stanchions and custom branding on every video.</p>
          <p>We serve downtown Chicago venues, hotels and offices along with suburban corporate campuses. Send your venue, date and expected headcount and we'll confirm logistics and send a quote, usually the same day.</p>`],
     ],
     faqs: [
