@@ -117,6 +117,7 @@ a.ev:hover svg{stroke:var(--blue)}a.ev:hover b{color:var(--blue)}
 .collage .ph:nth-child(1){aspect-ratio:4/3}
 .collage .ph:nth-child(2){aspect-ratio:3/4;grid-row:span 2}
 .collage .ph:nth-child(3){aspect-ratio:4/3}
+.collage .ph video{display:block;width:100%;height:100%;object-fit:cover}
 .bluesec h2{color:#fff;margin-bottom:1.2rem}
 .bluesec p{font-size:1.1rem;margin-bottom:1.2rem;color:#fff2f8}
 .bluesec .txt{text-align:center}
@@ -308,6 +309,9 @@ footer .grid .col a{white-space:nowrap}
 @media(max-width:900px){.dhero{padding:40px 0 60px}.dhero .grid{grid-template-columns:1fr;gap:2.6rem}.dhero figure{max-width:320px}.dhero figure.wide{max-width:none}.tiles,.spec-grid{grid-template-columns:1fr 1fr}}
 @media(max-width:520px){.tiles,.spec-grid{grid-template-columns:1fr}}
 </style>
+<link rel="stylesheet" href="/mobile-nav.css">
+<script src="/mobile-nav.js" defer></script>
+<script src="/video-autoplay.js" defer></script>
 </head>
 <body>
 
@@ -350,7 +354,7 @@ footer .grid .col a{white-space:nowrap}
   <div class="wrap grid">
     <div class="collage">
       <div class="ph"><img src="/360-booth-setup.webp" alt="AACT 360 booth set up with lighting at an evening event" loading="lazy"></div>
-      <div class="ph"><img src="/event-preview.webp" alt="Bride and groom back to back on the AACT 360 booth with their wedding overlay" loading="lazy"></div>
+      <div class="ph"><video src="/wedding-slomo-bubbles-confetti.mp4" poster="/wedding-slomo-bubbles-confetti.webp" autoplay muted loop playsinline preload="metadata" aria-label="Slow-motion 360 booth video of a bride and groom with bubbles and confetti at their reception"></video></div>
       <div class="ph"><img src="/package-premiere.webp" alt="Bride and groom dancing on the AACT 360 booth at their reception" loading="lazy"></div>
     </div>
     <div class="txt">
