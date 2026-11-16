@@ -177,7 +177,7 @@ ${d.timeline.steps.map(([h, t], i) => `      <div class="step"><div class="n">${
       const head = packages.slice(0, i).replace(/<div class="center">[\s\S]*?<\/h2><\/div>/, `<div class="center"><div class="kicker">Packages</div><h2>${d.packages.h2}</h2><p class="pkg-sub">${d.packages.sub}</p></div>`);
       if (!head.includes(d.packages.h2)) throw new Error('Homepage packages heading changed');
       const money = n => '$' + n.toLocaleString('en-US');
-      const custom = d.packages.cards && d.packages.cards.map(c => `      <div class="pkg"><h3>${c.name}</h3><div class="hrs">${c.label}</div><div class="price">${money(c.price)}</div><p class="for">${c.for}</p><a href="#book" class="btn btn-black" data-pkg="${esc(c.pkg)}">Get a Quote</a></div>`);
+      const custom = d.packages.cards && d.packages.cards.map(c => `      <div class="pkg"><h3>${c.name}</h3><div class="hrs">${c.label}</div><div class="price">${money(c.price)}</div><p class="for">${c.for}</p><a href="#book" class="btn btn-black" data-pkg="${esc(c.pkg)}">${d.packages.cta || 'Get a Quote'}</a></div>`);
       const cards = custom || [card('signature', 'Signature', 2), card('elite', 'Elite', 3), card('premiere', 'Premiere', 4)];
       let tail = packages.slice(j);
       if (d.packages.incl) {
@@ -185,7 +185,7 @@ ${d.timeline.steps.map(([h, t], i) => `      <div class="step"><div class="n">${
         if (!re.test(tail)) throw new Error('Homepage includes list changed');
         tail = tail.replace(re, `<h3>${d.packages.inclTitle}</h3>\n      <ul>\n${d.packages.incl.map(x => `        <li>${x}</li>`).join('\n')}\n      </ul>`);
       }
-      return `${head}<div class="pkgs${custom ? ' two' : ''}">\n${cards.join('\n')}\n    </div>\n    ${custom ? tail.replace(/ Planning a company or school event\?[\s\S]*?<\/a>\./, '') : packages.slice(j)}`;
+      return `${head}<div class="pkgs${custom ? ' two' : ''}">\n${cards.join('\n')}\n    </div>\n    ${custom ? tail.replace(/ Weddings and company events are priced separately:[\s\S]*<\/a>\./, '') : packages.slice(j)}`;
     },
     why: () => why,
     specs: () => `<!-- LOGISTICS -->

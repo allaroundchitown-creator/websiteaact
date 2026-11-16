@@ -5,6 +5,10 @@
 export const PRICES = { signature: 440, elite: 660, premiere: 880 };
 // Corporate events are priced separately from private events.
 export const CORPORATE = { two: 1200, four: 2200 };
+// Weddings are priced separately too.
+export const WEDDING = { two: 849, four: 1295 };
+const usd = n => '$' + n.toLocaleString('en-US');
+const WED_LINK = `Weddings have their own pricing, from ${usd(WEDDING.two)}: <a href="/wedding-photo-booth-chicago">see wedding packages</a>.`;
 
 const P = PRICES;
 
@@ -28,7 +32,7 @@ export const pages = [
       ['Which package should you pick?',
         `<p><strong>Signature (2 hours)</strong> works for birthdays, smaller parties and events where the booth is one activity among many. Two hours is enough for most guests to take a few spins.</p>
          <p><strong>Elite (3 hours)</strong> fits bigger birthdays and graduation parties where guests arrive over a longer window and you want the booth running for most of the night.</p>
-         <p><strong>Premiere (4 hours)</strong> is our go-to for weddings, quinceañeras and sweet 16s. It covers cocktail hour through the dance floor, and adds cold spark machines, professional lighting, stanchions and a carpet so the booth looks like part of the décor.</p>`],
+         <p><strong>Premiere (4 hours)</strong> is our go-to for quinceañeras and sweet 16s. It adds cold spark machines, professional lighting, stanchions and a carpet so the booth looks like part of the décor.</p>`],
       ['What you get at every Chicago event',
         `<p>Guests step onto the platform, the camera arm spins around them, and a few seconds later they have a slow-motion video set to music with your custom overlay on it. They scan a QR code at the booth and the video lands on their phone, ready for TikTok, Instagram Reels or the group chat.</p>
          <p>Your attendant runs everything: coaching poses, handing out props, keeping the line moving and making sure every group gets their video. You don't have to babysit the booth.</p>`],
@@ -47,7 +51,7 @@ export const pages = [
     slug: 'wedding-photo-booth-chicago',
     nav: 'Wedding Photo Booth',
     title: 'Wedding 360 Photo Booth Rental Chicago | AACT Booths',
-    description: `Add a 360 video booth to your Chicago wedding. Custom names-and-date overlay, slow-motion videos, an attendant all night, cold sparks with Premiere. From $${P.signature}.`,
+    description: `Add a 360 video booth to your Chicago wedding. Custom names-and-date overlay, slow-motion videos, an attendant all night. 2 hours ${usd(WEDDING.two)}, 4 hours ${usd(WEDDING.four)}.`,
     script: 'Spin Into Forever',
     h1: 'Wedding 360 Photo Booth Rental in Chicago',
     intro: `Give your guests the moment they'll post the next morning. Our 360 video booth turns your reception into slow-motion clips with your names and wedding date on every one.`,
@@ -56,7 +60,7 @@ export const pages = [
     service: 'Wedding 360 photo booth rental',
     dedicated: {
       navLabel: 'Weddings',
-      ticks: ['Your names and wedding date on every video', 'An attendant with the booth all night', 'Cold sparks, pro lighting, stanchions and carpet with Premiere'],
+      ticks: ['Your names and wedding date on every video', 'An attendant with the booth all night', 'Cold sparks, pro lighting, stanchions and carpet for the full ballroom look'],
       image: { src: '/strip-wedding-confetti.webp', alt: 'Couple celebrating with confetti on the AACT 360 booth at their Chicago wedding reception', pos: '50% 42%' },
       order: ['highlights', 'split', 'timeline', 'packages', 'why', 'specs'],
       highlights: { kicker: 'Why couples book it', h2: 'More Than a Photo Strip', items: [
@@ -66,7 +70,7 @@ export const pages = [
       ] },
       split: { h2: 'Made for the Dress, the Tux and the Dance Floor',
         text: ['A traditional booth gives you a strip of stills. A 360 booth gives you video: the dress twirling, the groomsmen showing off, grandma’s surprise dance move, all in slow motion with music.',
-          'Go Premiere and the booth becomes part of the room, with cold spark machines, professional lighting, stanchions and a carpet under the platform.'],
+          'With cold spark machines, professional lighting, stanchions and a carpet under the platform, the booth looks like part of the room.'],
         images: [['/360-booth-setup.webp', 'AACT 360 booth set up with lighting at an evening event'], ['/event-preview.webp', 'Bride and groom back to back on the AACT 360 booth with their wedding overlay'], ['/package-premiere.webp', 'Bride and groom dancing on the AACT 360 booth at their reception']] },
       timeline: { kicker: 'Your wedding day', h2: 'How the Booth Fits Your Timeline', steps: [
         ['Before guests arrive', 'We coordinate load-in with your venue and planner and set up early. Setup never comes out of your hours.'],
@@ -74,8 +78,11 @@ export const pages = [
         ['Reception', 'Dinner ends, the dance floor fills and the line at the booth starts.'],
         ['After the last spin', 'We pack everything down. Guests already have their videos, and you get them too.'],
       ] },
-      packages: { h2: 'Wedding Packages', sub: 'The same upfront pricing as every AACT event. No setup fee, no attendant fee.', featured: 'premiere', tag: 'Wedding Pick',
-        for: { signature: 'For intimate weddings, or a booth during cocktail hour only.', elite: 'Covers cocktail hour and the first stretch of dancing.', premiere: 'Cocktail hour through the dance floor. Adds cold sparks, pro lighting, stanchions &amp; carpet.' } },
+      packages: { h2: 'Wedding Pricing', sub: 'Upfront pricing for weddings. No setup fee, no attendant fee.', cta: 'Check My Date',
+        cards: [
+          { name: '2 Hours', label: 'Wedding', price: WEDDING.two, pkg: 'Wedding – 2 hrs', for: 'For cocktail hour, or the busiest stretch of the dance floor.' },
+          { name: '4 Hours', label: 'Wedding', price: WEDDING.four, pkg: 'Wedding – 4 hrs', for: 'Cocktail hour through the dance floor, so every guest gets a turn.' },
+        ] },
       specs: { kicker: 'For your venue &amp; planner', h2: 'Easy on Your Venue', items: [
         ['10×10 ft', 'Space', 'A flat area of about 10×10 ft near the dance floor or cocktail space.'],
         ['1 outlet', 'Power', 'One standard outlet nearby is all we need.'],
@@ -88,9 +95,8 @@ export const pages = [
       ['Why couples add a 360 booth to their wedding',
         `<p>A traditional photo booth gives you a strip of stills. A 360 booth gives you video: the dress twirling, the groomsmen showing off, grandma's surprise dance move, all in slow motion with music. Guests share their videos right away, so your wedding shows up all over their stories that night.</p>
          <p>You also get the videos. Every clip has your custom overlay with your names, date and wedding colors, so they look like part of your day rather than a generic rental.</p>`],
-      ['The Premiere package is built for weddings',
-        `<p>Most couples choose <strong>Premiere (4 hours, $${P.premiere})</strong>. Four hours covers cocktail hour and the bulk of the reception, when guests are dressed up and ready to celebrate. Premiere also adds cold spark machines, professional lighting, stanchions and a carpet under the platform so the booth looks polished in your ballroom or banquet hall photos.</p>
-         <p>Smaller wedding or a tighter timeline? Signature (2 hours) and Elite (3 hours) include the same attendant, unlimited videos and custom overlay.</p>`],
+      ['Wedding pricing',
+        `<p>Wedding pricing is <strong>${usd(WEDDING.two)} for 2 hours</strong> or <strong>${usd(WEDDING.four)} for 4 hours</strong>. Four hours covers cocktail hour and the bulk of the reception, when guests are dressed up and ready to celebrate.</p>`],
       ['How it works on your wedding day',
         `<p>We coordinate arrival with your venue and planner, set up before guests arrive, and have the booth ready when your package time starts. Setup time never comes out of your hours. Our attendant stays with the booth all night, so nobody from your wedding party has to run it.</p>
          <p>We need about a 10×10 ft space and one standard outlet. We serve wedding venues across Chicago and the suburbs, from downtown hotels and lofts to suburban banquet halls.</p>`],
@@ -99,7 +105,7 @@ export const pages = [
       ['When should I book a 360 booth for my wedding?', 'As soon as you have your date and venue. Saturdays in peak wedding season go first, so check availability early.'],
       ['Can the overlay match our wedding colors?', 'Yes. We design a custom overlay with your names, date and colors, and send it for your approval before the wedding.'],
       ['Do you work with our venue and planner?', 'Yes. Share your venue and planner contact and we will confirm load-in, space and power ahead of time.'],
-      ['Which package fits a wedding?', 'Premiere (4 hours) covers cocktail hour through most of the reception. For a shorter window, Signature and Elite include the same attendant, unlimited videos and custom overlay.'],
+      ['How much is a 360 booth for a wedding?', `Wedding pricing is ${usd(WEDDING.two)} for 2 hours or ${usd(WEDDING.four)} for 4 hours. Four hours covers cocktail hour through most of the reception; two hours suits a shorter window.`],
       ['Does our venue need to approve the cold sparks?', 'Some venues have their own rules about cold spark machines. Check with your venue and mention it in your request, and we will plan around it.'],
     ],
   },
@@ -357,7 +363,7 @@ export const pages = [
       ['Corporate and convention events',
         `<p>For trade shows, company parties and brand activations, we add your logo to every video. Guests share their clips on the spot, and you get the videos for your own channels. We've handled events with over 1,200 guests.</p>`],
       ['Weddings, quinces and parties',
-        `<p>For weddings and quinceañeras, <strong>Premiere</strong> (4 hours, $${P.premiere}) adds cold sparks, pro lighting, stanchions and a carpet. <strong>Signature</strong> (2 hours, $${P.signature}) and <strong>Elite</strong> (3 hours, $${P.elite}) work well for birthdays and smaller events. We also serve Hoffman Estates, Elk Grove Village, Palatine and Rolling Meadows.</p>`],
+        `<p>For quinceañeras and sweet 16s, <strong>Premiere</strong> (4 hours, $${P.premiere}) adds cold sparks, pro lighting, stanchions and a carpet. ${WED_LINK} <strong>Signature</strong> (2 hours, $${P.signature}) and <strong>Elite</strong> (3 hours, $${P.elite}) work well for birthdays and smaller events. We also serve Hoffman Estates, Elk Grove Village, Palatine and Rolling Meadows.</p>`],
     ],
     faqs: [
       ['Can you set up at a Schaumburg hotel or convention center?', 'Yes. We coordinate with the venue on load-in, space and power before your date.'],
@@ -381,7 +387,7 @@ export const pages = [
       ['Corporate events in Oak Brook',
         `<p>Oak Brook is home to many company headquarters and hotels, which makes it one of the busiest areas in the western suburbs for corporate events. A branded 360 booth gives your team and clients something fun to do and gives you a stack of logo-branded videos for your social channels.</p>`],
       ['Hotel weddings and private parties',
-        `<p>For weddings and big celebrations, <strong>Premiere</strong> (4 hours, $${P.premiere}) adds cold sparks, pro lighting, stanchions and a carpet, so the booth looks right at home in a hotel ballroom. <strong>Signature</strong> (2 hours, $${P.signature}) and <strong>Elite</strong> (3 hours, $${P.elite}) are great for shorter events.</p>`],
+        `<p>For big celebrations, <strong>Premiere</strong> (4 hours, $${P.premiere}) adds cold sparks, pro lighting, stanchions and a carpet, so the booth looks right at home in a hotel ballroom. ${WED_LINK} <strong>Signature</strong> (2 hours, $${P.signature}) and <strong>Elite</strong> (3 hours, $${P.elite}) are great for shorter events.</p>`],
       ['Serving the western suburbs',
         `<p>We also serve Oakbrook Terrace, Hinsdale, Elmhurst, Downers Grove and Westchester. Send us your venue with your date. Depending on where your event is, a small travel fee may apply, and we'll tell you up front.</p>`],
     ],
@@ -409,7 +415,7 @@ export const pages = [
       ['Grad parties and sweet 16s',
         `<p>Backyard graduation parties and sweet 16s are a perfect fit. We set up on any flat 10×10 ft space near an outlet, the attendant handles the line, and every guest gets a video with the guest of honor's name on it. <strong>Signature</strong> (2 hours, $${P.signature}) covers most home parties.</p>`],
       ['Weddings and the western suburbs',
-        `<p>For weddings, <strong>Premiere</strong> (4 hours, $${P.premiere}) adds cold sparks, pro lighting, stanchions and a carpet. <strong>Elite</strong> (3 hours, $${P.elite}) is a great middle option. We also serve Aurora, Lisle, Wheaton and Bolingbrook. Depending on your venue, a small travel fee may apply, and we'll include it in your quote up front.</p>`],
+        `<p>For sweet 16s and big parties, <strong>Premiere</strong> (4 hours, $${P.premiere}) adds cold sparks, pro lighting, stanchions and a carpet. ${WED_LINK} <strong>Elite</strong> (3 hours, $${P.elite}) is a great middle option. We also serve Aurora, Lisle, Wheaton and Bolingbrook. Depending on your venue, a small travel fee may apply, and we'll include it in your quote up front.</p>`],
     ],
     faqs: [
       ['Do you travel to Naperville?', 'Yes. Send us your venue address and we will include any travel fee in your quote up front.'],
