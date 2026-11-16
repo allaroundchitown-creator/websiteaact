@@ -92,6 +92,9 @@ const dedCss = `
 @media(max-width:900px){.hero.dfull .ph{min-height:0;aspect-ratio:4/3}.hero.dfull .ph::before{background:linear-gradient(0deg,#000 0%,rgba(0,0,0,.35) 12%,transparent 30%)}.dfull .hero-text{align-items:center;text-align:center;padding-top:26px}.dfull .hero p{margin-left:auto;margin-right:auto}.dfull .ticks{text-align:left}.dfull .hero-cta{align-self:center}}
 .dsec .sub{color:var(--muted);max-width:40em;margin:.9rem auto 0;font-size:1.05rem}
 .dsec .feats{padding:50px 0 0}
+.builtfor{padding:46px 0}.builtfor .kicker{margin-bottom:1.1rem}
+.pills{display:flex;flex-wrap:wrap;justify-content:center;gap:.6rem}
+.pills span{border:1px solid #e3e3e3;border-radius:999px;padding:.55rem 1.1rem;font:600 .88rem Montserrat,sans-serif;color:#111}
 .tiles{display:grid;grid-template-columns:repeat(4,1fr);gap:1rem;margin-top:3rem;text-align:left}
 .tile{border:1px solid #e3e3e3;border-radius:12px;padding:1.4rem 1.3rem;border-top:3px solid var(--blue)}
 .tile h3{font-size:1.05rem;font-weight:700;color:#111;margin-bottom:.35rem}
@@ -131,12 +134,10 @@ ${d.highlights.items.map(([ico, h, t]) => `      <div class="feat"><div class="i
 </section>
 `,
     tiles: () => `<!-- BUILT FOR -->
-<section class="dsec">
+<section class="dsec builtfor">
   <div class="wrap center">
-    <div class="kicker">${d.tiles.kicker}</div><h2>${d.tiles.h2}</h2>
-    <div class="tiles">
-${d.tiles.items.map(([h, t]) => `      <div class="tile"><h3>${h}</h3><p>${t}</p></div>`).join('\n')}
-    </div>
+    <div class="kicker">${d.tiles.kicker}</div>
+    <div class="pills">${d.tiles.items.map(([h]) => `<span>${h}</span>`).join('')}</div>
   </div>
 </section>
 `,
