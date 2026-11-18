@@ -59,6 +59,8 @@ const seoCss = `
 .areas .links a:hover{border-color:var(--blue);color:var(--blue)}
 footer .grid .col a{white-space:nowrap}
 @media(max-width:900px){.seo-body .wrap{grid-template-columns:1fr;gap:2.5rem}.quick{position:static}}
+.pkgs.two{grid-template-columns:repeat(2,1fr);max-width:780px;margin-left:auto;margin-right:auto}
+@media(max-width:900px){.pkgs.two{grid-template-columns:1fr}}
 `;
 
 const url = p => `${ORIGIN}/${p.slug}`;
@@ -185,7 +187,7 @@ ${d.timeline.steps.map(([h, t], i) => `      <div class="step"><div class="n">${
         if (!re.test(tail)) throw new Error('Homepage includes list changed');
         tail = tail.replace(re, `<h3>${d.packages.inclTitle}</h3>\n      <ul>\n${d.packages.incl.map(x => `        <li>${x}</li>`).join('\n')}\n      </ul>`);
       }
-      return `${head}<div class="pkgs${custom ? ' two' : ''}">\n${cards.join('\n')}\n    </div>\n    ${custom ? tail.replace(/ Weddings and company events are priced separately:[\s\S]*<\/a>\./, '') : packages.slice(j)}`;
+      return `${head}<div class="pkgs${custom ? ' two' : ''}">\n${cards.join('\n')}\n    </div>\n    ${custom ? tail.replace(/ Weddings[\s\S]*? are priced separately:[\s\S]*<\/a>\./, '') : packages.slice(j)}`;
     },
     why: () => why,
     specs: () => `<!-- LOGISTICS -->
@@ -264,7 +266,7 @@ ${d.specs.items.map(([big, h, t]) => `      <div class="spec"><b>${big}</b><h3>$
 const abs = src => ORIGIN + src;
 
 function schema(p, faqs) {
-  const custom = p.dedicated && p.dedicated.packages.cards;
+  const custom = (p.dedicated && p.dedicated.packages.cards) || p.packageCards;
   const offers = (custom ? custom.map(c => [`${c.label} — ${c.name.toLowerCase()}`, c.price]) : [
     ['The Signature — 2 hours', PRICES.signature],
     ['The Elite — 3 hours', PRICES.elite],
@@ -350,6 +352,21 @@ ${[...eventLinks, ...cityLinks].map(o => `      <a href="/${o.slug}">${o.city ? 
 </section>
 `;
 
+  // Pages with `packageCards` show two custom package cards instead of the homepage's three.
+  let packagesOut = packages, bookOut = book;
+  if (p.packageCards) {
+    const i = packages.indexOf('<div class="pkgs">'), j = packages.indexOf('<div class="incl">');
+    if (i < 0 || j < 0) throw new Error('Homepage packages markup changed');
+    const cards = p.packageCards.map(c => `      <div class="pkg"><h3>${c.name}</h3><div class="hrs">${c.label}</div><div class="price">$${c.price.toLocaleString('en-US')}</div><p class="for">${c.for}</p><a href="#book" class="btn btn-black" data-pkg="${esc(c.pkg)}">Check My Date</a></div>`);
+    const note = / Weddings, quinceañeras and company events are priced separately:[\s\S]*?<\/a>\./;
+    const tail = packages.slice(j);
+    if (!note.test(tail)) throw new Error('Homepage pricing note changed');
+    packagesOut = `${packages.slice(0, i)}<div class="pkgs two">\n${cards.join('\n')}\n    </div>\n    ${tail.replace(note, ' Weddings and company events are priced separately: <a href="/wedding-photo-booth-chicago" style="color:var(--blue);font-weight:600">wedding pricing</a> · <a href="/corporate-photo-booth-chicago" style="color:var(--blue);font-weight:600">corporate pricing</a>.')}`;
+    const sel = /(<select id="pkg" name="package">)[\s\S]*?(<\/select>)/;
+    if (!sel.test(book)) throw new Error('Homepage package select changed');
+    bookOut = book.replace(sel, `$1<option>Not sure yet</option>${p.packageCards.map(c => `<option>${c.pkg}</option>`).join('')}$2`);
+  }
+
   const pageScript = script
     .replace(/AACT homepage — /g, `AACT ${p.nav} — `)
     .replace(`data.append('source','AACT homepage')`, `data.append('source','${p.slug}')`)
@@ -394,9 +411,9 @@ ${why}${ded.parts.split}${ded.parts.timeline}${ded.parts.packages}${features}${f
 ${areas}
 ${ded.parts.book}` : ded ? ded.main : `${hero}
 ${body}
-${why}${blue}${how}${packages}${features}${faq}
+${why}${blue}${how}${packagesOut}${features}${faq}
 ${areas}
-${book}`}${ded ? ded.footer : footerAndPopup}${ded ? ded.script : pageScript}</body>
+${bookOut}`}${ded ? ded.footer : footerAndPopup}${ded ? ded.script : pageScript}</body>
 </html>
 `;
 }
