@@ -7,8 +7,12 @@ export const PRICES = { signature: 440, elite: 660, premiere: 880 };
 export const CORPORATE = { two: 1200, four: 2200 };
 // Weddings are priced separately too.
 export const WEDDING = { two: 849, four: 1295 };
+// Quinceañeras use the wedding structure (2 / 4 hours) at $200 less.
+export const QUINCE = { two: WEDDING.two - 200, four: WEDDING.four - 200 };
 const usd = n => '$' + n.toLocaleString('en-US');
 const WED_LINK = `Weddings have their own pricing, from ${usd(WEDDING.two)}: <a href="/wedding-photo-booth-chicago">see wedding packages</a>.`;
+
+const QUINCE_LINK = `Quinceañeras have their own pricing, from ${usd(QUINCE.two)}: <a href="/quinceanera-photo-booth-chicago">see quinceañera packages</a>.`;
 
 const P = PRICES;
 
@@ -32,7 +36,7 @@ export const pages = [
       ['Which package should you pick?',
         `<p><strong>Signature (2 hours)</strong> works for birthdays, smaller parties and events where the booth is one activity among many. Two hours is enough for most guests to take a few spins.</p>
          <p><strong>Elite (3 hours)</strong> fits bigger birthdays and graduation parties where guests arrive over a longer window and you want the booth running for most of the night.</p>
-         <p><strong>Premiere (4 hours)</strong> is our go-to for quinceañeras and sweet 16s. It adds cold spark machines, professional lighting, stanchions and a carpet so the booth looks like part of the décor.</p>`],
+         <p><strong>Premiere (4 hours)</strong> is our go-to for sweet 16s and big parties. It adds cold spark machines, professional lighting, stanchions and a carpet so the booth looks like part of the décor.</p>`],
       ['What you get at every Chicago event',
         `<p>Guests step onto the platform, the camera arm spins around them, and a few seconds later they have a slow-motion video set to music with your custom overlay on it. They scan a QR code at the booth and the video lands on their phone, ready for TikTok, Instagram Reels or the group chat.</p>
          <p>Your attendant runs everything: coaching poses, handing out props, keeping the line moving and making sure every group gets their video. You don't have to babysit the booth.</p>`],
@@ -113,20 +117,25 @@ export const pages = [
     slug: 'quinceanera-photo-booth-chicago',
     nav: 'Quinceañera Photo Booth',
     title: 'Quinceañera 360 Photo Booth Rental Chicago | AACT Booths',
-    description: `360 video booth rental for Chicago quinceañeras. Slow-motion videos of the dress, the court and the whole family, with a custom overlay. Packages from $${P.signature}.`,
+    description: `360 video booth rental for Chicago quinceañeras. Slow-motion videos of the dress, the court and the whole family, with a custom overlay. Packages from ${usd(QUINCE.two)}.`,
     script: 'Her Big Night',
     h1: 'Quinceañera 360 Photo Booth Rental in Chicago',
     intro: `The dress was made for spinning. Our 360 booth captures the quinceañera, her court and the whole family in slow-motion videos with her name on every clip.`,
     hero: { src: '/hero-desktop.webp', alt: 'Guest in a ball gown spinning on the AACT 360 booth at a Chicago quinceañera' },
     area: 'Chicago',
     service: 'Quinceañera 360 photo booth rental',
+    quick: [['2 hours', usd(QUINCE.two)], ['4 hours', usd(QUINCE.four)], ['Attendant &amp; setup', 'Included'], ['Videos', 'Unlimited']],
+    packageCards: [
+      { name: '2 Hours', label: 'Quinceañera', price: QUINCE.two, pkg: 'Quinceañera – 2 hrs', for: 'For the grand entrance and the busiest stretch of the dance floor.' },
+      { name: '4 Hours', label: 'Quinceañera', price: QUINCE.four, pkg: 'Quinceañera – 4 hrs', for: 'Grand entrance, dinner and hours of dancing. Adds cold sparks, pro lighting, stanchions &amp; carpet.' },
+    ],
     sections: [
       ['Made for quinceañeras',
         `<p>Quinces are big, loud, family-filled celebrations, and that's exactly where a 360 booth shines. The quinceañera's dress looks incredible in slow motion, the chambelanes can bring their best moves, and tías and abuelos get in on the fun too. Every guest leaves with a video on their phone.</p>
          <p>Her name, the date and her theme colors go on a custom overlay, so every clip shared that night looks like it belongs to her party.</p>`],
-      ['Premiere: the quince favorite',
-        `<p><strong>Premiere (4 hours, $${P.premiere})</strong> is the most popular package for quinceañeras. It covers the grand entrance, dinner and hours of dancing, and adds cold spark machines, professional lighting, stanchions and a carpet under the platform for a polished look in the banquet hall.</p>
-         <p>For a shorter celebration, Signature (2 hours, $${P.signature}) and Elite (3 hours, $${P.elite}) include the same attendant, unlimited videos and custom overlay.</p>`],
+      ['Quinceañera pricing',
+        `<p>Quinceañera pricing is <strong>${usd(QUINCE.two)} for 2 hours</strong> or <strong>${usd(QUINCE.four)} for 4 hours</strong>. Four hours covers the grand entrance, dinner and hours of dancing, and adds cold spark machines, professional lighting, stanchions and a carpet under the platform for a polished look in the banquet hall.</p>
+         <p>Both options include the same attendant, unlimited videos and custom overlay.</p>`],
       ['Stress-free for the family',
         `<p>Our attendant runs the booth the whole time, organizes groups and keeps the line moving, so the family can enjoy the party. We set up before guests arrive and pack everything down after, and setup never counts against your hours.</p>
          <p>We serve banquet halls and event spaces across Chicago and the suburbs. Send us the date and hall and we'll confirm availability, usually the same day.</p>`],
@@ -134,6 +143,7 @@ export const pages = [
     faqs: [
       ['Can the court take videos together?', 'Yes. The platform fits about 1–4 people at a time, and groups can go as many times as they want.'],
       ['Can the overlay include her name and theme colors?', 'Yes. Every package includes a custom overlay with her name, the date and her colors.'],
+      ['How much is a 360 booth for a quinceañera?', `Quinceañera pricing is ${usd(QUINCE.two)} for 2 hours or ${usd(QUINCE.four)} for 4 hours, with the attendant, unlimited videos, custom overlay and setup included.`],
       ['How far ahead should we book for a quinceañera?', 'Book as soon as you have the hall and date. Popular Saturdays fill early.'],
     ],
   },
@@ -363,7 +373,7 @@ export const pages = [
       ['Corporate and convention events',
         `<p>For trade shows, company parties and brand activations, we add your logo to every video. Guests share their clips on the spot, and you get the videos for your own channels. We've handled events with over 1,200 guests.</p>`],
       ['Weddings, quinces and parties',
-        `<p>For quinceañeras and sweet 16s, <strong>Premiere</strong> (4 hours, $${P.premiere}) adds cold sparks, pro lighting, stanchions and a carpet. ${WED_LINK} <strong>Signature</strong> (2 hours, $${P.signature}) and <strong>Elite</strong> (3 hours, $${P.elite}) work well for birthdays and smaller events. We also serve Hoffman Estates, Elk Grove Village, Palatine and Rolling Meadows.</p>`],
+        `<p>For sweet 16s and big parties, <strong>Premiere</strong> (4 hours, $${P.premiere}) adds cold sparks, pro lighting, stanchions and a carpet. ${WED_LINK} ${QUINCE_LINK} <strong>Signature</strong> (2 hours, $${P.signature}) and <strong>Elite</strong> (3 hours, $${P.elite}) work well for birthdays and smaller events. We also serve Hoffman Estates, Elk Grove Village, Palatine and Rolling Meadows.</p>`],
     ],
     faqs: [
       ['Can you set up at a Schaumburg hotel or convention center?', 'Yes. We coordinate with the venue on load-in, space and power before your date.'],
